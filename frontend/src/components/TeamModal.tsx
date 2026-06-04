@@ -26,31 +26,20 @@ interface TeamData {
   currentSquad?: Player[]
 }
 
-const teamFlags: Record<string, string> = {
-  ARG: 'https://flagcdn.com/w320/ar.png', MEX: 'https://flagcdn.com/w320/mx.png',
-  CAN: 'https://flagcdn.com/w320/ca.png', GUA: 'https://flagcdn.com/w320/gt.png',
-  ESP: 'https://flagcdn.com/w320/es.png', BRA: 'https://flagcdn.com/w320/br.png',
-  ECU: 'https://flagcdn.com/w320/ec.png', PAR: 'https://flagcdn.com/w320/py.png',
-  FRA: 'https://flagcdn.com/w320/fr.png', EGY: 'https://flagcdn.com/w320/eg.png',
-  NZL: 'https://flagcdn.com/w320/nz.png', VAN: 'https://flagcdn.com/w320/vu.png',
-  ENG: 'https://flagcdn.com/w320/gb.png', POR: 'https://flagcdn.com/w320/pt.png',
-  MAR: 'https://flagcdn.com/w320/ma.png', MAS: 'https://flagcdn.com/w320/my.png',
-  GER: 'https://flagcdn.com/w320/de.png', JPN: 'https://flagcdn.com/w320/jp.png',
-  AUS: 'https://flagcdn.com/w320/au.png', CHN: 'https://flagcdn.com/w320/cn.png',
-  NED: 'https://flagcdn.com/w320/nl.png', CRO: 'https://flagcdn.com/w320/hr.png',
-  KOR: 'https://flagcdn.com/w320/kr.png', JAM: 'https://flagcdn.com/w320/jm.png',
-  BEL: 'https://flagcdn.com/w320/be.png', ITA: 'https://flagcdn.com/w320/it.png',
-  USA: 'https://flagcdn.com/w320/us.png', HAI: 'https://flagcdn.com/w320/ht.png',
-  URU: 'https://flagcdn.com/w320/uy.png', COL: 'https://flagcdn.com/w320/co.png',
-  PAN: 'https://flagcdn.com/w320/pa.png', VEN: 'https://flagcdn.com/w320/ve.png',
-  SEN: 'https://flagcdn.com/w320/sn.png', ALG: 'https://flagcdn.com/w320/dz.png',
-  NGA: 'https://flagcdn.com/w320/ng.png', GAM: 'https://flagcdn.com/w320/gm.png',
-  SUI: 'https://flagcdn.com/w320/ch.png', SWE: 'https://flagcdn.com/w320/se.png',
-  CMR: 'https://flagcdn.com/w320/cm.png', QAT: 'https://flagcdn.com/w320/qa.png',
-  AUT: 'https://flagcdn.com/w320/at.png', TUR: 'https://flagcdn.com/w320/tr.png',
-  POL: 'https://flagcdn.com/w320/pl.png', BIH: 'https://flagcdn.com/w320/ba.png',
-  UKR: 'https://flagcdn.com/w320/ua.png', SRB: 'https://flagcdn.com/w320/rs.png',
-  ROU: 'https://flagcdn.com/w320/ro.png', LTU: 'https://flagcdn.com/w320/lt.png',
+// 3-letter team code -> 2-letter ISO flag code (flagcdn.com)
+const flagCodeMap: Record<string, string> = {
+  ALG:'dz', ARG:'ar', AUS:'au', AUT:'at', BEL:'be', BIH:'ba', BRA:'br', CAN:'ca',
+  CHI:'cl', CMR:'cm', COL:'co', CRO:'hr', ECU:'ec', EGY:'eg', ENG:'gb-eng',
+  ESP:'es', FRA:'fr', GER:'de', GHA:'gh', HUN:'hu', INA:'id', IRL:'ie',
+  IRN:'ir', ITA:'it', JPN:'jp', KOR:'kr', KSA:'sa', MAR:'ma', MEX:'mx',
+  NED:'nl', NGA:'ng', NOR:'no', NZL:'nz', PAR:'py', PER:'pe', POL:'pl',
+  POR:'pt', QAT:'qa', ROU:'ro', RSA:'za', SEN:'sn', SRB:'rs', SUI:'ch',
+  UAE:'ae', URU:'uy', USA:'us', VEN:'ve', WAL:'gb-wls',
+}
+
+function getFlagUrl(code: string): string {
+  const mapped = flagCodeMap[code]
+  return mapped ? `https://flagcdn.com/w320/${mapped}.png` : ''
 }
 
 const positionColors: Record<string, string> = {
@@ -104,9 +93,9 @@ export default function TeamModal({ teamCode, teamName, onClose }: TeamModalProp
         <div className="player-name">{player.name}</div>
         <div className="player-meta">
           <span className="player-pos">{positionLabels[player.position] || player.position}</span>
-          <span className="player-sep">•</span>
+          <span className="player-sep">·</span>
           <span className="player-age">{player.age}岁</span>
-          <span className="player-sep">•</span>
+          <span className="player-sep">·</span>
           <span className="player-club">{player.club}</span>
         </div>
       </div>
@@ -121,8 +110,8 @@ export default function TeamModal({ teamCode, teamName, onClose }: TeamModalProp
       <div className="team-modal" onClick={e => e.stopPropagation()}>
         {/* 头部 */}
         <div className="team-modal-header">
-          {teamFlags[teamCode] && (
-            <img className="team-modal-flag" src={teamFlags[teamCode]} alt={teamName} />
+          {getFlagUrl(teamCode) && (
+            <img className="team-modal-flag" src={getFlagUrl(teamCode)} alt={teamName} />
           )}
           <div className="team-modal-info">
             <h2 className="team-modal-name">{teamName}</h2>
@@ -160,7 +149,6 @@ export default function TeamModal({ teamCode, teamName, onClose }: TeamModalProp
                       {team.currentSquad.filter(p => p.position === 'GK').map((p, i) => renderPlayerCard(p, i))}
                     </div>
                   )}
-                  
                   {/* 后卫 */}
                   {team.currentSquad.filter(p => p.position === 'DEF').length > 0 && (
                     <div className="squad-section">
@@ -170,7 +158,6 @@ export default function TeamModal({ teamCode, teamName, onClose }: TeamModalProp
                       {team.currentSquad.filter(p => p.position === 'DEF').map((p, i) => renderPlayerCard(p, i))}
                     </div>
                   )}
-                  
                   {/* 中场 */}
                   {team.currentSquad.filter(p => p.position === 'MID').length > 0 && (
                     <div className="squad-section">
@@ -180,7 +167,6 @@ export default function TeamModal({ teamCode, teamName, onClose }: TeamModalProp
                       {team.currentSquad.filter(p => p.position === 'MID').map((p, i) => renderPlayerCard(p, i))}
                     </div>
                   )}
-                  
                   {/* 前锋 */}
                   {team.currentSquad.filter(p => p.position === 'FWD').length > 0 && (
                     <div className="squad-section">

@@ -39,10 +39,21 @@ interface LeaderboardEntry {
 
 const flagBase = 'https://flagcdn.com/w160/'
 
+// 3-letter team code -> 2-letter ISO flag code
+const flagCodeMap: Record<string, string> = {
+  ALG:'dz', ARG:'ar', AUS:'au', AUT:'at', BEL:'be', BIH:'ba', BRA:'br', CAN:'ca',
+  CMR:'cm', COL:'co', CRO:'hr', ECU:'ec', EGY:'eg', ENG:'gb-eng', ESP:'es', FRA:'fr',
+  GER:'de', GHA:'gh', HUN:'hu', INA:'id', IRL:'ie', IRN:'ir', ITA:'it', JPN:'jp',
+  KOR:'kr', KSA:'sa', MAR:'ma', MEX:'mx', NED:'nl', NGA:'ng', NOR:'no', NZL:'nz',
+  PAR:'py', PER:'pe', POL:'pl', POR:'pt', QAT:'qa', ROU:'ro', RSA:'za', SEN:'sn',
+  SRB:'rs', SUI:'ch', UAE:'ae', URU:'uy', USA:'us', VEN:'ve', WAL:'gb-wls', CHI:'cl'
+}
+
 function getTeamFlagUrl(code: string): string {
   if (!code) return ''
-  const lower = code.toLowerCase()
-  return `${flagBase}${lower}.png`
+  const mapped = flagCodeMap[code]
+  if (mapped) return `${flagBase}${mapped}.png`
+  return `${flagBase}${code.toLowerCase()}.png`
 }
 
 function getStageLabel(stage: string): string {
