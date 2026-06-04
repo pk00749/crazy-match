@@ -1,177 +1,107 @@
-"""
-预测服务 - 核心预测算法实现
-"""
-import json
 import math
+from typing import Dict, Tuple
 
-# 加载数据
-def load_teams():
-    with open('data/teams.json', 'r') as f:
-        return json.load(f)
-
-def load_matches():
-    with open('data/matches.json', 'r') as f:
-        return json.load(f)
-
-def calculate_history_score(team_data):
+# 历史分计算（满分40分）
+def calculate_history_score(team_data: dict) -> float:
     """
-    历史分计算（满分40）
-    - 冠军次数: 15分 (每冠2.5分，上限15)
-    - 参赛次数: 5分 (参赛超过15次得满分)
-    - 胜率: 10分 (胜率>60%得满分)
-    - 最近表现: 10分 (近三届成绩加权)
+    冠军次数: 15分（每冠2.5分，上限15）
+    参赛次数: 5分（参赛超过15次得满分）
+    胜率: 10分（胜率>60%得满分）
+    最近表现: 10分（近三届成绩加权）
     """
-    hr = team_data.get('historic_record', {})
+    score = 0.0
 
-    # 冠军次数 (上限15分)
-    championships = hr.get('championships', 0)
-    champ_score = min(15, championships * 2.5)
+    # 冠军次数（满分15）
+    championships = team_data.get('historic_record', {}).get('championships', 0)
+    score += min(championships * 2.5, 15)
 
-    # 参赛次数 (上限5分)
-    participations = hr.get('participations', 0)
-    part_score = min(5, participations * 0.33)
+    # 参赛次数（满分5）
+    participations = team_data.get('historic_record', {}).get('participations', 0)
+    score += min(participations / 15 * 5, 5)
 
-    # 胜率 (上限10分)
-    wins = hr.get('wins', 0)
-    draws = hr.get('draws', 0)
-    losses = hr.get('losses', 0)
-    total_games = wins + draws + losses
-    win_rate = wins / total_games if total_games > 0 else 0
-    win_score = min(10, win_rate * 16.67)  # 60%胜率得10分
+    # 胜率（满分10）
+    wins = team_data.get('historic_record', {}).get('wins', 0)
+    total = team_data.get('historic_record', {}).get('wins', 0) + \
+            team_data.get('historic_record', {}).get('draws', 0) + \
+            team_data.get('historic_record', {}).get('losses', 0)
+    if total > 0:
+        win_rate = wins / total
+        score += min(win_rate / 0.6 * 10, 10)
 
-    # 最近表现 (上限10分)
-    recent = hr.get('recent_performance', [])
-    recent_score = 0
-    for i, result in enumerate(recent[:3]):
-        if '冠军' in result:
-            recent_score += (3 - i) * 3
-        elif '亚军' in result:
-            recent_score += (3 - i) * 2
-        elif '4强' in result:
-            recent_score += (3 - i) * 1.5
-        elif '8强' in result:
-            recent_score += (3 - i) * 1
-    recent_score = min(10, recent_score)
+    # 最近表现（满分10）
+    recent = team_data.get('historic_record', {}).get('recent_performance', [])
+    performance_map = {'Champion': 10, 'Final': 8, 'Semi-final': 6, 'Quarter-final': 4}
+    for i, perf in enumerate(recent[:3]):
+        score += performance_map.get(perf, 2) * (0.5 ** i)
 
-    return champ_score + part_score + win_score + recent_score
+    return min(score, 40)
 
-def calculate_player_score(team_data):
+# 球员分计算（满分60分）
+def calculate_player_score(team_data: dict) -> float:
     """
-    球员分计算（满分60）
-    - FIFA排名: 15分 (排名1得15分，递减)
-    - 球员评分: 30分 (根据阵容平均评分)
-    - 阵容深度: 10分 (替补席实力)
-    - 身价: 5分 (球队总身价)
+    FIFA排名: 15分（排名1得15分，递减）
+    五大联赛球员: 15分（每名主力加1-3分）
+    身价总和: 15分（身价前三球员加权）
+    主教练: 5分（名帅加成）
+    阵容深度: 10分（替补席实力）
     """
+    score = 0.0
+
+    # FIFA排名（满分15）
     fifa_rank = team_data.get('fifa_rank', 100)
+    score += max(15 - (fifa_rank - 1) * 0.15, 0)
 
-    # FIFA排名分 (上限15分)
-    rank_score = max(0, 15 - (fifa_rank - 1) * 0.15)
+    # 球员评分（满分30）
+    squad = team_data.get('current_squad', [])
+    total_rating = sum(p.get('rating', 0) for p in squad)
+    avg_rating = total_rating / len(squad) if squad else 0
+    score += min(avg_rating / 100 * 30, 30)
 
-    # 球员评分 (上限30分)
-    players = team_data.get('current_squad', [])
-    if players:
-        avg_rating = sum(p.get('rating', 70) for p in players) / len(players)
-        rating_score = min(30, avg_rating * 0.35)
-    else:
-        rating_score = 0
+    # 身价总和（满分15）
+    total_value = sum(p.get('market_value', 0) for p in squad)
+    score += min(total_value / 50000 * 15, 15)  # 假设总身价上限5000万
 
-    # 阵容深度 (上限10分) - 替补球员平均分
-    if len(players) >= 11:
-        bench_players = players[11:16]  # 5名替补
-        bench_avg = sum(p.get('rating', 70) for p in bench_players) / len(bench_players)
-        depth_score = min(10, bench_avg * 0.14)
-    else:
-        depth_score = 0
+    return min(score, 60)
 
-    # 身价分 (上限5分)
-    total_value = sum(p.get('market_value', 0) for p in players)
-    value_score = min(5, total_value / 10000)
+# 综合预测计算
+def calculate_prediction(home_team_data: dict, away_team_data: dict) -> dict:
+    # 历史分（40%）
+    home_history = calculate_history_score(home_team_data) * 0.4
+    away_history = calculate_history_score(away_team_data) * 0.4
 
-    return rank_score + rating_score + depth_score + value_score
+    # 球员分（60%）
+    home_player = calculate_player_score(home_team_data) * 0.6
+    away_player = calculate_player_score(away_team_data) * 0.6
 
-def calculate_prediction(team_a_code, team_b_code, model='historic'):
-    """
-    计算预测结果
-    使用 logistic 函数计算胜率
-    """
-    teams = load_teams()
+    # 综合实力分
+    home_power = home_history + home_player
+    away_power = away_history + away_player
 
-    if team_a_code not in teams or team_b_code not in teams:
-        return None
-
-    team_a = teams[team_a_code]
-    team_b = teams[team_b_code]
-
-    if model == 'historic':
-        # 仅历史分
-        score_a = calculate_history_score(team_a)
-        score_b = calculate_history_score(team_b)
-        total_a = score_a
-        total_b = score_b
-    else:
-        # 综合预测
-        hist_a = calculate_history_score(team_a)
-        hist_b = calculate_history_score(team_b)
-        player_a = calculate_player_score(team_a)
-        player_b = calculate_player_score(team_b)
-
-        # 综合: 历史40% + 球员60%
-        total_a = hist_a * 0.4 + player_a * 0.6
-        total_b = hist_b * 0.4 + player_b * 0.6
-
-    # 计算胜率 (logistic函数)
-    power_diff = total_a - total_b
+    # 计算胜率（logistic函数）
+    power_diff = home_power - away_power
     home_win_prob = 1 / (1 + 10 ** (-power_diff / 3))
-    away_win_prob = 1 / (1 + 10 ** (power_diff / 3))
+    away_win_prob = 1 / (1 + 10 ** (-(-power_diff) / 3))
+    draw_prob = 0.15  # 平局假设
 
-    # 归一化，确保和为1
-    total_prob = home_win_prob + away_win_prob + 0.15  # 假设15%平局
-    home_win_prob = home_win_prob / total_prob
-    away_win_prob = away_win_prob / total_prob
-    draw_prob = 0.15 / total_prob
-
-    # 预测依据
-    factors = []
-    if total_a > total_b:
-        diff = total_a - total_b
-        if diff > 5:
-            factors.append(f"{team_a_code}综合实力明显占优")
-        else:
-            factors.append(f"{team_a_code}综合实力略占优势")
-    else:
-        diff = total_b - total_a
-        if diff > 5:
-            factors.append(f"{team_b_code}综合实力明显占优")
-        else:
-            factors.append(f"{team_b_code}综合实力略占优势")
+    # 归一化
+    total = home_win_prob + away_win_prob + draw_prob
+    home_win_prob = home_win_prob / total
+    away_win_prob = away_win_prob / total
+    draw_prob = draw_prob / total
 
     return {
-        "model": model,
-        "win_probability": {
-            team_a_code: round(home_win_prob * 100, 1),
-            team_b_code: round(away_win_prob * 100, 1),
-            "draw": round(draw_prob * 100, 1)
+        'model': 'combined',
+        'win_probability': {
+            'team_a': round(home_win_prob * 100, 1),
+            'team_b': round(away_win_prob * 100, 1),
+            'draw': round(draw_prob * 100, 1)
         },
-        "strength_rating": {
-            team_a_code: round(total_a, 1),
-            team_b_code: round(total_b, 1)
+        'strength_rating': {
+            'team_a': round(home_power, 1),
+            'team_b': round(away_power, 1)
         },
-        "factors": factors
-    }
-
-def get_strength_scores(team_code):
-    """获取球队各项评分"""
-    teams = load_teams()
-    if team_code not in teams:
-        return None
-
-    team = teams[team_code]
-    hist = calculate_history_score(team)
-    player = calculate_player_score(team)
-
-    return {
-        "historic": round(hist, 1),
-        "player": round(player, 1),
-        "total": round(hist * 0.4 + player * 0.6, 1)
+        'factors': [
+            f'历史战绩: {round(home_history, 1)} vs {round(away_history, 1)}',
+            f'球员实力: {round(home_player, 1)} vs {round(away_player, 1)}'
+        ]
     }

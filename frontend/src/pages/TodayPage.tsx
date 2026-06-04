@@ -1,89 +1,117 @@
 import { useState, useEffect } from 'react'
-import { getMatches, getTeams, getPrediction } from '../api'
-import type { Team, Match, Prediction } from '../api'
-import MatchCard from '../components/MatchCard'
 import DatePicker from '../components/DatePicker'
+import MatchCard from '../components/MatchCard'
+import Leaderboard from '../components/Leaderboard'
+import PredictionForm from '../components/PredictionForm'
+import { matchesApi, teamsApi, predictApi } from '../api'
 
 export default function TodayPage() {
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0])
-  const [matches, setMatches] = useState<Match[]>([])
-  const [teams, setTeams] = useState<Record<string, Team>>({})
-  const [predictions, setPredictions] = useState<Record<string, Prediction>>({})
-  const [loading, setLoading] = useState(true)
-  const [model, setModel] = useState<'historic' | 'squad'>('squad')
+  // Default to June 11, 2026 - first match day
+  const [selectedDate, setSelectedDate] = useState(new Date('2026-06-11'))
+  const [matches, setMatches] = useState<any[]>([])
+  const [predictions, setPredictions] = useState<Record<string, any>>({})
+  const [loading, setLoading] = useState(false)
+  const [showPredictionForm, setShowPredictionForm] = useState<string | null>(null)
 
   useEffect(() => {
-    async function loadData() {
-      try {
-        const [matchesData, teamsData] = await Promise.all([
-          getMatches({ date: selectedDate }),
-          getTeams()
-        ])
+    loadMatches()
+  }, [selectedDate])
 
-        setMatches(matchesData)
-        const teamsMap: Record<string, Team> = {}
-        teamsData.forEach((t: Team) => teamsMap[t.code] = t)
-        setTeams(teamsMap)
+  const loadMatches = async () => {
+    setLoading(true)
+    try {
+      const dateStr = selectedDate.toISOString().split('T')[0]
+      const data = matchesApi.getByDate(dateStr)
+      setMatches(data || [])
 
-        // Load predictions
-        const preds: Record<string, Prediction> = {}
-        for (const match of matchesData) {
-          try {
-            preds[match.id] = await getPrediction(match.id)
-          } catch (e) {
-            console.error('Failed to load prediction for', match.id, e)
-          }
+      // Load predictions for each match
+      const preds: Record<string, any> = {}
+      for (const match of data || []) {
+        try {
+          preds[match.id] = predictApi.getByMatch(match.id)
+        } catch (e) {
+          console.error('Failed to get prediction for match', match.id, e)
         }
-        setPredictions(preds)
-      } catch (e) {
-        console.error('Failed to load data:', e)
-      } finally {
-        setLoading(false)
       }
+      setPredictions(preds)
+    } catch (err) {
+      console.error('Failed to load matches:', err)
+    } finally {
+      setLoading(false)
     }
+  }
 
-    loadData()
-  }, [selectedDate, model])
+  const handleShare = (matchId: string) => {
+    const match = matches.find(m => m.id === matchId)
+    if (match) {
+      const link = `${window.location.origin}/share/${matchId}`
+      navigator.clipboard.writeText(link)
+      alert('分享链接已复制！')
+    }
+  }
 
-  if (loading) {
-    return <div className="loading">加载中...</div>
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
+  }
+
+  const getMatchCount = () => {
+    const dateStr = selectedDate.toISOString().split('T')[0]
+    return matchesApi.getByDate(dateStr).length
   }
 
   return (
     <div className="today-page">
-      <div className="date-section">
-        <DatePicker value={selectedDate} onChange={setSelectedDate} />
-        <div className="model-toggle">
-          <button
-            className={model === 'historic' ? 'active' : ''}
-            onClick={() => setModel('historic')}
-          >
-            历史战绩
-          </button>
-          <button
-            className={model === 'squad' ? 'active' : ''}
-            onClick={() => setModel('squad')}
-          >
-            球员实力
-          </button>
+      <div className="today-header">
+        <div>
+          <h2>{formatDate(selectedDate)}</h2>
+          <span className="today-date-badge">共 {getMatchCount()} 场比赛</span>
         </div>
+        <DatePicker selectedDate={selectedDate} onDateChange={setSelectedDate} />
       </div>
 
-      <div className="matches-list">
-        {matches.length === 0 ? (
-          <div className="no-matches">当日无比赛</div>
-        ) : (
-          matches.map(match => (
-            <MatchCard
-              key={match.id}
-              match={match}
-              teamA={teams[match.team_a]}
-              teamB={teams[match.team_b]}
-              prediction={predictions[match.id]}
-            />
-          ))
-        )}
+      {loading ? (
+        <div className="loading">加载中...</div>
+      ) : matches.length === 0 ? (
+        <div className="no-matches">
+          <p>📅 当天没有比赛</p>
+          <p style={{ fontSize: '14px', marginTop: '8px', color: 'var(--text-muted)' }}>
+            2026世界杯小组赛：6月11日-6月27日
+          </p>
+        </div>
+      ) : (
+        <div className="matches-list">
+          {matches.map(match => {
+            const teamA = teamsApi.getById(match.team_a)
+            const teamB = teamsApi.getById(match.team_b)
+            return (
+              <MatchCard
+                key={match.id}
+                match={{
+                  ...match,
+                  team_a: teamA?.name || match.team_a,
+                  team_b: teamB?.name || match.team_b
+                }}
+                prediction={predictions[match.id]}
+                onPredict={(id) => setShowPredictionForm(id)}
+                onShare={handleShare}
+              />
+            )
+          })}
+        </div>
+      )}
+
+      <div className="leaderboard-section">
+        <Leaderboard />
       </div>
+
+      {showPredictionForm && (
+        <PredictionForm
+          matchId={showPredictionForm}
+          teamAName={matches.find(m => m.id === showPredictionForm)?.team_a || ''}
+          teamBName={matches.find(m => m.id === showPredictionForm)?.team_b || ''}
+          onClose={() => setShowPredictionForm(null)}
+        />
+      )}
     </div>
   )
 }

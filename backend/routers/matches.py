@@ -1,43 +1,22 @@
-"""
-比赛路由
-"""
-from fastapi import APIRouter, Query
-import json
-import os
+from fastapi import APIRouter, HTTPException, Query
 from typing import Optional
+from models import Match, ApiResponse
+from data_loader import load_matches, load_match_by_id
 
 router = APIRouter()
 
-def get_matches():
-    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data')
-    with open(os.path.join(data_dir, 'matches.json'), 'r') as f:
-        return json.load(f)
-
-@router.get("/")
-async def get_matches_list(
-    date: Optional[str] = Query(None, description="Filter by date (YYYY-MM-DD)"),
-    stage: Optional[str] = Query(None, description="Filter by stage"),
-    group: Optional[str] = Query(None, description="Filter by group")
-):
-    """获取比赛列表，支持按日期、阶段、小组筛选"""
-    matches = get_matches()
-
+@router.get("/matches")
+async def get_matches(date: Optional[str] = Query(None, description="筛选日期 YYYY-MM-DD")):
+    """获取所有比赛或按日期筛选"""
+    matches = load_matches()
     if date:
-        matches = [m for m in matches if m.get('date') == date]
-    if stage:
-        matches = [m for m in matches if m.get('stage') == stage]
-    if group:
-        matches = [m for m in matches if m.get('group') == group.upper()]
+        matches = [m for m in matches if m['date'] == date]
+    return ApiResponse(success=True, data=matches, timestamp="2026-06-03")
 
-    return matches
-
-@router.get("/{match_id}")
+@router.get("/matches/{match_id}")
 async def get_match(match_id: str):
-    """获取单场比赛详情"""
-    matches = get_matches()
-    for match in matches:
-        if match.get('id') == match_id:
-            return match
-
-    from fastapi import HTTPException
-    raise HTTPException(status_code=404, detail="Match not found")
+    """获取单场比赛"""
+    match = load_match_by_id(match_id)
+    if not match:
+        raise HTTPException(status_code=404, detail="Match not found")
+    return ApiResponse(success=True, data=match, timestamp="2026-06-03")

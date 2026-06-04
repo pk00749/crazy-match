@@ -1,106 +1,101 @@
 import { useState, useEffect } from 'react'
-import { getMatches, getTeams } from '../api'
-import type { Team, Match } from '../api'
 import MatchCard from '../components/MatchCard'
+import { matchesApi, predictApi } from '../api'
 
 type Stage = 'group' | 'round16' | 'quarter' | 'semi' | 'final'
 
-const STAGE_LABELS: Record<Stage, string> = {
-  group: '小组赛',
-  round16: '16强',
-  quarter: '8强',
-  semi: '4强',
-  final: '决赛'
-}
+const stageTabs: { key: Stage; label: string }[] = [
+  { key: 'group', label: '小组赛' },
+  { key: 'round16', label: '16强' },
+  { key: 'quarter', label: '8强' },
+  { key: 'semi', label: '4强' },
+  { key: 'final', label: '决赛' },
+]
 
 export default function SchedulePage() {
-  const [stage, setStage] = useState<Stage>('group')
-  const [matches, setMatches] = useState<Match[]>([])
-  const [teams, setTeams] = useState<Record<string, Team>>({})
-  const [loading, setLoading] = useState(true)
+  const [activeTab, setActiveTab] = useState<Stage>('group')
+  const [matches, setMatches] = useState<any[]>([])
+  const [predictions, setPredictions] = useState<Record<string, any>>({})
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    async function loadData() {
-      try {
-        const [matchesData, teamsData] = await Promise.all([
-          getMatches({ stage }),
-          getTeams()
-        ])
+    loadAllMatches()
+  }, [])
 
-        setMatches(matchesData)
-        const teamsMap: Record<string, Team> = {}
-        teamsData.forEach((t: Team) => teamsMap[t.code] = t)
-        setTeams(teamsMap)
-      } catch (e) {
-        console.error('Failed to load data:', e)
-      } finally {
-        setLoading(false)
+  const loadAllMatches = async () => {
+    setLoading(true)
+    try {
+      const data = await matchesApi.getAll()
+      setMatches(data || [])
+
+      for (const match of data || []) {
+        try {
+          const pred = await predictApi.getByMatch(match.id)
+          setPredictions(prev => ({ ...prev, [match.id]: pred }))
+        } catch {}
       }
+    } catch (err) {
+      console.error('Failed to load matches:', err)
+    } finally {
+      setLoading(false)
     }
-
-    loadData()
-  }, [stage])
-
-  // Group matches by group for group stage
-  const groupMatches = stage === 'group'
-    ? matches.reduce((acc, match) => {
-        const g = match.group || 'Other'
-        if (!acc[g]) acc[g] = []
-        acc[g].push(match)
-        return acc
-      }, {} as Record<string, Match[]>)
-    : null
-
-  if (loading) {
-    return <div className="loading">加载中...</div>
   }
+
+  const filteredMatches = matches.filter(m => m.stage === activeTab)
+
+  const groupedMatches = activeTab === 'group'
+    ? Array.from(new Set(filteredMatches.map(m => m.group)))
+        .sort()
+        .map(group => ({
+          group,
+          matches: filteredMatches.filter(m => m.group === group)
+        }))
+    : null
 
   return (
     <div className="schedule-page">
       <div className="stage-tabs">
-        {(Object.keys(STAGE_LABELS) as Stage[]).map(s => (
+        {stageTabs.map(tab => (
           <button
-            key={s}
-            className={stage === s ? 'active' : ''}
-            onClick={() => setStage(s)}
+            key={tab.key}
+            className={`tab ${activeTab === tab.key ? 'active' : ''}`}
+            onClick={() => setActiveTab(tab.key)}
           >
-            {STAGE_LABELS[s]}
+            {tab.label}
           </button>
         ))}
       </div>
 
-      <div className="matches-container">
-        {stage === 'group' && groupMatches ? (
-          Object.entries(groupMatches)
-            .sort(([a], [b]) => a.localeCompare(b))
-            .map(([group, groupMatches]) => (
-              <div key={group} className="group-section">
-                <h3>📅 {group} 组</h3>
-                <div className="group-matches">
-                  {groupMatches.map(match => (
-                    <MatchCard
-                      key={match.id}
-                      match={match}
-                      teamA={teams[match.team_a]}
-                      teamB={teams[match.team_b]}
-                    />
-                  ))}
-                </div>
+      {loading ? (
+        <div className="loading">加载中...</div>
+      ) : activeTab === 'group' && groupedMatches ? (
+        <div className="groups-container">
+          {groupedMatches.map(({ group, matches }) => (
+            <div key={group} className="group-section">
+              <h3>小组 {group}</h3>
+              <div className="group-matches">
+                {matches.map(match => (
+                  <MatchCard
+                    key={match.id}
+                    match={match}
+                    prediction={predictions[match.id]}
+                  />
+                ))}
               </div>
-            ))
-        ) : (
-          <div className="knockout-matches">
-            {matches.map(match => (
-              <MatchCard
-                key={match.id}
-                match={match}
-                teamA={teams[match.team_a]}
-                teamB={teams[match.team_b]}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="knockout-matches">
+          {filteredMatches.map(match => (
+            <MatchCard
+              key={match.id}
+              match={match}
+              prediction={predictions[match.id]}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

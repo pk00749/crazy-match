@@ -1,32 +1,35 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import TodayPage from './pages/TodayPage'
 import SchedulePage from './pages/SchedulePage'
-import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <header className="header">
-        <div className="header-content">
-          <h1>🏆 Crazy Match</h1>
+    <BrowserRouter>
+      <div className="app">
+        <header className="header">
+          <div className="header-brand">
+            <span className="header-logo">⚽</span>
+            <h1 className="header-title">Crazy Match</h1>
+            <span className="header-badge">2026 世界杯</span>
+          </div>
           <nav>
-            <Link to="/" className="nav-link">今日预测</Link>
-            <Link to="/schedule" className="nav-link">完整赛程</Link>
+            <NavLink to="/today" className={({ isActive }) => isActive ? 'active' : ''}>
+              今日预测
+            </NavLink>
+            <NavLink to="/schedule" className={({ isActive }) => isActive ? 'active' : ''}>
+              完整赛程
+            </NavLink>
           </nav>
-        </div>
-      </header>
-
-      <main className="main">
-        <Routes>
-          <Route path="/" element={<TodayPage />} />
-          <Route path="/schedule" element={<SchedulePage />} />
-        </Routes>
-      </main>
-
-      <footer className="footer">
-        <p>2026 世界杯预测平台 · 仅供参考 · 请勿用于投注</p>
-      </footer>
-    </div>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/today" element={<TodayPage />} />
+            <Route path="/schedule" element={<SchedulePage />} />
+            <Route path="/" element={<TodayPage />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   )
 }
 

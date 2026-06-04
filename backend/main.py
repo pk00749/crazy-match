@@ -1,13 +1,14 @@
-"""
-Crazy Match - 世界杯预测平台 - FastAPI 后端
-"""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import teams, matches, predict
+from dotenv import load_dotenv
+
+from routers import matches, teams, predict, leaderboard
+
+load_dotenv()
 
 app = FastAPI(title="Crazy Match API", version="1.0.0")
 
-# CORS
+# CORS 配置
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,15 +17,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Routes
-app.include_router(teams.router, prefix="/api/teams", tags=["teams"])
-app.include_router(matches.router, prefix="/api/matches", tags=["matches"])
-app.include_router(predict.router, prefix="/api/predict", tags=["predict"])
+# 挂载路由
+app.include_router(matches.router, prefix="/api", tags=["matches"])
+app.include_router(teams.router, prefix="/api", tags=["teams"])
+app.include_router(predict.router, prefix="/api", tags=["predict"])
+app.include_router(leaderboard.router, prefix="/api", tags=["leaderboard"])
 
 @app.get("/")
-async def root():
-    return {"message": "Crazy Match API", "version": "1.0.0"}
+def root():
+    return {"message": "Crazy Match API is running"}
 
 @app.get("/health")
-async def health():
+def health():
     return {"status": "ok"}

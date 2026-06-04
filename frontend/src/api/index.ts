@@ -1,101 +1,85 @@
-const API_BASE = '/api'
+import teamsData from '../data/teams.json'
+import matchesData from '../data/matches.json'
 
-export interface Team {
-  id: string
-  name: string
-  code: string
-  flag: string
-  fifa_rank: number
-  group: string
-  historic_record?: HistoricRecord
-  current_squad?: Player[]
-  strength_score?: StrengthScore
+// Helper to simulate prediction data
+function calculatePrediction(teamA: any, teamB: any) {
+  const diff = teamA.strengthScore - teamB.strengthScore
+  const base = 1 / (1 + Math.pow(10, -diff / 10))
+  const teamAWin = Math.round(base * 100)
+  const draw = Math.round(Math.random() * 15 + 5)
+  const teamBWin = 100 - teamAWin - draw
+  
+  return {
+    win_probability: { team_a: teamAWin, team_b: teamBWin, draw },
+    strength_rating: { team_a: teamA.strengthScore, team_b: teamB.strengthScore }
+  }
 }
 
-export interface HistoricRecord {
-  participations: number
-  championships: number
-  wins: number
-  draws: number
-  losses: number
-  goals_scored: number
-  goals_conceded: number
-  best_result: string
-  recent_performance: string[]
+// In-memory predictions storage (for MVP)
+let predictions: Record<string, any> = {}
+
+export const matchesApi = {
+  getAll: () => {
+    return matchesData.matches
+  },
+  getByDate: (date: string) => {
+    return matchesData.matches.filter((m: any) => m.date === date)
+  },
+  getById: (id: string) => {
+    return matchesData.matches.find((m: any) => m.id === id)
+  }
 }
 
-export interface Player {
-  id: string
-  name: string
-  position: 'GK' | 'DEF' | 'MID' | 'FWD'
-  age: number
-  club: string
-  market_value: number
-  rating: number
+export const teamsApi = {
+  getAll: () => {
+    return Object.values(teamsData)
+  },
+  getById: (id: string) => {
+    return teamsData[id]
+  }
 }
 
-export interface StrengthScore {
-  historic: number
-  player: number
-  total: number
+export const predictApi = {
+  submit: (matchId: string, nickname: string, prediction: string) => {
+    const match = matchesData.matches.find((m: any) => m.id === matchId)
+    if (!match) throw new Error('Match not found')
+    
+    const teamA = teamsData[match.team_a]
+    const teamB = teamsData[match.team_b]
+    if (!teamA || !teamB) throw new Error('Team not found')
+    
+    predictions[matchId] = {
+      ...calculatePrediction(teamA, teamB),
+      user_prediction: prediction,
+      nickname
+    }
+    return predictions[matchId]
+  },
+  getByMatch: (matchId: string) => {
+    const match = matchesData.matches.find((m: any) => m.id === matchId)
+    if (!match) return null
+    
+    const teamA = teamsData[match.team_a]
+    const teamB = teamsData[match.team_b]
+    if (!teamA || !teamB) return null
+    
+    return calculatePrediction(teamA, teamB)
+  }
 }
 
-export interface Match {
-  id: string
-  date: string
-  time: string
-  stage: 'group' | 'round16' | 'quarter' | 'semi' | 'final'
-  group?: string
-  team_a: string
-  team_b: string
-  venue: string
-  city: string
+export const predictionsApi = {
+  getByDeviceId: () => Object.values(predictions)
 }
 
-export interface Prediction {
-  model: string
-  win_probability: Record<string, number>
-  strength_rating: Record<string, number>
-  factors: string[]
-  match?: Match
-}
-
-export async function getTeams(): Promise<Team[]> {
-  const res = await fetch(`${API_BASE}/teams/`)
-  if (!res.ok) throw new Error('Failed to fetch teams')
-  return res.json()
-}
-
-export async function getTeam(teamId: string): Promise<Team> {
-  const res = await fetch(`${API_BASE}/teams/${teamId}`)
-  if (!res.ok) throw new Error('Failed to fetch team')
-  return res.json()
-}
-
-export async function getMatches(filters?: { date?: string; stage?: string; group?: string }): Promise<Match[]> {
-  const params = new URLSearchParams()
-  if (filters?.date) params.set('date', filters.date)
-  if (filters?.stage) params.set('stage', filters.stage)
-  if (filters?.group) params.set('group', filters.group)
-
-  const url = `${API_BASE}/matches/${params.toString() ? '?' + params.toString() : ''}`
-  const res = await fetch(url)
-  if (!res.ok) throw new Error('Failed to fetch matches')
-  return res.json()
-}
-
-export async function getPrediction(matchId: string): Promise<Prediction> {
-  const res = await fetch(`${API_BASE}/predict/${matchId}`)
-  if (!res.ok) throw new Error('Failed to fetch prediction')
-  return res.json()
-}
-
-export async function postPredict(teamA: string, teamB: string, model: string = 'squad'): Promise<Prediction> {
-  const res = await fetch(`${API_BASE}/predict/`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ team_a: teamA, team_b: teamB, model })
-  })
-  if (!res.ok) throw new Error('Failed to predict')
-  return res.json()
+export const leaderboardApi = {
+  getTop20: () => {
+    // Mock leaderboard for MVP
+    return [
+      { nickname: '足球专家', correct_count: 12, total_count: 15, current_streak: 5 },
+      { nickname: '预言帝', correct_count: 10, total_count: 14, current_streak: 3 },
+      { nickname: '数据控', correct_count: 9, total_count: 13, current_streak: 2 },
+      { nickname: '直觉王', correct_count: 8, total_count: 12, current_streak: 1 },
+      { nickname: '球迷小李', correct_count: 7, total_count: 11, current_streak: 0 },
+    ]
+  }
 }

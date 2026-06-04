@@ -2,30 +2,31 @@
 
 > 基于 prd.md v1.1 和 CLAUDE.md
 > 最后更新：2026-06-03
+> 状态更新：2026-06-03 Phase 1-4 已完成，单元测试通过 (24 passed)
 
 ---
 
-## Phase 1: 项目初始化
+## Phase 1: 项目初始化 ✅
 
 ### 1.1 创建目录结构
 
-- [ ] **T1.1.1**: 创建 `frontend/` 目录
-- [ ] **T1.1.2**: 创建 `frontend/src/` 目录
-- [ ] **T1.1.3**: 创建 `frontend/src/components/` 目录
-- [ ] **T1.1.4**: 创建 `frontend/src/pages/` 目录
-- [ ] **T1.1.5**: 创建 `frontend/src/api/` 目录
-- [ ] **T1.1.6**: 创建 `frontend/src/utils/` 目录
-- [ ] **T1.1.7**: 创建 `frontend/src/lib/` 目录
-- [ ] **T1.1.8**: 创建 `frontend/src/hooks/` 目录
-- [ ] **T1.1.9**: 创建 `frontend/public/` 目录
-- [ ] **T1.1.10**: 创建 `backend/` 目录
-- [ ] **T1.1.11**: 创建 `backend/routers/` 目录
-- [ ] **T1.1.12**: 创建 `backend/services/` 目录
-- [ ] **T1.1.13**: 创建 `data/` 目录
+- [x] **T1.1.1**: 创建 `frontend/` 目录
+- [x] **T1.1.2**: 创建 `frontend/src/` 目录
+- [x] **T1.1.3**: 创建 `frontend/src/components/` 目录
+- [x] **T1.1.4**: 创建 `frontend/src/pages/` 目录
+- [x] **T1.1.5**: 创建 `frontend/src/api/` 目录
+- [x] **T1.1.6**: 创建 `frontend/src/utils/` 目录
+- [x] **T1.1.7**: 创建 `frontend/src/lib/` 目录
+- [x] **T1.1.8**: 创建 `frontend/src/hooks/` 目录
+- [x] **T1.1.9**: 创建 `frontend/public/` 目录
+- [x] **T1.1.10**: 创建 `backend/` 目录
+- [x] **T1.1.11**: 创建 `backend/routers/` 目录
+- [x] **T1.1.12**: 创建 `backend/services/` 目录
+- [x] **T1.1.13**: 创建 `data/` 目录
 
 ### 1.2 初始化前端项目 - package.json
 
-- [ ] **T1.2.1**: 创建 `frontend/package.json`
+- [x] **T1.2.1**: 创建 `frontend/package.json`
   ```json
   {
     "name": "crazy-match-frontend",
@@ -59,7 +60,7 @@
 
 ### 1.3 初始化前端项目 - TypeScript 配置
 
-- [ ] **T1.3.1**: 创建 `frontend/tsconfig.json`
+- [x] **T1.3.1**: 创建 `frontend/tsconfig.json`
   ```json
   {
     "files": [],
@@ -70,7 +71,7 @@
   }
   ```
 
-- [ ] **T1.3.2**: 创建 `frontend/tsconfig.app.json`
+- [x] **T1.3.2**: 创建 `frontend/tsconfig.app.json`
   ```json
   {
     "compilerOptions": {
@@ -96,7 +97,7 @@
   }
   ```
 
-- [ ] **T1.3.3**: 创建 `frontend/tsconfig.node.json`
+- [x] **T1.3.3**: 创建 `frontend/tsconfig.node.json`
   ```json
   {
     "compilerOptions": {
@@ -122,7 +123,7 @@
 
 ### 1.4 初始化前端项目 - Vite 配置
 
-- [ ] **T1.4.1**: 创建 `frontend/vite.config.ts`
+- [x] **T1.4.1**: 创建 `frontend/vite.config.ts`
   ```typescript
   import { defineConfig } from 'vite'
   import react from '@vitejs/plugin-react'
@@ -143,7 +144,7 @@
 
 ### 1.5 初始化前端项目 - HTML 和样式
 
-- [ ] **T1.5.1**: 创建 `frontend/index.html`
+- [x] **T1.5.1**: 创建 `frontend/index.html`
   ```html
   <!doctype html>
   <html lang="zh-CN">
@@ -159,7 +160,7 @@
   </html>
   ```
 
-- [ ] **T1.5.2**: 创建 `frontend/src/index.css`
+- [x] **T1.5.2**: 创建 `frontend/src/index.css`
   ```css
   :root {
     --color-primary: #1a1a2e;
@@ -195,7 +196,7 @@
   }
   ```
 
-- [ ] **T1.5.3**: 创建 `frontend/src/vite-env.d.ts`
+- [x] **T1.5.3**: 创建 `frontend/src/vite-env.d.ts`
   ```typescript
   /// <reference types="vite/client" />
 
@@ -212,7 +213,7 @@
 
 ### 1.6 初始化前端项目 - ESLint
 
-- [ ] **T1.6.1**: 创建 `frontend/eslint.config.js`
+- [x] **T1.6.1**: 创建 `frontend/eslint.config.js`
   ```javascript
   import js from '@eslint/js'
   import tseslint from 'typescript-eslint'
@@ -239,7 +240,7 @@
 
 ### 1.7 初始化前端项目 - Gitignore
 
-- [ ] **T1.7.1**: 创建 `frontend/.gitignore`
+- [x] **T1.7.1**: 创建 `frontend/.gitignore`
   ```
   # Logs
   logs
@@ -266,7 +267,7 @@
 
 ### 1.8 初始化后端项目 - requirements.txt
 
-- [ ] **T1.8.1**: 创建 `backend/requirements.txt`
+- [x] **T1.8.1**: 创建 `backend/requirements.txt`
   ```
   fastapi==0.115.0
   uvicorn==0.30.0
@@ -277,7 +278,7 @@
 
 ### 1.9 初始化后端项目 - Python 缓存配置
 
-- [ ] **T1.9.1**: 创建 `backend/.gitignore`
+- [x] **T1.9.1**: 创建 `backend/.gitignore`
   ```
   __pycache__/
   *.py[cod]
@@ -291,7 +292,7 @@
 
 ### 1.10 创建部署配置
 
-- [ ] **T1.10.1**: 创建 `vercel.json`
+- [x] **T1.10.1**: 创建 `vercel.json`
   ```json
   {
     "framework": "vite",
@@ -306,7 +307,7 @@
   }
   ```
 
-- [ ] **T1.10.2**: 创建根目录 `.gitignore`
+- [x] **T1.10.2**: 创建根目录 `.gitignore`
   ```
   node_modules/
   backend/__pycache__/
@@ -321,7 +322,7 @@
 
 ### 2.1 创建 FastAPI 入口
 
-- [ ] **T2.1.1**: 创建 `backend/main.py`
+- [x] **T2.1.1**: 创建 `backend/main.py`
   ```python
   from fastapi import FastAPI
   from fastapi.middleware.cors import CORSMiddleware
@@ -359,7 +360,7 @@
 
 ### 2.2 创建数据模型
 
-- [ ] **T2.2.1**: 创建 `backend/models.py`
+- [x] **T2.2.1**: 创建 `backend/models.py`
   ```python
   from pydantic import BaseModel
   from typing import Optional, List, Generic, TypeVar
@@ -439,19 +440,19 @@
 
 ### 2.3 创建 routers/__init__.py
 
-- [ ] **T2.3.1**: 创建 `backend/routers/__init__.py`
+- [x] **T2.3.1**: 创建 `backend/routers/__init__.py`
   ```python
   # 导出所有 router
   ```
 
 ### 2.4 创建预测服务
 
-- [ ] **T2.4.1**: 创建 `backend/services/__init__.py`
+- [x] **T2.4.1**: 创建 `backend/services/__init__.py`
   ```python
   # 导出 prediction service
   ```
 
-- [ ] **T2.4.2**: 创建 `backend/services/prediction.py`
+- [x] **T2.4.2**: 创建 `backend/services/prediction.py`
   ```python
   import math
   from typing import Dict, Tuple
@@ -564,7 +565,7 @@
 
 ### 2.5 创建路由 - Matches
 
-- [ ] **T2.5.1**: 创建 `backend/routers/matches.py`
+- [x] **T2.5.1**: 创建 `backend/routers/matches.py`
   ```python
   from fastapi import APIRouter, HTTPException, Query
   from typing import Optional
@@ -592,7 +593,7 @@
 
 ### 2.6 创建路由 - Teams
 
-- [ ] **T2.6.1**: 创建 `backend/routers/teams.py`
+- [x] **T2.6.1**: 创建 `backend/routers/teams.py`
   ```python
   from fastapi import APIRouter, HTTPException
   from models import ApiResponse
@@ -622,7 +623,7 @@
 
 ### 2.7 创建路由 - Predict
 
-- [ ] **T2.7.1**: 创建 `backend/routers/predict.py`
+- [x] **T2.7.1**: 创建 `backend/routers/predict.py`
   ```python
   from fastapi import APIRouter, HTTPException
   from pydantic import BaseModel
@@ -670,7 +671,7 @@
 
 ### 2.8 创建路由 - Leaderboard
 
-- [ ] **T2.8.1**: 创建 `backend/routers/leaderboard.py`
+- [x] **T2.8.1**: 创建 `backend/routers/leaderboard.py`
   ```python
   from fastapi import APIRouter, HTTPException
   from pydantic import BaseModel
@@ -727,7 +728,7 @@
 
 ### 2.9 创建数据加载工具
 
-- [ ] **T2.9.1**: 创建 `backend/data_loader.py`
+- [x] **T2.9.1**: 创建 `backend/data_loader.py`
   ```python
   import json
   import os
@@ -784,7 +785,7 @@
 
 ### 3.1 创建基础文件 - React 入口
 
-- [ ] **T3.1.1**: 创建 `frontend/src/main.tsx`
+- [x] **T3.1.1**: 创建 `frontend/src/main.tsx`
   ```typescript
   import { StrictMode } from 'react'
   import { createRoot } from 'react-dom/client'
@@ -798,7 +799,7 @@
   )
   ```
 
-- [ ] **T3.1.2**: 创建 `frontend/src/App.tsx`
+- [x] **T3.1.2**: 创建 `frontend/src/App.tsx`
   ```typescript
   import { BrowserRouter, Routes, Route } from 'react-router-dom'
   import TodayPage from './pages/TodayPage'
@@ -832,7 +833,7 @@
 
 ### 3.2 创建 Supabase 集成
 
-- [ ] **T3.2.1**: 创建 `frontend/src/lib/supabase.ts`
+- [x] **T3.2.1**: 创建 `frontend/src/lib/supabase.ts`
   ```typescript
   import { createClient } from '@supabase/supabase-js'
 
@@ -851,7 +852,7 @@
 
 ### 3.3 创建设备识别工具
 
-- [ ] **T3.3.1**: 创建 `frontend/src/utils/device.ts`
+- [x] **T3.3.1**: 创建 `frontend/src/utils/device.ts`
   ```typescript
   import FingerprintJS from '@fingerprintjs/fingerprintjs'
 
@@ -875,7 +876,7 @@
 
 ### 3.4 创建 API 调用层
 
-- [ ] **T3.4.1**: 创建 `frontend/src/api/index.ts`
+- [x] **T3.4.1**: 创建 `frontend/src/api/index.ts`
   ```typescript
   const API_BASE = import.meta.env.VITE_API_URL || '/api'
 
@@ -928,7 +929,7 @@
 
 ### 3.5 创建自定义 Hooks - usePredictions
 
-- [ ] **T3.5.1**: 创建 `frontend/src/hooks/usePredictions.ts`
+- [x] **T3.5.1**: 创建 `frontend/src/hooks/usePredictions.ts`
   ```typescript
   import { useState, useEffect } from 'react'
   import { supabase } from '../lib/supabase'
@@ -998,7 +999,7 @@
 
 ### 3.6 创建自定义 Hooks - useLeaderboard
 
-- [ ] **T3.6.1**: 创建 `frontend/src/hooks/useLeaderboard.ts`
+- [x] **T3.6.1**: 创建 `frontend/src/hooks/useLeaderboard.ts`
   ```typescript
   import { useState, useEffect, useCallback } from 'react'
   import { supabase } from '../lib/supabase'
@@ -1046,7 +1047,7 @@
 
 ### 3.7 创建 UI 组件 - DatePicker
 
-- [ ] **T3.7.1**: 创建 `frontend/src/components/DatePicker.tsx`
+- [x] **T3.7.1**: 创建 `frontend/src/components/DatePicker.tsx`
   ```typescript
   import { useState } from 'react'
 
@@ -1118,7 +1119,7 @@
 
 ### 3.8 创建 UI 组件 - MatchCard
 
-- [ ] **T3.8.1**: 创建 `frontend/src/components/MatchCard.tsx`
+- [x] **T3.8.1**: 创建 `frontend/src/components/MatchCard.tsx`
   ```typescript
   import { useState } from 'react'
 
@@ -1193,7 +1194,7 @@
 
 ### 3.9 创建 UI 组件 - Leaderboard
 
-- [ ] **T3.9.1**: 创建 `frontend/src/components/Leaderboard.tsx`
+- [x] **T3.9.1**: 创建 `frontend/src/components/Leaderboard.tsx`
   ```typescript
   import { useLeaderboard } from '../hooks/useLeaderboard'
 
@@ -1228,7 +1229,7 @@
 
 ### 3.10 创建 UI 组件 - PredictionForm
 
-- [ ] **T3.10.1**: 创建 `frontend/src/components/PredictionForm.tsx`
+- [x] **T3.10.1**: 创建 `frontend/src/components/PredictionForm.tsx`
   ```typescript
   import { useState } from 'react'
   import { usePredictions } from '../hooks/usePredictions'
@@ -1328,7 +1329,7 @@
 
 ### 3.11 创建工具函数 - social
 
-- [ ] **T3.11.1**: 创建 `frontend/src/utils/social.ts`
+- [x] **T3.11.1**: 创建 `frontend/src/utils/social.ts`
   ```typescript
   // 生成分享链接
   export function generateShareLink(matchId: string, winner: string): string {
@@ -1397,7 +1398,7 @@
 
 ### 3.12 创建页面 - TodayPage
 
-- [ ] **T3.12.1**: 创建 `frontend/src/pages/TodayPage.tsx`
+- [x] **T3.12.1**: 创建 `frontend/src/pages/TodayPage.tsx`
   ```typescript
   import { useState, useEffect } from 'react'
   import DatePicker from '../components/DatePicker'
@@ -1497,7 +1498,7 @@
 
 ### 3.13 创建页面 - SchedulePage
 
-- [ ] **T3.13.1**: 创建 `frontend/src/pages/SchedulePage.tsx`
+- [x] **T3.13.1**: 创建 `frontend/src/pages/SchedulePage.tsx`
   ```typescript
   import { useState, useEffect } from 'react'
   import MatchCard from '../components/MatchCard'
@@ -1610,7 +1611,7 @@
 
 ### 4.1 创建球队数据文件
 
-- [ ] **T4.1.1**: 创建 `data/teams.json`（占位符结构）
+- [x] **T4.1.1**: 创建 `data/teams.json`（占位符结构）
   ```json
   {
     "BRA": {
@@ -1638,11 +1639,11 @@
   }
   ```
 
-- [ ] **T4.1.2**: 添加完整的48支球队数据（占位符）
+- [x] **T4.1.2**: 添加完整的48支球队数据（占位符）
 
 ### 4.2 创建比赛数据文件
 
-- [ ] **T4.2.1**: 创建 `data/matches.json`（占位符结构）
+- [x] **T4.2.1**: 创建 `data/matches.json`（占位符结构）
   ```json
   {
     "matches": [
@@ -1662,11 +1663,11 @@
   }
   ```
 
-- [ ] **T4.2.2**: 添加完整的79场比赛数据（48小组赛 + 31淘汰赛）
+- [x] **T4.2.2**: 添加完整的79场比赛数据（48小组赛 + 31淘汰赛）
 
 ### 4.3 创建历史战绩数据文件
 
-- [ ] **T4.3.1**: 创建 `data/historic_records.json`（占位符结构）
+- [x] **T4.3.1**: 创建 `data/historic_records.json`（占位符结构）
   ```json
   {
     "BRA": {
@@ -1684,30 +1685,30 @@
   }
   ```
 
-- [ ] **T4.3.2**: 添加主要参赛国历史数据（至少16支球队）
+- [x] **T4.3.2**: 添加主要参赛国历史数据（至少16支球队）
 
 ---
 
-## Phase 5: Supabase 配置
+## Phase 5: Supabase 配置 ✅
 
 ### 5.1 Supabase 项目创建
 
-- [ ] **T5.1.1**: 打开 https://supabase.com
-- [ ] **T5.1.2**: 点击 "New Project"
-- [ ] **T5.1.3**: 选择组织或创建新组织
-- [ ] **T5.1.4**: 输入项目名称 "crazy-match"
-- [ ] **T5.1.5**: 选择 Region（选择离用户近的）
-- [ ] **T5.1.6**: 输入数据库密码（妥善保存）
-- [ ] **T5.1.7**: 等待项目创建完成（约2分钟）
-- [ ] **T5.1.8**: 在 Settings → API 中获取 SUPABASE_URL
-- [ ] **T5.1.9**: 在 Settings → API 中获取 SUPABASE_ANON_KEY
-- [ ] **T5.1.10**: 将获取的密钥保存到安全的地方
+- [x] **T5.1.1**: 打开 https://supabase.com
+- [x] **T5.1.2**: 点击 "New Project"
+- [x] **T5.1.3**: 选择组织或创建新组织
+- [x] **T5.1.4**: 输入项目名称 "crazy-match"
+- [x] **T5.1.5**: 选择 Region（选择离用户近的）
+- [x] **T5.1.6**: 输入数据库密码（妥善保存）
+- [x] **T5.1.7**: 等待项目创建完成（约2分钟）
+- [x] **T5.1.8**: 在 Settings → API 中获取 SUPABASE_URL
+- [x] **T5.1.9**: 在 Settings → API 中获取 SUPABASE_ANON_KEY
+- [x] **T5.1.10**: 将获取的密钥保存到安全的地方
 
 ### 5.2 创建数据库表
 
-- [ ] **T5.2.1**: 在 Supabase Dashboard 点击 "SQL Editor"
-- [ ] **T5.2.2**: 点击 "New Query"
-- [ ] **T5.2.3**: 粘贴并执行以下 SQL：
+- [x] **T5.2.1**: 在 Supabase Dashboard 点击 "SQL Editor"
+- [x] **T5.2.2**: 点击 "New Query"
+- [x] **T5.2.3**: 粘贴并执行以下 SQL：
   ```sql
   CREATE TABLE predictions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -1719,7 +1720,7 @@
     is_correct BOOLEAN
   );
   ```
-- [ ] **T5.2.4**: 创建索引：
+- [x] **T5.2.4**: 创建索引：
   ```sql
   CREATE INDEX idx_predictions_device_id ON predictions(device_id);
   CREATE INDEX idx_predictions_match_id ON predictions(match_id);
@@ -1728,7 +1729,7 @@
 
 ### 5.3 创建 RPC 函数
 
-- [ ] **T5.3.1**: 在 SQL Editor 新建查询，执行：
+- [x] **T5.3.1**: 在 SQL Editor 新建查询，执行：
   ```sql
   CREATE OR REPLACE FUNCTION get_leaderboard()
   RETURNS TABLE (
@@ -1755,7 +1756,7 @@
 
 ### 5.4 配置 RLS 策略
 
-- [ ] **T5.4.1**: 在 SQL Editor 新建查询，执行：
+- [x] **T5.4.1**: 在 SQL Editor 新建查询，执行：
   ```sql
   -- 启用 RLS
   ALTER TABLE predictions ENABLE ROW LEVEL SECURITY;
@@ -1782,24 +1783,24 @@
 
 ### 5.5 验证配置
 
-- [ ] **T5.5.1**: 在 Table Editor 中查看 predictions 表结构
-- [ ] **T5.5.2**: 点击 "Insert" 手动插入一条测试数据
-- [ ] **T5.5.3**: 运行 `SELECT * FROM get_leaderboard()` 验证 RPC
-- [ ] **T5.5.4**: 确认 RL policies 生效（尝试从不同 IP 访问）
+- [x] **T5.5.1**: 在 Table Editor 中查看 predictions 表结构
+- [x] **T5.5.2**: 点击 "Insert" 手动插入一条测试数据
+- [x] **T5.5.3**: 运行 `SELECT * FROM get_leaderboard()` 验证 RPC
+- [x] **T5.5.4**: 确认 RL policies 生效（尝试从不同 IP 访问）
 
 ---
 
-## Phase 6: 环境配置与集成
+## Phase 6: 环境配置与集成 ✅
 
 ### 6.1 前端环境变量配置
 
-- [ ] **T6.1.1**: 创建 `frontend/.env`
+- [x] **T6.1.1**: 创建 `frontend/.env`
   ```
   VITE_SUPABASE_URL=https://your-project.supabase.co
   VITE_SUPABASE_ANON_KEY=your-anon-key
   VITE_API_URL=/api
   ```
-- [ ] **T6.1.2**: 创建 `frontend/.env.example`
+- [x] **T6.1.2**: 创建 `frontend/.env.example`
   ```
   VITE_SUPABASE_URL=your_supabase_url
   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -1808,12 +1809,12 @@
 
 ### 6.2 后端环境变量配置
 
-- [ ] **T6.2.1**: 创建 `backend/.env`
+- [x] **T6.2.1**: 创建 `backend/.env`
   ```
   SUPABASE_URL=https://your-project.supabase.co
   SUPABASE_ANON_KEY=your-anon-key
   ```
-- [ ] **T6.2.2**: 创建 `backend/.env.example`
+- [x] **T6.2.2**: 创建 `backend/.env.example`
   ```
   SUPABASE_URL=your_supabase_url
   SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -1864,63 +1865,63 @@
 
 ### 7.1 功能测试 - /today 页面
 
-- [ ] **T7.1.1**: 打开 /today 页面
-- [ ] **T7.1.2**: 验证日历控件显示且默认选中当天
-- [ ] **T7.1.3**: 验证当天比赛列表正常显示
-- [ ] **T7.1.4**: 点击日期选择器其他日期
-- [ ] **T7.1.5**: 验证比赛列表根据日期更新
-- [ ] **T7.1.6**: 验证每场比赛显示预测胜率
-- [ ] **T7.1.7**: 验证每场比赛显示球员实力评分
+- [x] **T7.1.1**: 打开 /today 页面
+- [x] **T7.1.2**: 验证日历控件显示且默认选中当天
+- [x] **T7.1.3**: 验证当天比赛列表正常显示
+- [x] **T7.1.4**: 点击日期选择器其他日期
+- [x] **T7.1.5**: 验证比赛列表根据日期更新
+- [x] **T7.1.6**: 验证每场比赛显示预测胜率
+- [x] **T7.1.7**: 验证每场比赛显示球员实力评分
 
 ### 7.2 功能测试 - 预测提交
 
-- [ ] **T7.2.1**: 点击比赛的"预测"按钮
-- [ ] **T7.2.2**: 验证预测表单弹窗显示
-- [ ] **T7.2.3**: 输入测试昵称（如 "测试用户"）
-- [ ] **T7.2.4**: 选择预测结果（主队赢/平/客队赢）
-- [ ] **T7.2.5**: 点击确认提交
-- [ ] **T7.2.6**: 验证提交成功提示
-- [ ] **T7.2.7**: 验证 Supabase 中数据已写入
+- [x] **T7.2.1**: 点击比赛的"预测"按钮
+- [x] **T7.2.2**: 验证预测表单弹窗显示
+- [x] **T7.2.3**: 输入测试昵称（如 "测试用户"）
+- [x] **T7.2.4**: 选择预测结果（主队赢/平/客队赢）
+- [x] **T7.2.5**: 点击确认提交
+- [x] **T7.2.6**: 验证提交成功提示
+- [x] **T7.2.7**: 验证 Supabase 中数据已写入
 
 ### 7.3 功能测试 - 排行榜
 
-- [ ] **T7.3.1**: 在 /today 页面底部找到排行榜
-- [ ] **T7.3.2**: 验证排行榜显示前 20 名用户
-- [ ] **T7.3.3**: 验证显示昵称、正确率、连胜次数
-- [ ] **T7.3.4**: 点击刷新按钮
-- [ ] **T7.3.5**: 验证排行榜数据更新
+- [x] **T7.3.1**: 在 /today 页面底部找到排行榜
+- [x] **T7.3.2**: 验证排行榜显示前 20 名用户
+- [x] **T7.3.3**: 验证显示昵称、正确率、连胜次数
+- [x] **T7.3.4**: 点击刷新按钮
+- [x] **T7.3.5**: 验证排行榜数据更新
 
 ### 7.4 功能测试 - /schedule 页面
 
-- [ ] **T7.4.1**: 访问 /schedule 页面
-- [ ] **T7.4.2**: 验证 Tab 切换（小组赛/16强/8强/4强/决赛）
-- [ ] **T7.4.3**: 选择"小组赛" Tab
-- [ ] **T7.4.4**: 验证按 A-H 组显示比赛
-- [ ] **T7.4.5**: 选择"16强" Tab
-- [ ] **T7.4.6**: 验证淘汰赛按阶段显示
+- [x] **T7.4.1**: 访问 /schedule 页面
+- [x] **T7.4.2**: 验证 Tab 切换（小组赛/16强/8强/4强/决赛）
+- [x] **T7.4.3**: 选择"小组赛" Tab
+- [x] **T7.4.4**: 验证按 A-H 组显示比赛
+- [x] **T7.4.5**: 选择"16强" Tab
+- [x] **T7.4.6**: 验证淘汰赛按阶段显示
 
 ### 7.5 功能测试 - 分享
 
-- [ ] **T7.5.1**: 点击比赛的"分享"按钮
-- [ ] **T7.5.2**: 验证分享链接已复制到剪贴板
-- [ ] **T7.5.3**: 在新标签页打开分享链接
-- [ ] **T7.5.4**: 验证链接能正常访问
+- [x] **T7.5.1**: 点击比赛的"分享"按钮
+- [x] **T7.5.2**: 验证分享链接已复制到剪贴板
+- [x] **T7.5.3**: 在新标签页打开分享链接
+- [x] **T7.5.4**: 验证链接能正常访问
 
 ### 7.6 交互测试
 
-- [ ] **T7.6.1**: 测试 Canvas 图片生成功能
-- [ ] **T7.6.2**: 验证图片包含比赛信息、预测结果、昵称
-- [ ] **T7.6.3**: 测试响应式布局（移动端）
-- [ ] **T7.6.4**: 测试页面加载速度（目标 < 3 秒）
+- [x] **T7.6.1**: 测试 Canvas 图片生成功能
+- [x] **T7.6.2**: 验证图片包含比赛信息、预测结果、昵称
+- [x] **T7.6.3**: 测试响应式布局（移动端）
+- [x] **T7.6.4**: 测试页面加载速度（目标 < 3 秒）
 
 ### 7.7 API 测试
 
-- [ ] **T7.7.1**: 测试 GET /api/matches
-- [ ] **T7.7.2**: 测试 GET /api/matches?date=2026-06-11
-- [ ] **T7.7.3**: 测试 GET /api/teams
-- [ ] **T7.7.4**: 测试 GET /api/teams/BRA
-- [ ] **T7.7.5**: 测试 POST /api/predict
-- [ ] **T7.7.6**: 测试 GET /api/leaderboard
+- [x] **T7.7.1**: 测试 GET /api/matches
+- [x] **T7.7.2**: 测试 GET /api/matches?date=2026-06-11
+- [x] **T7.7.3**: 测试 GET /api/teams
+- [x] **T7.7.4**: 测试 GET /api/teams/BRA
+- [x] **T7.7.5**: 测试 POST /api/predict
+- [x] **T7.7.6**: 测试 GET /api/leaderboard
 
 ---
 

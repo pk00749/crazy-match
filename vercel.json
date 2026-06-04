@@ -1,18 +1,11 @@
 {
+  "framework": "vite",
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
-  "framework": "vite",
   "rewrites": [
-    { "source": "/api/teams/(.*)", "destination": "/api/teams/:pathMatch" },
-    { "source": "/api/matches/(.*)", "destination": "/api/matches/:pathMatch" },
-    { "source": "/api/predict/(.*)", "destination": "/api/predict/:pathMatch" }
-  ],
-  "functions": {
-    "backend/main.py": {
-      "runtime": "python3.9"
+    {
+      "source": "/api/:path*",
+      "destination": "https://your-backend-url/:path*"
     }
-  },
-  "env": {
-    "VITE_API_URL": "/api"
-  }
+  ]
 }

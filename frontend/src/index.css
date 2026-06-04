@@ -1,4 +1,22 @@
-/* 基本重置 */
+:root {
+  --primary: #0a0f1c;
+  --secondary: #111827;
+  --card: #1a2235;
+  --card-hover: #232d42;
+  --accent: #00d4aa;
+  --accent-secondary: #6366f1;
+  --highlight: #ff6b35;
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: #334155;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --gradient: linear-gradient(135deg, #00d4aa 0%, #6366f1 100%);
+  --gradient-warm: linear-gradient(135deg, #ff6b35 0%, #f59e0b 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,272 +24,874 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0a0a1a;
-  color: #fff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--primary);
+  color: var(--text);
+  line-height: 1.6;
   min-height: 100vh;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+/* App Layout */
 .app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
 }
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  padding: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
 }
 
-.header h1 {
-  font-size: 1.5rem;
-  background: linear-gradient(90deg, #ffd700, #ff6b35);
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  font-size: 32px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-nav {
+.header-badge {
+  background: var(--card);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.header nav {
   display: flex;
-  gap: 1rem;
+  gap: 8px;
 }
 
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: background 0.2s;
-}
-
-.nav-link:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-/* Main */
-.main {
-  flex: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  width: 100%;
-}
-
-/* Loading */
-.loading {
-  text-align: center;
-  padding: 3rem;
-  color: #888;
-}
-
-/* 日期选择 */
-.date-section {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.date-input {
-  background: #1a1a2e;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.model-toggle {
-  display: flex;
-  background: #1a1a2e;
-  border-radius: 8px;
-  padding: 4px;
-}
-
-.model-toggle button {
-  background: none;
-  border: none;
-  color: #888;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
+.header nav a {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  color: var(--text-secondary);
   transition: all 0.2s;
 }
 
-.model-toggle button.active {
-  background: linear-gradient(90deg, #ffd700, #ff6b35);
-  color: #000;
+.header nav a:hover {
+  background: var(--card);
+  color: var(--text);
 }
 
-/* 比赛列表 */
+.header nav a.active {
+  background: var(--gradient);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Page Containers */
+.today-page,
+.schedule-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+/* Today Header */
+.today-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.today-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.today-date-badge {
+  background: var(--card);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Date Picker */
+.date-picker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.date-picker input {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  padding: 4px;
+}
+
+.date-picker input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+/* Match Cards */
 .matches-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
-.no-matches {
-  text-align: center;
-  padding: 3rem;
-  color: #888;
-}
-
-/* 比赛卡片 */
 .match-card {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: var(--card);
   border-radius: 16px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  padding: 24px;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.match-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .match-header {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 1rem;
-}
-
-.match-teams {
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 20px;
+  cursor: pointer;
 }
 
 .team {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 12px;
   flex: 1;
 }
 
-.team-flag {
-  font-size: 2rem;
+.team-a {
+  justify-content: flex-start;
 }
 
-.team-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.team:last-child {
-  text-align: right;
+.team-b {
   justify-content: flex-end;
 }
 
-.vs {
-  color: #ffd700;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0 1rem;
-}
-
-.prediction-section {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.win-prob {
+.team-flag {
+  font-size: 36px;
+  width: 48px;
+  height: 48px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  background: var(--secondary);
+  border-radius: 50%;
 }
 
-.win-prob span:first-child,
-.win-prob span:last-child {
-  font-size: 1.5rem;
-  font-weight: bold;
+.team-name {
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.prob-label {
-  color: #888;
-  font-size: 0.85rem;
+.team-b .team-name {
+  text-align: right;
 }
+
+.match-vs {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  background: var(--secondary);
+  border-radius: 8px;
+}
+
+.match-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.match-time,
+.match-venue {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.match-time::before {
+  content: '';
+}
+
+.match-venue::before {
+  content: '';
+}
+
+/* Prediction Summary */
+.prediction-summary {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.prediction-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.prediction-team {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 60px;
+}
+
+.prediction-team-a {
+  text-align: left;
+}
+
+.prediction-team-b {
+  text-align: right;
+}
+
+.prob-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.prob-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.prob-fill.win {
+  background: var(--success);
+}
+
+.prob-fill.draw {
+  background: var(--warning);
+}
+
+.prob-fill.lose {
+  background: var(--danger);
+}
+
+.prob-value {
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 50px;
+  text-align: center;
+}
+
+.prob-value.win { color: var(--success); }
+.prob-value.draw { color: var(--warning); }
+.prob-value.lose { color: var(--danger); }
 
 .strength-rating {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: #888;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
-/* Tab 切换 */
-.stage-tabs {
+.strength-value {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Match Actions */
+.match-actions {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
 }
 
-.stage-tabs button {
-  background: #1a1a2e;
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #888;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
+.match-actions button {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
   transition: all 0.2s;
 }
 
-.stage-tabs button.active {
-  background: linear-gradient(90deg, #ffd700, #ff6b35);
-  color: #000;
-  border: none;
+.btn-predict {
+  background: var(--gradient);
+  color: var(--primary);
 }
 
-/* 小组赛分组 */
+.btn-predict:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.btn-share {
+  background: var(--card-hover);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-share:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Leaderboard */
+.leaderboard-section {
+  margin-top: 32px;
+}
+
+.leaderboard {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.leaderboard-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leaderboard-refresh {
+  background: var(--secondary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.leaderboard-refresh:hover {
+  background: var(--card-hover);
+  color: var(--text);
+}
+
+.leaderboard-list {
+  list-style: none;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-rank {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 16px;
+}
+
+.leaderboard-item:nth-child(1) .leaderboard-rank {
+  background: linear-gradient(135deg, #ffd700, #ffb800);
+  color: #000;
+  border-radius: 50%;
+}
+
+.leaderboard-item:nth-child(2) .leaderboard-rank {
+  background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
+  color: #000;
+  border-radius: 50%;
+}
+
+.leaderboard-item:nth-child(3) .leaderboard-rank {
+  background: linear-gradient(135deg, #cd7f32, #b87333);
+  color: #000;
+  border-radius: 50%;
+}
+
+.leaderboard-item:not(:nth-child(-n+3)) .leaderboard-rank {
+  background: var(--secondary);
+  color: var(--text-muted);
+  border-radius: 8px;
+}
+
+.leaderboard-nickname {
+  flex: 1;
+  font-weight: 500;
+}
+
+.leaderboard-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.leaderboard-streak {
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+/* Schedule Page */
+.stage-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.stage-tabs button {
+  padding: 12px 24px;
+  background: var(--card);
+  color: var(--text-secondary);
+  border-radius: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.stage-tabs button:hover {
+  background: var(--card-hover);
+  color: var(--text);
+}
+
+.stage-tabs button.active {
+  background: var(--gradient);
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .group-section {
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
 }
 
 .group-section h3 {
-  margin-bottom: 1rem;
-  color: #ffd700;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Footer */
-.footer {
+.group-section h3::before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.group-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Prediction Form Modal */
+.prediction-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.prediction-form {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 440px;
+  width: 100%;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prediction-form h3 {
+  font-size: 20px;
+  font-weight: 700;
   text-align: center;
-  padding: 2rem;
-  color: #666;
-  font-size: 0.85rem;
+  margin-bottom: 8px;
 }
 
-/* 响应式 */
-@media (max-width: 600px) {
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.prediction-form .match-info {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
 
-  .match-teams {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+.form-group {
+  margin-bottom: 20px;
+}
 
-  .team {
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--accent);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+}
+
+.prediction-options {
+  display: flex;
+  gap: 8px;
+}
+
+.prediction-options button {
+  flex: 1;
+  padding: 14px 12px;
+  background: var(--secondary);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.prediction-options button:hover {
+  border-color: var(--accent);
+}
+
+.prediction-options button.selected {
+  background: var(--gradient);
+  border-color: transparent;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.form-actions .btn-cancel {
+  background: var(--secondary);
+  color: var(--text-secondary);
+}
+
+.form-actions .btn-cancel:hover {
+  background: var(--card-hover);
+  color: var(--text);
+}
+
+.form-actions .btn-submit {
+  background: var(--gradient);
+  color: var(--primary);
+}
+
+.form-actions .btn-submit:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.form-actions .btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message {
+  text-align: center;
+  padding: 12px;
+  margin-top: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.message.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--success);
+}
+
+.message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+/* Loading & Empty States */
+.loading,
+.no-matches {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.loading {
+  font-size: 16px;
+}
+
+.loading::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .header nav {
     width: 100%;
     justify-content: center;
   }
-
-  .team:last-child {
-    text-align: center;
+  
+  .today-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-
-  .vs {
-    padding: 0.5rem 0;
+  
+  .team-flag {
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
   }
+  
+  .team-name {
+    font-size: 16px;
+  }
+  
+  .match-vs {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .stage-tabs {
+    gap: 6px;
+  }
+  
+  .stage-tabs button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .prediction-form {
+    padding: 24px;
+  }
+}
+
+/* Date Picker */
+.date-picker {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  min-width: 280px;
+}
+
+.date-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.date-picker-header span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.date-picker-header button {
+  width: 36px;
+  height: 36px;
+  background: var(--secondary);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.date-picker-header button:hover {
+  background: var(--card-hover);
+}
+
+.date-picker-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.date-picker-weekdays span {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 8px 0;
+}
+
+.date-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.date-picker-grid button,
+.date-picker-grid span.empty {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.date-picker-grid button {
+  background: var(--secondary);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.date-picker-grid button:hover {
+  background: var(--card-hover);
+}
+
+.date-picker-grid button.today {
+  border: 2px solid var(--accent);
+}
+
+.date-picker-grid button.selected {
+  background: var(--gradient);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.date-picker-grid span.empty {
+  background: transparent;
 }
