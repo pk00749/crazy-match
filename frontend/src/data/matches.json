@@ -1,0 +1,88 @@
+{
+  "matches": [
+    {"id": "m001", "date": "2026-06-11", "time": "03:00", "stage": "group", "group": "A", "team_a": "ARG", "team_b": "GUA", "venue": "玫瑰碗体育场", "city": "帕萨迪纳"},
+    {"id": "m002", "date": "2026-06-11", "time": "07:00", "stage": "group", "group": "A", "team_a": "CAN", "team_b": "MEX", "venue": "BMO球场", "city": "多伦多"},
+    {"id": "m003", "date": "2026-06-11", "time": "22:00", "stage": "group", "group": "A", "team_a": "ARG", "team_b": "CAN", "venue": "梅西体育中心", "city": "迈阿密"},
+    {"id": "m004", "date": "2026-06-12", "time": "04:00", "stage": "group", "group": "A", "team_a": "MEX", "team_b": "GUA", "venue": "阿兹特克球场", "city": "墨西哥城"},
+    
+    {"id": "m005", "date": "2026-06-11", "time": "22:00", "stage": "group", "group": "B", "team_a": "ESP", "team_b": "PAR", "venue": "AT&T球场", "city": "阿灵顿"},
+    {"id": "m006", "date": "2026-06-12", "time": "01:00", "stage": "group", "group": "B", "team_a": "BRA", "team_b": "ECU", "venue": "NRG体育场", "city": "休斯顿"},
+    {"id": "m007", "date": "2026-06-15", "time": "22:00", "stage": "group", "group": "B", "team_a": "ESP", "team_b": "BRA", "venue": "梅赛德斯-奔驰体育场", "city": "亚特兰大"},
+    {"id": "m008", "date": "2026-06-16", "time": "01:00", "stage": "group", "group": "B", "team_a": "ECU", "team_b": "PAR", "venue": "列维斯体育场", "city": "西雅图"},
+    
+    {"id": "m009", "date": "2026-06-12", "time": "22:00", "stage": "group", "group": "C", "team_a": "FRA", "team_b": "VAN", "venue": "大都会人寿体育场", "city": "新泽西"},
+    {"id": "m010", "date": "2026-06-13", "time": "01:00", "stage": "group", "group": "C", "team_a": "EGY", "team_b": "NZL", "venue": "梅奥诊所体育场", "city": "明尼阿波利斯"},
+    {"id": "m011", "date": "2026-06-15", "time": "01:00", "stage": "group", "group": "C", "team_a": "FRA", "team_b": "EGY", "venue": "SoFi体育场", "city": "英格尔伍德"},
+    {"id": "m012", "date": "2026-06-16", "time": "22:00", "stage": "group", "group": "C", "team_a": "NZL", "team_b": "GUA", "venue": "BMO球场", "city": "多伦多"},
+    
+    {"id": "m013", "date": "2026-06-12", "time": "19:00", "stage": "group", "group": "D", "team_a": "ENG", "team_b": "MAS", "venue": "费城体育场", "city": "费城"},
+    {"id": "m014", "date": "2026-06-13", "time": "04:00", "stage": "group", "group": "D", "team_a": "POR", "team_b": "MAR", "venue": "箭头体育场", "city": "丹佛"},
+    {"id": "m015", "date": "2026-06-15", "time": "19:00", "stage": "group", "group": "D", "team_a": "ENG", "team_b": "POR", "venue": "吉列体育场", "city": "波士顿"},
+    {"id": "m016", "date": "2026-06-16", "time": "19:00", "stage": "group", "group": "D", "team_a": "MAR", "team_b": "MAS", "venue": "列维斯体育场", "city": "西雅图"},
+    
+    {"id": "m017", "date": "2026-06-13", "time": "19:00", "stage": "group", "group": "E", "team_a": "GER", "team_b": "CHN", "venue": "NRG体育场", "city": "休斯顿"},
+    {"id": "m018", "date": "2026-06-13", "time": "22:00", "stage": "group", "group": "E", "team_a": "JPN", "team_b": "AUS", "venue": "威瑞森中心", "city": "华盛顿"},
+    {"id": "m019", "date": "2026-06-17", "time": "19:00", "stage": "group", "group": "E", "team_a": "GER", "team_b": "JPN", "venue": "梅西体育中心", "city": "迈阿密"},
+    {"id": "m020", "date": "2026-06-17", "time": "22:00", "stage": "group", "group": "E", "team_a": "AUS", "team_b": "CHN", "venue": "AT&T球场", "city": "阿灵顿"},
+    
+    {"id": "m021", "date": "2026-06-14", "time": "01:00", "stage": "group", "group": "F", "team_a": "NED", "team_b": "JAM", "venue": "Amon Carter体育场", "city": "沃思堡"},
+    {"id": "m022", "date": "2026-06-14", "time": "04:00", "stage": "group", "group": "F", "team_a": "CRO", "team_b": "KOR", "venue": "列维斯体育场", "city": "西雅图"},
+    {"id": "m023", "date": "2026-06-17", "time": "01:00", "stage": "group", "group": "F", "team_a": "NED", "team_b": "CRO", "venue": "AT&T球场", "city": "阿灵顿"},
+    {"id": "m024", "date": "2026-06-18", "time": "01:00", "stage": "group", "group": "F", "team_a": "KOR", "team_b": "JAM", "venue": "BMO球场", "city": "多伦多"},
+    
+    {"id": "m025", "date": "2026-06-14", "time": "19:00", "stage": "group", "group": "G", "team_a": "BEL", "team_b": "HAI", "venue": "梅赛德斯-奔驰体育场", "city": "亚特兰大"},
+    {"id": "m026", "date": "2026-06-14", "time": "22:00", "stage": "group", "group": "G", "team_a": "ITA", "team_b": "USA", "venue": "玫瑰碗体育场", "city": "帕萨迪纳"},
+    {"id": "m027", "date": "2026-06-18", "time": "19:00", "stage": "group", "group": "G", "team_a": "BEL", "team_b": "ITA", "venue": "大都会人寿体育场", "city": "新泽西"},
+    {"id": "m028", "date": "2026-06-18", "time": "22:00", "stage": "group", "group": "G", "team_a": "USA", "team_b": "HAI", "venue": "威瑞森中心", "city": "华盛顿"},
+    
+    {"id": "m029", "date": "2026-06-15", "time": "04:00", "stage": "group", "group": "H", "team_a": "URU", "team_b": "VEN", "venue": "SoFi体育场", "city": "英格尔伍德"},
+    {"id": "m030", "date": "2026-06-15", "time": "07:00", "stage": "group", "group": "H", "team_a": "COL", "team_b": "PAN", "venue": "梅奥诊所体育场", "city": "明尼阿波利斯"},
+    {"id": "m031", "date": "2026-06-19", "time": "04:00", "stage": "group", "group": "H", "team_a": "URU", "team_b": "COL", "venue": "费城体育场", "city": "费城"},
+    {"id": "m032", "date": "2026-06-19", "time": "07:00", "stage": "group", "group": "H", "team_a": "PAN", "team_b": "VEN", "venue": "箭头体育场", "city": "丹佛"},
+    
+    {"id": "m033", "date": "2026-06-15", "time": "16:00", "stage": "group", "group": "I", "team_a": "SEN", "team_b": "GAM", "venue": "BMO球场", "city": "多伦多"},
+    {"id": "m034", "date": "2026-06-15", "time": "19:00", "stage": "group", "group": "I", "team_a": "ALG", "team_b": "NGA", "venue": "Amon Carter体育场", "city": "沃思堡"},
+    {"id": "m035", "date": "2026-06-19", "time": "16:00", "stage": "group", "group": "I", "team_a": "SEN", "team_b": "ALG", "venue": "梅西体育中心", "city": "迈阿密"},
+    {"id": "m036", "date": "2026-06-19", "time": "19:00", "stage": "group", "group": "I", "team_a": "NGA", "team_b": "GAM", "venue": "NRG体育场", "city": "休斯顿"},
+    
+    {"id": "m037", "date": "2026-06-16", "time": "04:00", "stage": "group", "group": "J", "team_a": "SUI", "team_b": "QAT", "venue": "玫瑰碗体育场", "city": "帕萨迪纳"},
+    {"id": "m038", "date": "2026-06-16", "time": "07:00", "stage": "group", "group": "J", "team_a": "SWE", "team_b": "CMR", "venue": "列维斯体育场", "city": "西雅图"},
+    {"id": "m039", "date": "2026-06-20", "time": "04:00", "stage": "group", "group": "J", "team_a": "SUI", "team_b": "SWE", "venue": "AT&T球场", "city": "阿灵顿"},
+    {"id": "m040", "date": "2026-06-20", "time": "07:00", "stage": "group", "group": "J", "team_a": "CMR", "team_b": "QAT", "venue": "大都会人寿体育场", "city": "新泽西"},
+    
+    {"id": "m041", "date": "2026-06-16", "time": "16:00", "stage": "group", "group": "K", "team_a": "AUT", "team_b": "BIH", "venue": "梅赛德斯-奔驰体育场", "city": "亚特兰大"},
+    {"id": "m042", "date": "2026-06-16", "time": "19:00", "stage": "group", "group": "K", "team_a": "TUR", "team_b": "POL", "venue": "费城体育场", "city": "费城"},
+    {"id": "m043", "date": "2026-06-20", "time": "16:00", "stage": "group", "group": "K", "team_a": "AUT", "team_b": "TUR", "venue": "SoFi体育场", "city": "英格尔伍德"},
+    {"id": "m044", "date": "2026-06-20", "time": "19:00", "stage": "group", "group": "K", "team_a": "POL", "team_b": "BIH", "venue": "威瑞森中心", "city": "华盛顿"},
+    
+    {"id": "m045", "date": "2026-06-17", "time": "04:00", "stage": "group", "group": "L", "team_a": "UKR", "team_b": "LTU", "venue": "梅奥诊所体育场", "city": "明尼阿波利斯"},
+    {"id": "m046", "date": "2026-06-17", "time": "07:00", "stage": "group", "group": "L", "team_a": "SRB", "team_b": "ROU", "venue": "箭头体育场", "city": "丹佛"},
+    {"id": "m047", "date": "2026-06-21", "time": "04:00", "stage": "group", "group": "L", "team_a": "UKR", "team_b": "SRB", "venue": "NRG体育场", "city": "休斯顿"},
+    {"id": "m048", "date": "2026-06-21", "time": "07:00", "stage": "group", "group": "L", "team_a": "ROU", "team_b": "LTU", "venue": "BMO球场", "city": "多伦多"},
+    
+    {"id": "m049", "date": "2026-06-22", "time": "03:00", "stage": "round16", "team_a": "A1", "team_b": "C2", "venue": "玫瑰碗体育场", "city": "帕萨迪纳"},
+    {"id": "m050", "date": "2026-06-22", "time": "07:00", "stage": "round16", "team_a": "B1", "team_b": "D2", "venue": "SoFi体育场", "city": "英格尔伍德"},
+    {"id": "m051", "date": "2026-06-22", "time": "22:00", "stage": "round16", "team_a": "C1", "team_b": "A2", "venue": "AT&T球场", "city": "阿灵顿"},
+    {"id": "m052", "date": "2026-06-23", "time": "02:00", "stage": "round16", "team_a": "D1", "team_b": "B2", "venue": "NRG体育场", "city": "休斯顿"},
+    
+    {"id": "m053", "date": "2026-06-23", "time": "07:00", "stage": "round16", "team_a": "E1", "team_b": "G2", "venue": "梅西体育中心", "city": "迈阿密"},
+    {"id": "m054", "date": "2026-06-23", "time": "22:00", "stage": "round16", "team_a": "F1", "team_b": "H2", "venue": "大都会人寿体育场", "city": "新泽西"},
+    {"id": "m055", "date": "2026-06-24", "time": "02:00", "stage": "round16", "team_a": "G1", "team_b": "E2", "venue": "列维斯体育场", "city": "西雅图"},
+    {"id": "m056", "date": "2026-06-24", "time": "07:00", "stage": "round16", "team_a": "H1", "team_b": "F2", "venue": "费城体育场", "city": "费城"},
+    
+    {"id": "m057", "date": "2026-06-24", "time": "22:00", "stage": "round16", "team_a": "I1", "team_b": "K2", "venue": "梅赛德斯-奔驰体育场", "city": "亚特兰大"},
+    {"id": "m058", "date": "2026-06-25", "time": "02:00", "stage": "round16", "team_a": "J1", "team_b": "L2", "venue": "威瑞森中心", "city": "华盛顿"},
+    {"id": "m059", "date": "2026-06-25", "time": "07:00", "stage": "round16", "team_a": "K1", "team_b": "I2", "venue": "BMO球场", "city": "多伦多"},
+    {"id": "m060", "date": "2026-06-25", "time": "22:00", "stage": "round16", "team_a": "L1", "team_b": "J2", "venue": "箭头体育场", "city": "丹佛"},
+    
+    {"id": "m061", "date": "2026-06-28", "time": "03:00", "stage": "quarter", "team_a": "W49", "team_b": "W50", "venue": "玫瑰碗体育场", "city": "帕萨迪纳"},
+    {"id": "m062", "date": "2026-06-28", "time": "07:00", "stage": "quarter", "team_a": "W51", "team_b": "W52", "venue": "SoFi体育场", "city": "英格尔伍德"},
+    {"id": "m063", "date": "2026-06-29", "time": "03:00", "stage": "quarter", "team_a": "W53", "team_b": "W54", "venue": "AT&T球场", "city": "阿灵顿"},
+    {"id": "m064", "date": "2026-06-29", "time": "07:00", "stage": "quarter", "team_a": "W55", "team_b": "W56", "venue": "NRG体育场", "city": "休斯顿"},
+    
+    {"id": "m065", "date": "2026-07-02", "time": "03:00", "stage": "semi", "team_a": "W61", "team_b": "W62", "venue": "梅西体育中心", "city": "迈阿密"},
+    {"id": "m066", "date": "2026-07-02", "time": "07:00", "stage": "semi", "team_a": "W63", "team_b": "W64", "venue": "大都会人寿体育场", "city": "新泽西"},
+    
+    {"id": "m067", "date": "2026-07-09", "time": "03:00", "stage": "final", "team_a": "W65", "team_b": "W66", "venue": "SoFi体育场", "city": "英格尔伍德"}
+  ]
+}
