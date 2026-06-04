@@ -2,8 +2,8 @@ import { useState, useEffect, useCallback } from 'react'
 import DatePicker from '../components/DatePicker'
 import MatchCard from '../components/MatchCard'
 import PredictionForm from '../components/PredictionForm'
+import ShareImageModal from '../components/ShareImageModal'
 import { matchesApi, teamsApi, predictApi } from '../api'
-import { generatePredictionShareImage, downloadImage } from '../utils/shareImage'
 
 export default function TodayPage() {
   const [selectedDate, setSelectedDate] = useState(new Date('2026-06-11'))
@@ -12,6 +12,7 @@ export default function TodayPage() {
   const [selectedMatchId, setSelectedMatchId] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [showPredictionForm, setShowPredictionForm] = useState<string | null>(null)
+  const [showShareModal, setShowShareModal] = useState<string | null>(null)
 
   const loadMatches = useCallback(async () => {
     setLoading(true)
@@ -43,38 +44,8 @@ export default function TodayPage() {
     loadMatches()
   }, [loadMatches])
 
-  const handleShare = async (matchId: string) => {
-    const match = matches.find(m => m.id === matchId)
-    if (!match) return
-
-    const teamA = teamsApi.getById(match.team_a)
-    const teamB = teamsApi.getById(match.team_b)
-    
-    const userPred = localStorage.getItem('crazy_match_predictions')
-    let userPrediction = ''
-    let nickname = '球迷'
-    
-    if (userPred) {
-      const predictions = JSON.parse(userPred)
-      const myPred = predictions[matchId]
-      if (myPred) {
-        userPrediction = myPred.prediction
-        nickname = myPred.nickname
-      }
-    }
-
-    try {
-      const imageData = await generatePredictionShareImage(
-        teamA?.name || match.team_a, match.team_a,
-        teamB?.name || match.team_b, match.team_b,
-        userPrediction, nickname
-      )
-      downloadImage(imageData, `crazy-match-${matchId}.png`)
-    } catch (err) {
-      const link = `${window.location.origin}/share/${matchId}`
-      navigator.clipboard.writeText(link)
-      alert('分享链接已复制！')
-    }
+  const handleShare = (matchId: string) => {
+    setShowShareModal(matchId)
   }
 
   const formatDate = (date: Date) => {
@@ -159,6 +130,10 @@ export default function TodayPage() {
           />
         )
       })()}
+
+      {showShareModal && (
+        <ShareImageModal matchId={showShareModal} onClose={() => setShowShareModal(null)} />
+      )}
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import MatchCard from '../components/MatchCard'
 import { matchesApi, teamsApi, predictApi } from '../api'
 import PredictionForm from '../components/PredictionForm'
-import { generatePredictionShareImage, downloadImage } from '../utils/shareImage'
+import ShareImageModal from '../components/ShareImageModal'
 
 type Stage = 'group' | 'round16' | 'quarter' | 'semi' | 'final'
 
@@ -21,6 +21,7 @@ export default function SchedulePage() {
   const [selectedMatchId, setSelectedMatchId] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [showPredictionForm, setShowPredictionForm] = useState<string | null>(null)
+  const [showShareModal, setShowShareModal] = useState<string | null>(null)
 
   useEffect(() => {
     loadAllMatches()
@@ -53,41 +54,8 @@ export default function SchedulePage() {
     }
   }
 
-  const handleShare = async (matchId: string) => {
-    const match = matches.find(m => m.id === matchId)
-    if (!match) return
-
-    const teamA = teamsApi.getById(match.team_a)
-    const teamB = teamsApi.getById(match.team_b)
-    
-    const userPred = localStorage.getItem('crazy_match_predictions')
-    let userPrediction = ''
-    let nickname = '球迷'
-    
-    if (userPred) {
-      const predictions = JSON.parse(userPred)
-      const myPred = predictions[matchId]
-      if (myPred) {
-        userPrediction = myPred.prediction
-        nickname = myPred.nickname
-      }
-    }
-
-    try {
-      const imageData = await generatePredictionShareImage(
-        teamA?.name || match.team_a,
-        match.team_a,
-        teamB?.name || match.team_b,
-        match.team_b,
-        userPrediction,
-        nickname
-      )
-      downloadImage(imageData, `crazy-match-${matchId}.png`)
-    } catch (err) {
-      const link = `${window.location.origin}/share/${matchId}`
-      navigator.clipboard.writeText(link)
-      alert('分享链接已复制到剪贴板！')
-    }
+  const handleShare = (matchId: string) => {
+    setShowShareModal(matchId)
   }
 
   const handleTabChange = (tab: Stage) => {
@@ -111,13 +79,10 @@ export default function SchedulePage() {
         }))
     : null
 
-  // 计算小组赛进度
-  const groupMatches = matches.filter(m => m.stage === 'group')
   const progressText = `小组赛 ${filteredMatches.length} 场`
 
   return (
     <div className="schedule-page">
-      {/* 顶部进度条 */}
       <div className="countdown-bar">
         <span className="countdown-title">📅 完整赛程</span>
         <span className="countdown-days">{progressText}</span>
@@ -220,9 +185,14 @@ export default function SchedulePage() {
             teamBCode={match?.team_b || ''}
             teamBName={teamB?.name || match?.team_b || ''}
             onClose={() => setShowPredictionForm(null)}
+            onSuccess={loadAllMatches}
           />
         )
       })()}
+
+      {showShareModal && (
+        <ShareImageModal matchId={showShareModal} onClose={() => setShowShareModal(null)} />
+      )}
     </div>
   )
 }
