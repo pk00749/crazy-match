@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import DatePicker from '../components/DatePicker'
 import MatchCard from '../components/MatchCard'
-import Leaderboard from '../components/Leaderboard'
 import PredictionForm from '../components/PredictionForm'
 import { matchesApi, teamsApi, predictApi } from '../api'
 
@@ -101,10 +100,6 @@ export default function TodayPage() {
           })}
         </div>
       )}
-
-      <div className="leaderboard-section">
-        <Leaderboard />
-      </div>
 
       {showPredictionForm && (() => {
         const match = matches.find(m => m.id === showPredictionForm)
