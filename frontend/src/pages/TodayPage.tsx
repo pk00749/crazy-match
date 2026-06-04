@@ -94,9 +94,7 @@ export default function TodayPage() {
                 key={match.id}
                 match={{
                   id: match.id,
-                  team_a_code: match.team_a,
                   team_a: teamA?.name || match.team_a,
-                  team_b_code: match.team_b,
                   team_b: teamB?.name || match.team_b,
                   time: match.time,
                   venue: match.venue,
