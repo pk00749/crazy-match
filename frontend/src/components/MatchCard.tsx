@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getUserPredictions, getLeaderboard } from '../api/supabase'
+import { supabase } from '../lib/supabase'
 import TeamModal from './TeamModal'
 
 interface MatchCardProps {
@@ -51,7 +51,7 @@ const teamFlags: Record<string, string> = {
   NED: 'https://flagcdn.com/w160/nl.png', CRO: 'https://flagcdn.com/w160/hr.png',
   KOR: 'https://flagcdn.com/w160/kr.png', JAM: 'https://flagcdn.com/w160/jm.png',
   BEL: 'https://flagcdn.com/w160/be.png', ITA: 'https://flagcdn.com/w160/it.png',
-  USA: 'https://flagcdn.com/w160/us.png', HAI: 'https://flagcdn.com/w160/ht.png',
+  USA: 'https://flagcdn.com/w160/us.png', HAI: 'https://flagcdn.com/w80/ht.png',
   URU: 'https://flagcdn.com/w160/uy.png', COL: 'https://flagcdn.com/w160/co.png',
   PAN: 'https://flagcdn.com/w160/pa.png', VEN: 'https://flagcdn.com/w160/ve.png',
   SEN: 'https://flagcdn.com/w160/sn.png', ALG: 'https://flagcdn.com/w160/dz.png',
@@ -69,7 +69,7 @@ function getTeamFlagUrl(code: string): string {
 }
 
 export default function MatchCard({ match, isSelected, prediction, onPredict, onShare, onSelect }: MatchCardProps) {
-  const [predictions, setPredictions] = useState<Prediction[]>([])
+  const [matchPredictions, setMatchPredictions] = useState<Prediction[]>([])
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([])
   const [activeTab, setActiveTab] = useState<'mine' | 'ranking'>('mine')
   const [loading, setLoading] = useState(false)
@@ -85,12 +85,26 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
   const loadPredictionData = async () => {
     setLoading(true)
     try {
-      const [predData, rankData] = await Promise.all([
-        getUserPredictions(),
-        getLeaderboard(10)
-      ])
-      setPredictions(predData)
-      setLeaderboard(rankData)
+      // 只获取当前比赛的预测
+      const { data: predData, error: predError } = await supabase
+        .from('predictions')
+        .select('*')
+        .eq('match_id', match.id)
+        .order('created_at', { ascending: false })
+        .limit(20)
+
+      if (predError) throw predError
+      setMatchPredictions(predData || [])
+
+      // 获取排行榜
+      const { data: rankData, error: rankError } = await supabase
+        .from('leaderboard_stats')
+        .select('*')
+        .order('correct_count', { ascending: false })
+        .limit(10)
+
+      if (rankError) throw rankError
+      setLeaderboard(rankData || [])
     } catch (err) {
       console.error('Failed to load prediction data:', err)
     } finally {
@@ -112,30 +126,24 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
     return ''
   }
 
-  // 计算显示百分比（确保显示两位小数以上）
-  const displayPercent = (value: number) => {
-    return Math.max(1, value) // 至少显示 1%
-  }
+  const displayPercent = (value: number) => Math.max(1, value)
 
   return (
     <>
       <div className={`match-card ${isSelected ? 'selected' : ''}`} onClick={() => onSelect?.(match.id)}>
-        {/* 球队对阵区域 */}
         <div className="match-header">
           <div className="team team-a">
             {getTeamFlagUrl(match.team_a_code) && (
               <img className="team-flag-img" src={getTeamFlagUrl(match.team_a_code)} alt={match.team_a} loading="lazy" />
             )}
             <span className="team-name" onClick={(e) => { e.stopPropagation(); setShowTeamA(true); }}>
-              {match.team_a}
-              <span className="team-hint">👤</span>
+              {match.team_a} <span className="team-hint">👤</span>
             </span>
           </div>
           <div className="match-vs">VS</div>
           <div className="team team-b">
             <span className="team-name" onClick={(e) => { e.stopPropagation(); setShowTeamB(true); }}>
-              <span className="team-hint">👤</span>
-              {match.team_b}
+              <span className="team-hint">👤</span> {match.team_b}
             </span>
             {getTeamFlagUrl(match.team_b_code) && (
               <img className="team-flag-img" src={getTeamFlagUrl(match.team_b_code)} alt={match.team_b} loading="lazy" />
@@ -149,10 +157,8 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
           {match.stage === 'group' && <span className="match-group">🏆 {match.group}组</span>}
         </div>
 
-        {/* 选中后显示完整内容 */}
         {isSelected && (
           <div className="match-content" onClick={e => e.stopPropagation()}>
-            {/* 预测分析 - 显示完整百分比 */}
             {prediction && (
               <div className="prediction-analysis">
                 <div className="prob-bar">
@@ -195,10 +201,9 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
               </div>
             )}
 
-            {/* Tab 切换 */}
             <div className="card-tabs">
               <button className={`card-tab ${activeTab === 'mine' ? 'active' : ''}`} onClick={() => setActiveTab('mine')}>
-                我的预测 ({predictions.length})
+                本场预测 ({matchPredictions.length})
               </button>
               <button className={`card-tab ${activeTab === 'ranking' ? 'active' : ''}`} onClick={() => setActiveTab('ranking')}>
                 🏅 排行榜
@@ -210,10 +215,10 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
                 <div className="predictions-mini-list">
                   {loading ? (
                     <div className="mini-loading">加载中...</div>
-                  ) : predictions.length === 0 ? (
-                    <div className="mini-empty">暂无预测记录，提交预测成为第一个！</div>
+                  ) : matchPredictions.length === 0 ? (
+                    <div className="mini-empty">暂无预测，提交成为第一个！</div>
                   ) : (
-                    predictions.slice(0, 10).map((pred, i) => (
+                    matchPredictions.map((pred, i) => (
                       <div key={pred.id} className="pred-mini-item">
                         <span className="pred-mini-nick">{pred.nickname}</span>
                         <span className={`pred-mini-badge ${getBadgeClass(pred.predicted_winner)}`}>
@@ -230,7 +235,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
                   ) : leaderboard.length === 0 ? (
                     <div className="mini-empty">暂无排行数据</div>
                   ) : (
-                    leaderboard.slice(0, 10).map((entry, i) => (
+                    leaderboard.map((entry, i) => (
                       <div key={entry.device_id} className="rank-mini-item">
                         <span className="rank-mini-pos">{i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1}</span>
                         <span className="rank-mini-nick">{entry.nickname}</span>
@@ -245,7 +250,6 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
               )}
             </div>
 
-            {/* 操作按钮 */}
             <div className="match-actions">
               <button className="btn-predict" onClick={() => onPredict?.(match.id)}>📝 预测</button>
               <button className="btn-share" onClick={() => onShare?.(match.id)}>🔗 分享</button>
@@ -256,21 +260,8 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
         {!isSelected && <div className="match-hint">⚽ 点击查看预测详情</div>}
       </div>
 
-      {/* 球队详情弹窗 */}
-      {showTeamA && (
-        <TeamModal 
-          teamCode={match.team_a_code} 
-          teamName={match.team_a}
-          onClose={() => setShowTeamA(false)} 
-        />
-      )}
-      {showTeamB && (
-        <TeamModal 
-          teamCode={match.team_b_code} 
-          teamName={match.team_b}
-          onClose={() => setShowTeamB(false)} 
-        />
-      )}
+      {showTeamA && <TeamModal teamCode={match.team_a_code} teamName={match.team_a} onClose={() => setShowTeamA(false)} />}
+      {showTeamB && <TeamModal teamCode={match.team_b_code} teamName={match.team_b} onClose={() => setShowTeamB(false)} />}
     </>
   )
 }

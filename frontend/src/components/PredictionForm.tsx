@@ -1,18 +1,19 @@
 import { useState } from 'react'
-import { submitPrediction } from '../api/supabase'
+import { supabase } from '../lib/supabase'
 
 interface PredictionFormProps {
   matchId: string
-  teamACode: string  // 新增
+  teamACode: string
   teamAName: string
-  teamBCode: string  // 新增
+  teamBCode: string
   teamBName: string
   onClose: () => void
+  onSuccess?: () => void
 }
 
-export default function PredictionForm({ matchId, teamACode, teamAName, teamBCode, teamBName, onClose }: PredictionFormProps) {
+export default function PredictionForm({ matchId, teamACode, teamAName, teamBCode, teamBName, onClose, onSuccess }: PredictionFormProps) {
   const [nickname, setNickname] = useState('')
-  const [prediction, setPrediction] = useState<string>('')  // 改为 string 类型
+  const [prediction, setPrediction] = useState<string>('')
   const [submitting, setSubmitting] = useState(false)
   const [message, setMessage] = useState('')
 
@@ -27,12 +28,53 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
     setMessage('')
     
     try {
-      await submitPrediction(matchId, nickname, teamACode, teamBCode, prediction)
-      setMessage('预测提交成功！')
-      setTimeout(onClose, 1500)
-    } catch (err) {
-      console.error('Failed to submit prediction:', err)
-      setMessage('提交失败，请重试')
+      // 获取设备ID
+      let deviceId = localStorage.getItem('crazy_match_device_id')
+      if (!deviceId) {
+        deviceId = 'device_' + Math.random().toString(36).substring(2, 15)
+        localStorage.setItem('crazy_match_device_id', deviceId)
+      }
+
+      // 提交到 Supabase
+      const { data, error } = await supabase
+        .from('predictions')
+        .upsert({
+          match_id: matchId,
+          device_id: deviceId,
+          nickname: nickname,
+          predicted_winner: prediction,
+          team_a_code: teamACode,
+          team_b_code: teamBCode,
+        }, { onConflict: 'match_id,device_id' })
+        .select()
+
+      if (error) {
+        console.error('Supabase error:', error)
+        throw error
+      }
+
+      // 同时保存到 localStorage 作为备份
+      const localPredictions = JSON.parse(localStorage.getItem('crazy_match_predictions') || '{}')
+      localPredictions[matchId] = { nickname, prediction, timestamp: Date.now() }
+      localStorage.setItem('crazy_match_predictions', JSON.stringify(localPredictions))
+
+      setMessage('✅ 预测提交成功！')
+      setTimeout(() => {
+        onSuccess?.()
+        onClose()
+      }, 1500)
+    } catch (err: any) {
+      console.error('Failed to submit:', err)
+      // 如果 Supabase 失败，保存到本地
+      const localPredictions = JSON.parse(localStorage.getItem('crazy_match_predictions') || '{}')
+      localPredictions[matchId] = { nickname, prediction, timestamp: Date.now() }
+      localStorage.setItem('crazy_match_predictions', JSON.stringify(localPredictions))
+      
+      setMessage('✅ 已保存到本地（离线模式）')
+      setTimeout(() => {
+        onSuccess?.()
+        onClose()
+      }, 1500)
     } finally {
       setSubmitting(false)
     }
@@ -92,7 +134,7 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
         </form>
 
         {message && (
-          <div className={`message ${message.includes('成功') ? 'success' : 'error'}`}>
+          <div className={`message ${message.includes('成功') || message.includes('本地') ? 'success' : 'error'}`}>
             {message}
           </div>
         )}

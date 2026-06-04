@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import DatePicker from '../components/DatePicker'
 import MatchCard from '../components/MatchCard'
 import PredictionForm from '../components/PredictionForm'
@@ -13,11 +13,7 @@ export default function TodayPage() {
   const [loading, setLoading] = useState(false)
   const [showPredictionForm, setShowPredictionForm] = useState<string | null>(null)
 
-  useEffect(() => {
-    loadMatches()
-  }, [selectedDate])
-
-  const loadMatches = async () => {
+  const loadMatches = useCallback(async () => {
     setLoading(true)
     setSelectedMatchId(null)
     try {
@@ -41,7 +37,11 @@ export default function TodayPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [selectedDate])
+
+  useEffect(() => {
+    loadMatches()
+  }, [loadMatches])
 
   const handleShare = async (matchId: string) => {
     const match = matches.find(m => m.id === matchId)
@@ -50,7 +50,6 @@ export default function TodayPage() {
     const teamA = teamsApi.getById(match.team_a)
     const teamB = teamsApi.getById(match.team_b)
     
-    // 获取用户预测
     const userPred = localStorage.getItem('crazy_match_predictions')
     let userPrediction = ''
     let nickname = '球迷'
@@ -66,19 +65,15 @@ export default function TodayPage() {
 
     try {
       const imageData = await generatePredictionShareImage(
-        teamA?.name || match.team_a,
-        match.team_a,
-        teamB?.name || match.team_b,
-        match.team_b,
-        userPrediction,
-        nickname
+        teamA?.name || match.team_a, match.team_a,
+        teamB?.name || match.team_b, match.team_b,
+        userPrediction, nickname
       )
       downloadImage(imageData, `crazy-match-${matchId}.png`)
     } catch (err) {
-      // Fallback to link sharing
       const link = `${window.location.origin}/share/${matchId}`
       navigator.clipboard.writeText(link)
-      alert('分享链接已复制到剪贴板！')
+      alert('分享链接已复制！')
     }
   }
 
@@ -86,14 +81,12 @@ export default function TodayPage() {
     return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
   }
 
-  // 计算世界杯倒计时
   const worldCupDate = new Date('2026-06-11')
   const today = new Date()
   const daysLeft = Math.ceil((worldCupDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
 
   return (
     <div className="today-page">
-      {/* 顶部倒计时 */}
       <div className="countdown-bar">
         <span className="countdown-title">🏆 2026 世界杯</span>
         <span className="countdown-days">{daysLeft > 0 ? `倒计时 ${daysLeft} 天` : '进行中'}</span>
@@ -162,6 +155,7 @@ export default function TodayPage() {
             teamBCode={match?.team_b || ''}
             teamBName={teamB?.name || match?.team_b || ''}
             onClose={() => setShowPredictionForm(null)}
+            onSuccess={loadMatches}
           />
         )
       })()}
