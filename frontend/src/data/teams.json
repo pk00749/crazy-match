@@ -1,61 +1,359 @@
 {
-  "ARG": { "id": "ARG", "name": "阿根廷", "code": "ARG", "flag": "🇦🇷", "fifa_rank": 1, "group": "A", "strengthScore": 91 },
-  "MEX": { "id": "MEX", "name": "墨西哥", "code": "MEX", "flag": "🇲🇽", "fifa_rank": 11, "group": "A", "strengthScore": 78 },
-  "CAN": { "id": "CAN", "name": "加拿大", "code": "CAN", "flag": "🇨🇦", "fifa_rank": 46, "group": "A", "strengthScore": 68 },
-  "GUA": { "id": "GUA", "name": "危地马拉", "code": "GUA", "flag": "🇬🇹", "fifa_rank": 89, "group": "A", "strengthScore": 55 },
-  
-  "ESP": { "id": "ESP", "name": "西班牙", "code": "ESP", "flag": "🇪🇸", "fifa_rank": 3, "group": "B", "strengthScore": 88 },
-  "BRA": { "id": "BRA", "name": "巴西", "code": "BRA", "flag": "🇧🇷", "fifa_rank": 5, "group": "B", "strengthScore": 90 },
-  "ECU": { "id": "ECU", "name": "厄瓜多尔", "code": "ECU", "flag": "🇪🇨", "fifa_rank": 30, "group": "B", "strengthScore": 76 },
-  "PAR": { "id": "PAR", "name": "巴拉圭", "code": "PAR", "flag": "🇵🇾", "fifa_rank": 58, "group": "B", "strengthScore": 70 },
-  
-  "FRA": { "id": "FRA", "name": "法国", "code": "FRA", "flag": "🇫🇷", "fifa_rank": 2, "group": "C", "strengthScore": 90 },
-  "EGY": { "id": "EGY", "name": "埃及", "code": "EGY", "flag": "🇪🇬", "fifa_rank": 18, "group": "C", "strengthScore": 74 },
-  "NZL": { "id": "NZL", "name": "新西兰", "code": "NZL", "flag": "🇳🇿", "fifa_rank": 94, "group": "C", "strengthScore": 58 },
-  "VAN": { "id": "VAN", "name": "瓦努阿图", "code": "VAN", "flag": "🇻🇺", "fifa_rank": 162, "group": "C", "strengthScore": 45 },
-  
-  "ENG": { "id": "ENG", "name": "英格兰", "code": "ENG", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "fifa_rank": 4, "group": "D", "strengthScore": 89 },
-  "POR": { "id": "POR", "name": "葡萄牙", "code": "POR", "flag": "🇵🇹", "fifa_rank": 8, "group": "D", "strengthScore": 86 },
-  "MAR": { "id": "MAR", "name": "摩洛哥", "code": "MAR", "flag": "🇲🇦", "fifa_rank": 13, "group": "D", "strengthScore": 80 },
-  "MAS": { "id": "MAS", "name": "马来西亚", "code": "MAS", "flag": "🇲🇾", "fifa_rank": 186, "group": "D", "strengthScore": 48 },
-  
-  "GER": { "id": "GER", "name": "德国", "code": "GER", "flag": "🇩🇪", "fifa_rank": 16, "group": "E", "strengthScore": 87 },
-  "JPN": { "id": "JPN", "name": "日本", "code": "JPN", "flag": "🇯🇵", "fifa_rank": 18, "group": "E", "strengthScore": 82 },
-  "AUS": { "id": "AUS", "name": "澳大利亚", "code": "AUS", "flag": "🇦🇺", "fifa_rank": 23, "group": "E", "strengthScore": 78 },
-  "CHN": { "id": "CHN", "name": "中国", "code": "CHN", "flag": "🇨🇳", "fifa_rank": 88, "group": "E", "strengthScore": 62 },
-  
-  "NED": { "id": "NED", "name": "荷兰", "code": "NED", "flag": "🇳🇱", "fifa_rank": 7, "group": "F", "strengthScore": 85 },
-  "CRO": { "id": "CRO", "name": "克罗地亚", "code": "CRO", "flag": "🇭🇷", "fifa_rank": 10, "group": "F", "strengthScore": 82 },
-  "KOR": { "id": "KOR", "name": "韩国", "code": "KOR", "flag": "🇰🇷", "fifa_rank": 24, "group": "F", "strengthScore": 77 },
-  "JAM": { "id": "JAM", "name": "牙买加", "code": "JAM", "flag": "🇯🇲", "fifa_rank": 51, "group": "F", "strengthScore": 66 },
-  
-  "BEL": { "id": "BEL", "name": "比利时", "code": "BEL", "flag": "🇧🇪", "fifa_rank": 6, "group": "G", "strengthScore": 84 },
-  "ITA": { "id": "ITA", "name": "意大利", "code": "ITA", "flag": "🇮🇹", "fifa_rank": 10, "group": "G", "strengthScore": 85 },
-  "USA": { "id": "USA", "name": "美国", "code": "USA", "flag": "🇺🇸", "fifa_rank": 16, "group": "G", "strengthScore": 80 },
-  "HAI": { "id": "HAI", "name": "海地", "code": "HAI", "flag": "🇭🇹", "fifa_rank": 89, "group": "G", "strengthScore": 58 },
-  
-  "URU": { "id": "URU", "name": "乌拉圭", "code": "URU", "flag": "🇺🇾", "fifa_rank": 14, "group": "H", "strengthScore": 83 },
-  "COL": { "id": "COL", "name": "哥伦比亚", "code": "COL", "flag": "🇨🇴", "fifa_rank": 12, "group": "H", "strengthScore": 81 },
-  "PAN": { "id": "PAN", "name": "巴拿马", "code": "PAN", "flag": "🇵🇦", "fifa_rank": 35, "group": "H", "strengthScore": 72 },
-  "VEN": { "id": "VEN", "name": "委内瑞拉", "code": "VEN", "flag": "🇻🇪", "fifa_rank": 54, "group": "H", "strengthScore": 68 },
-  
-  "SEN": { "id": "SEN", "name": "塞内加尔", "code": "SEN", "flag": "🇸🇳", "fifa_rank": 20, "group": "I", "strengthScore": 78 },
-  "ALG": { "id": "ALG", "name": "阿尔及利亚", "code": "ALG", "flag": "🇩🇿", "fifa_rank": 32, "group": "I", "strengthScore": 75 },
-  "NGA": { "id": "NGA", "name": "尼日利亚", "code": "NGA", "flag": "🇳🇬", "fifa_rank": 28, "group": "I", "strengthScore": 76 },
-  "GAM": { "id": "GAM", "name": "冈比亚", "code": "GAM", "flag": "🇬🇲", "fifa_rank": 98, "group": "I", "strengthScore": 52 },
-  
-  "SUI": { "id": "SUI", "name": "瑞士", "code": "SUI", "flag": "🇨🇭", "fifa_rank": 15, "group": "J", "strengthScore": 82 },
-  "SWE": { "id": "SWE", "name": "瑞典", "code": "SWE", "flag": "🇸🇪", "fifa_rank": 22, "group": "J", "strengthScore": 78 },
-  "CMR": { "id": "CMR", "name": "喀麦隆", "code": "CMR", "flag": "🇨🇲", "fifa_rank": 47, "group": "J", "strengthScore": 72 },
-  "QAT": { "id": "QAT", "name": "卡塔尔", "code": "QAT", "flag": "🇶🇦", "fifa_rank": 58, "group": "J", "strengthScore": 68 },
-  
-  "AUT": { "id": "AUT", "name": "奥地利", "code": "AUT", "flag": "🇦🇹", "fifa_rank": 17, "group": "K", "strengthScore": 78 },
-  "TUR": { "id": "TUR", "name": "土耳其", "code": "TUR", "flag": "🇹🇷", "fifa_rank": 21, "group": "K", "strengthScore": 79 },
-  "POL": { "id": "POL", "name": "波兰", "code": "POL", "flag": "🇵🇱", "fifa_rank": 31, "group": "K", "strengthScore": 77 },
-  "BIH": { "id": "BIH", "name": "波黑", "code": "BIH", "flag": "🇧🇦", "fifa_rank": 63, "group": "K", "strengthScore": 70 },
-  
-  "UKR": { "id": "UKR", "name": "乌克兰", "code": "UKR", "flag": "🇺🇦", "fifa_rank": 24, "group": "L", "strengthScore": 79 },
-  "SRB": { "id": "SRB", "name": "塞尔维亚", "code": "SRB", "flag": "🇷🇸", "fifa_rank": 25, "group": "L", "strengthScore": 78 },
-  "ROU": { "id": "ROU", "name": "罗马尼亚", "code": "ROU", "flag": "🇷🇴", "fifa_rank": 45, "group": "L", "strengthScore": 72 },
-  "LTU": { "id": "LTU", "name": "立陶宛", "code": "LTU", "flag": "🇱🇹", "fifa_rank": 142, "group": "L", "strengthScore": 52 }
+  "ARG": {
+    "id": "ARG", "name": "阿根廷", "code": "ARG", "fifa_rank": 1, "group": "A", "strengthScore": 91,
+    "historicRecord": {"appearances": 18, "titles": 3, "winRate": 58},
+    "currentSquad": [
+      {"id": "ARG_1", "name": "马丁内斯", "position": "GK", "age": 31, "club": "阿斯顿维拉", "rating": 88},
+      {"id": "ARG_2", "name": "鲁利", "position": "GK", "age": 32, "club": "阿贾克斯", "rating": 82},
+      {"id": "ARG_3", "name": "贝纳维德兹", "position": "GK", "age": 24, "club": "河床", "rating": 79},
+      {"id": "ARG_4", "name": "莫利纳", "position": "DEF", "age": 26, "club": "马德里竞技", "rating": 83},
+      {"id": "ARG_5", "name": "罗霍", "position": "DEF", "age": 35, "club": "博卡青年", "rating": 78},
+      {"id": "ARG_6", "name": "奥塔门迪", "position": "DEF", "age": 36, "club": "本菲卡", "rating": 81},
+      {"id": "ARG_7", "name": "佩泽拉", "position": "DEF", "age": 33, "club": "皇家贝蒂斯", "rating": 81},
+      {"id": "ARG_8", "name": "塔利亚菲科", "position": "DEF", "age": 32, "club": "马德里竞技", "rating": 82},
+      {"id": "ARG_9", "name": "蒙铁尔", "position": "DEF", "age": 26, "club": "塞维利亚", "rating": 81},
+      {"id": "ARG_10", "name": "德保罗", "position": "MID", "age": 30, "club": "马德里竞技", "rating": 85},
+      {"id": "ARG_11", "name": "帕雷德斯", "position": "MID", "age": 30, "club": "罗马", "rating": 81},
+      {"id": "ARG_12", "name": "恩佐", "position": "MID", "age": 23, "club": "切尔西", "rating": 86},
+      {"id": "ARG_13", "name": "麦卡利斯特", "position": "MID", "age": 25, "club": "布莱顿", "rating": 84},
+      {"id": "ARG_14", "name": "洛塞尔索", "position": "MID", "age": 28, "club": "热刺", "rating": 82},
+      {"id": "ARG_15", "name": "阿尔瓦雷斯", "position": "FWD", "age": 24, "club": "曼城", "rating": 87},
+      {"id": "ARG_16", "name": "劳塔罗", "position": "FWD", "age": 27, "club": "国际米兰", "rating": 87},
+      {"id": "ARG_17", "name": "迪巴拉", "position": "FWD", "age": 31, "club": "罗马", "rating": 84},
+      {"id": "ARG_18", "name": "冈萨雷斯", "position": "FWD", "age": 26, "club": "佛罗伦萨", "rating": 82},
+      {"id": "ARG_19", "name": "卡尔博尼", "position": "MID", "age": 21, "club": "马赛", "rating": 80},
+      {"id": "ARG_20", "name": "圭多", "position": "MID", "age": 24, "club": "塞维利亚", "rating": 79},
+      {"id": "ARG_21", "name": "阿尔马达", "position": "MID", "age": 23, "club": "亚特兰大联", "rating": 78},
+      {"id": "ARG_22", "name": "科雷亚", "position": "FWD", "age": 25, "club": "国际米兰", "rating": 81},
+      {"id": "ARG_23", "name": "佩泽拉", "position": "DEF", "age": 33, "club": "佛罗伦萨", "rating": 80}
+    ]
+  },
+  "BRA": {
+    "id": "BRA", "name": "巴西", "code": "BRA", "fifa_rank": 5, "group": "B", "strengthScore": 90,
+    "historicRecord": {"appearances": 22, "titles": 5, "winRate": 62},
+    "currentSquad": [
+      {"id": "BRA_1", "name": "阿利松", "position": "GK", "age": 31, "club": "利物浦", "rating": 89},
+      {"id": "BRA_2", "name": "埃德森", "position": "GK", "age": 30, "club": "曼城", "rating": 87},
+      {"id": "BRA_3", "name": "韦弗顿", "position": "GK", "age": 34, "club": "帕尔梅拉斯", "rating": 80},
+      {"id": "BRA_4", "name": "达尼洛", "position": "DEF", "age": 32, "club": "尤文图斯", "rating": 82},
+      {"id": "BRA_5", "name": "席尔瓦", "position": "DEF", "age": 39, "club": "切尔西", "rating": 83},
+      {"id": "BRA_6", "name": "马尔基尼奥斯", "position": "DEF", "age": 29, "club": "巴黎圣日耳曼", "rating": 87},
+      {"id": "BRA_7", "name": "米利唐", "position": "DEF", "age": 26, "club": "皇家马德里", "rating": 86},
+      {"id": "BRA_8", "name": "洛迪", "position": "DEF", "age": 26, "club": "马德里竞技", "rating": 82},
+      {"id": "BRA_9", "name": "卡塞米罗", "position": "MID", "age": 32, "club": "曼联", "rating": 85},
+      {"id": "BRA_10", "name": "帕奎塔", "position": "MID", "age": 26, "club": "西汉姆联", "rating": 84},
+      {"id": "BRA_11", "name": "吉马良斯", "position": "MID", "age": 26, "club": "纽卡斯尔", "rating": 83},
+      {"id": "BRA_12", "name": "维尼修斯", "position": "FWD", "age": 24, "club": "皇家马德里", "rating": 89},
+      {"id": "BRA_13", "name": "罗德里戈", "position": "FWD", "age": 23, "club": "皇家马德里", "rating": 86},
+      {"id": "BRA_14", "name": "拉菲尼亚", "position": "FWD", "age": 27, "club": "巴塞罗那", "rating": 85},
+      {"id": "BRA_15", "name": "热苏斯", "position": "FWD", "age": 27, "club": "阿森纳", "rating": 84},
+      {"id": "BRA_16", "name": "恩德里克", "position": "FWD", "age": 18, "club": "帕尔梅拉斯", "rating": 80},
+      {"id": "BRA_17", "name": "萨维奥", "position": "FWD", "age": 20, "club": "曼城", "rating": 82},
+      {"id": "BRA_18", "name": "里贝罗", "position": "MID", "age": 34, "club": "弗拉门戈", "rating": 81},
+      {"id": "BRA_19", "name": "道格拉斯", "position": "DEF", "age": 28, "club": "皇家社会", "rating": 80}
+    ]
+  },
+  "FRA": {
+    "id": "FRA", "name": "法国", "code": "FRA", "fifa_rank": 2, "group": "C", "strengthScore": 90,
+    "historicRecord": {"appearances": 16, "titles": 2, "winRate": 52},
+    "currentSquad": [
+      {"id": "FRA_1", "name": "迈尼昂", "position": "GK", "age": 28, "club": "AC米兰", "rating": 88},
+      {"id": "FRA_2", "name": "桑巴", "position": "GK", "age": 29, "club": "朗斯", "rating": 83},
+      {"id": "FRA_3", "name": "孔德", "position": "DEF", "age": 25, "club": "巴塞罗那", "rating": 86},
+      {"id": "FRA_4", "name": "帕瓦尔", "position": "DEF", "age": 28, "club": "拜仁慕尼黑", "rating": 84},
+      {"id": "FRA_5", "name": "萨利巴", "position": "DEF", "age": 23, "club": "阿森纳", "rating": 87},
+      {"id": "FRA_6", "name": "乌帕梅卡诺", "position": "DEF", "age": 25, "club": "拜仁慕尼黑", "rating": 83},
+      {"id": "FRA_7", "name": "特奥", "position": "DEF", "age": 27, "club": "AC米兰", "rating": 86},
+      {"id": "FRA_8", "name": "坎特", "position": "MID", "age": 33, "club": "吉达联合", "rating": 86},
+      {"id": "FRA_9", "name": "拉比奥", "position": "MID", "age": 29, "club": "尤文图斯", "rating": 84},
+      {"id": "FRA_10", "name": "楚阿梅尼", "position": "MID", "age": 24, "club": "皇家马德里", "rating": 86},
+      {"id": "FRA_11", "name": "卡马文加", "position": "MID", "age": 22, "club": "皇家马德里", "rating": 85},
+      {"id": "FRA_12", "name": "姆巴佩", "position": "FWD", "age": 26, "club": "皇家马德里", "rating": 91},
+      {"id": "FRA_13", "name": "格列兹曼", "position": "FWD", "age": 33, "club": "马德里竞技", "rating": 86},
+      {"id": "FRA_14", "name": "图拉姆", "position": "FWD", "age": 26, "club": "国际米兰", "rating": 85},
+      {"id": "FRA_15", "name": "科曼", "position": "FWD", "age": 28, "club": "拜仁慕尼黑", "rating": 84},
+      {"id": "FRA_16", "name": "穆阿尼", "position": "FWD", "age": 26, "club": "巴黎圣日耳曼", "rating": 84}
+    ]
+  },
+  "GER": {
+    "id": "GER", "name": "德国", "code": "GER", "fifa_rank": 16, "group": "E", "strengthScore": 87,
+    "historicRecord": {"appearances": 20, "titles": 4, "winRate": 50},
+    "currentSquad": [
+      {"id": "GER_1", "name": "诺伊尔", "position": "GK", "age": 38, "club": "拜仁慕尼黑", "rating": 86},
+      {"id": "GER_2", "name": "特尔施特根", "position": "GK", "age": 32, "club": "巴塞罗那", "rating": 87},
+      {"id": "GER_3", "name": "基米希", "position": "DEF", "age": 29, "club": "拜仁慕尼黑", "rating": 86},
+      {"id": "GER_4", "name": "吕迪格", "position": "DEF", "age": 31, "club": "皇家马德里", "rating": 87},
+      {"id": "GER_5", "name": "施洛特贝克", "position": "DEF", "age": 24, "club": "多特蒙德", "rating": 84},
+      {"id": "GER_6", "name": "塔", "position": "DEF", "age": 28, "club": "阿森纳", "rating": 85},
+      {"id": "GER_7", "name": "劳姆", "position": "DEF", "age": 26, "club": "莱比锡红牛", "rating": 83},
+      {"id": "GER_8", "name": "克罗斯", "position": "MID", "age": 34, "club": "皇家马德里", "rating": 88},
+      {"id": "GER_9", "name": "京多安", "position": "MID", "age": 34, "club": "巴塞罗那", "rating": 86},
+      {"id": "GER_10", "name": "穆西亚拉", "position": "MID", "age": 21, "club": "拜仁慕尼黑", "rating": 87},
+      {"id": "GER_11", "name": "维尔茨", "position": "MID", "age": 21, "club": "勒沃库森", "rating": 86},
+      {"id": "GER_12", "name": "萨内", "position": "FWD", "age": 28, "club": "拜仁慕尼黑", "rating": 85},
+      {"id": "GER_13", "name": "穆勒", "position": "FWD", "age": 34, "club": "拜仁慕尼黑", "rating": 84},
+      {"id": "GER_14", "name": "哈弗茨", "position": "FWD", "age": 25, "club": "阿森纳", "rating": 85},
+      {"id": "GER_15", "name": "菲尔克鲁格", "position": "FWD", "age": 31, "club": "多特蒙德", "rating": 82}
+    ]
+  },
+  "ENG": {
+    "id": "ENG", "name": "英格兰", "code": "ENG", "fifa_rank": 4, "group": "D", "strengthScore": 89,
+    "historicRecord": {"appearances": 16, "titles": 1, "winRate": 45},
+    "currentSquad": [
+      {"id": "ENG_1", "name": "皮克福德", "position": "GK", "age": 30, "club": "埃弗顿", "rating": 84},
+      {"id": "ENG_2", "name": "波普", "position": "GK", "age": 31, "club": "纽卡斯尔", "rating": 83},
+      {"id": "ENG_3", "name": "沃克", "position": "DEF", "age": 34, "club": "曼城", "rating": 85},
+      {"id": "ENG_4", "name": "斯通斯", "position": "DEF", "age": 30, "club": "曼城", "rating": 84},
+      {"id": "ENG_5", "name": "马奎尔", "position": "DEF", "age": 31, "club": "曼联", "rating": 82},
+      {"id": "ENG_6", "name": "卢克肖", "position": "DEF", "age": 28, "club": "曼联", "rating": 83},
+      {"id": "ENG_7", "name": "奇尔维尔", "position": "DEF", "age": 27, "club": "切尔西", "rating": 82},
+      {"id": "ENG_8", "name": "贝林厄姆", "position": "MID", "age": 20, "club": "皇家马德里", "rating": 88},
+      {"id": "ENG_9", "name": "赖斯", "position": "MID", "age": 25, "club": "阿森纳", "rating": 86},
+      {"id": "ENG_10", "name": "福登", "position": "MID", "age": 24, "club": "曼城", "rating": 87},
+      {"id": "ENG_11", "name": "萨卡", "position": "MID", "age": 23, "club": "阿森纳", "rating": 86},
+      {"id": "ENG_12", "name": "桑乔", "position": "FWD", "age": 24, "club": "曼联", "rating": 82},
+      {"id": "ENG_13", "name": "凯恩", "position": "FWD", "age": 31, "club": "拜仁慕尼黑", "rating": 90},
+      {"id": "ENG_14", "name": "斯特林", "position": "FWD", "age": 29, "club": "切尔西", "rating": 83},
+      {"id": "ENG_15", "name": "格拉利什", "position": "FWD", "age": 28, "club": "曼城", "rating": 84}
+    ]
+  },
+  "MEX": {
+    "id": "MEX", "name": "墨西哥", "code": "MEX", "fifa_rank": 11, "group": "A", "strengthScore": 78,
+    "historicRecord": {"appearances": 17, "titles": 0, "winRate": 38},
+    "currentSquad": [
+      {"id": "MEX_1", "name": "奥乔亚", "position": "GK", "age": 39, "club": "美洲", "rating": 80},
+      {"id": "MEX_2", "name": "埃雷拉", "position": "DEF", "age": 31, "club": "马德里竞技", "rating": 81},
+      {"id": "MEX_3", "name": "蒙特斯", "position": "DEF", "age": 28, "club": "蒙特雷", "rating": 80},
+      {"id": "MEX_4", "name": "阿尔瓦雷斯", "position": "MID", "age": 25, "club": "阿贾克斯", "rating": 82},
+      {"id": "MEX_5", "name": "瓜尔达多", "position": "MID", "age": 37, "club": "贝莱扎亚", "rating": 79},
+      {"id": "MEX_6", "name": "洛萨诺", "position": "FWD", "age": 28, "club": "埃因霍温", "rating": 81},
+      {"id": "MEX_7", "name": "希门尼斯", "position": "FWD", "age": 31, "club": "狼队", "rating": 80},
+      {"id": "MEX_8", "name": "贝加", "position": "FWD", "age": 23, "club": "皇家社会", "rating": 78}
+    ]
+  },
+  "ESP": {
+    "id": "ESP", "name": "西班牙", "code": "ESP", "fifa_rank": 3, "group": "B", "strengthScore": 88,
+    "historicRecord": {"appearances": 16, "titles": 1, "winRate": 50},
+    "currentSquad": [
+      {"id": "ESP_1", "name": "乌奈-西蒙", "position": "GK", "age": 26, "club": "毕尔巴鄂", "rating": 84},
+      {"id": "ESP_2", "name": "拉亚", "position": "GK", "age": 28, "club": "布伦特福德", "rating": 83},
+      {"id": "ESP_3", "name": "卡瓦哈尔", "position": "DEF", "age": 32, "club": "皇家马德里", "rating": 86},
+      {"id": "ESP_4", "name": "纳乔", "position": "DEF", "age": 34, "club": "皇家马德里", "rating": 82},
+      {"id": "ESP_5", "name": "拉波尔特", "position": "DEF", "age": 30, "club": "利雅得胜利", "rating": 84},
+      {"id": "ESP_6", "name": "加维", "position": "MID", "age": 20, "club": "巴塞罗那", "rating": 85},
+      {"id": "ESP_7", "name": "佩德里", "position": "MID", "age": 22, "club": "巴塞罗那", "rating": 87},
+      {"id": "ESP_8", "name": "罗德里", "position": "MID", "age": 29, "club": "曼城", "rating": 89},
+      {"id": "ESP_9", "name": "梅里诺", "position": "MID", "age": 28, "club": "皇家社会", "rating": 83},
+      {"id": "ESP_10", "name": "奥尔莫", "position": "MID", "age": 26, "club": "RB莱比锡", "rating": 84},
+      {"id": "ESP_11", "name": "威廉斯", "position": "FWD", "age": 21, "club": "毕尔巴鄂", "rating": 83},
+      {"id": "ESP_12", "name": "莫拉塔", "position": "FWD", "age": 32, "club": "马德里竞技", "rating": 82},
+      {"id": "ESP_13", "name": "何塞卢", "position": "FWD", "age": 34, "club": "皇家马德里", "rating": 81}
+    ]
+  },
+  "NED": {
+    "id": "NED", "name": "荷兰", "code": "NED", "fifa_rank": 7, "group": "F", "strengthScore": 85,
+    "historicRecord": {"appearances": 11, "titles": 0, "winRate": 55},
+    "currentSquad": [
+      {"id": "NED_1", "name": "诺珀特", "position": "GK", "age": 30, "club": "费耶诺德", "rating": 80},
+      {"id": "NED_2", "name": "弗莱肯", "position": "GK", "age": 31, "club": "弗赖堡", "rating": 81},
+      {"id": "NED_3", "name": "范戴克", "position": "DEF", "age": 33, "club": "利物浦", "rating": 89},
+      {"id": "NED_4", "name": "德里赫特", "position": "DEF", "age": 25, "club": "拜仁慕尼黑", "rating": 86},
+      {"id": "NED_5", "name": "阿克", "position": "DEF", "age": 28, "club": "曼城", "rating": 84},
+      {"id": "NED_6", "name": "德容", "position": "MID", "age": 27, "club": "巴塞罗那", "rating": 86},
+      {"id": "NED_7", "name": "弗兰基-德容", "position": "MID", "age": 27, "club": "巴塞罗那", "rating": 86},
+      {"id": "NED_8", "name": "加克波", "position": "FWD", "age": 25, "club": "利物浦", "rating": 84},
+      {"id": "NED_9", "name": "德佩", "position": "FWD", "age": 30, "club": "马德里竞技", "rating": 82},
+      {"id": "NED_10", "name": "哈维-西蒙斯", "position": "FWD", "age": 21, "club": "埃因霍温", "rating": 83}
+    ]
+  },
+  "BEL": {
+    "id": "BEL", "name": "比利时", "code": "BEL", "fifa_rank": 6, "group": "G", "strengthScore": 84,
+    "historicRecord": {"appearances": 14, "titles": 0, "winRate": 48},
+    "currentSquad": [
+      {"id": "BEL_1", "name": "库尔图瓦", "position": "GK", "age": 31, "club": "皇家马德里", "rating": 91},
+      {"id": "BEL_2", "name": "卡斯特尔斯", "position": "GK", "age": 31, "club": "狼堡", "rating": 82},
+      {"id": "BEL_3", "name": "阿尔德韦雷尔德", "position": "DEF", "age": 35, "club": "安特卫普", "rating": 80},
+      {"id": "BEL_4", "name": "维尔通亨", "position": "DEF", "age": 37, "club": "本菲卡", "rating": 79},
+      {"id": "BEL_5", "name": "德布劳内", "position": "MID", "age": 33, "club": "曼城", "rating": 91},
+      {"id": "BEL_6", "name": "维特塞尔", "position": "MID", "age": 35, "club": "马德里竞技", "rating": 80},
+      {"id": "BEL_7", "name": "卡拉斯科", "position": "MID", "age": 30, "club": "马德里竞技", "rating": 83},
+      {"id": "BEL_8", "name": "卢卡库", "position": "FWD", "age": 31, "club": "罗马", "rating": 84},
+      {"id": "BEL_9", "name": "特罗萨德", "position": "FWD", "age": 29, "club": "阿森纳", "rating": 83},
+      {"id": "BEL_10", "name": "多库", "position": "FWD", "age": 22, "club": "曼城", "rating": 82}
+    ]
+  },
+  "POR": {
+    "id": "POR", "name": "葡萄牙", "code": "POR", "fifa_rank": 8, "group": "D", "strengthScore": 86,
+    "historicRecord": {"appearances": 8, "titles": 0, "winRate": 50},
+    "currentSquad": [
+      {"id": "POR_1", "name": "科斯塔", "position": "GK", "age": 31, "club": "利雅得胜利", "rating": 85},
+      {"id": "POR_2", "name": "帕特里西奥", "position": "GK", "age": 36, "club": "罗马", "rating": 80},
+      {"id": "POR_3", "name": "坎塞洛", "position": "DEF", "age": 30, "club": "巴塞罗那", "rating": 84},
+      {"id": "POR_4", "name": "迪亚斯", "position": "DEF", "age": 27, "club": "曼城", "rating": 87},
+      {"id": "POR_5", "name": "佩佩", "position": "DEF", "age": 41, "club": "波尔图", "rating": 78},
+      {"id": "POR_6", "name": "B费", "position": "MID", "age": 29, "club": "曼联", "rating": 87},
+      {"id": "POR_7", "name": "B席", "position": "MID", "age": 30, "club": "曼城", "rating": 86},
+      {"id": "POR_8", "name": "内维斯", "position": "MID", "age": 28, "club": "利雅得新月", "rating": 83},
+      {"id": "POR_9", "name": "C罗", "position": "FWD", "age": 40, "club": "利雅得胜利", "rating": 80},
+      {"id": "POR_10", "name": "菲利克斯", "position": "FWD", "age": 25, "club": "巴塞罗那", "rating": 82},
+      {"id": "POR_11", "name": "莱奥", "position": "FWD", "age": 25, "club": "AC米兰", "rating": 84}
+    ]
+  },
+  "ITA": {
+    "id": "ITA", "name": "意大利", "code": "ITA", "fifa_rank": 10, "group": "G", "strengthScore": 85,
+    "historicRecord": {"appearances": 18, "titles": 4, "winRate": 50},
+    "currentSquad": [
+      {"id": "ITA_1", "name": "多纳鲁马", "position": "GK", "age": 25, "club": "巴黎圣日耳曼", "rating": 88},
+      {"id": "ITA_2", "name": "梅里特", "position": "GK", "age": 32, "club": "那不勒斯", "rating": 82},
+      {"id": "ITA_3", "name": "迪马尔科", "position": "DEF", "age": 26, "club": "国际米兰", "rating": 83},
+      {"id": "ITA_4", "name": "巴斯托尼", "position": "DEF", "age": 25, "club": "国际米兰", "rating": 84},
+      {"id": "ITA_5", "name": "博努奇", "position": "DEF", "age": 37, "club": "费内巴切", "rating": 78},
+      {"id": "ITA_6", "name": "维拉蒂", "position": "MID", "age": 31, "club": "利雅得新月", "rating": 84},
+      {"id": "ITA_7", "name": "若日尼奥", "position": "MID", "age": 32, "club": "阿森纳", "rating": 82},
+      {"id": "ITA_8", "name": "巴雷拉", "position": "MID", "age": 27, "club": "国际米兰", "rating": 85},
+      {"id": "ITA_9", "name": "基耶萨", "position": "FWD", "age": 27, "club": "尤文图斯", "rating": 83},
+      {"id": "ITA_10", "name": "拉斯帕多里", "position": "FWD", "age": 24, "club": "那不勒斯", "rating": 82},
+      {"id": "ITA_11", "name": "雷特吉", "position": "FWD", "age": 25, "club": "亚特兰大", "rating": 81}
+    ]
+  },
+  "URU": {
+    "id": "URU", "name": "乌拉圭", "code": "URU", "fifa_rank": 14, "group": "H", "strengthScore": 83,
+    "historicRecord": {"appearances": 14, "titles": 2, "winRate": 50},
+    "currentSquad": [
+      {"id": "URU_1", "name": "罗切特", "position": "GK", "age": 38, "club": "美洲", "rating": 80},
+      {"id": "URU_2", "name": "希门尼斯", "position": "DEF", "age": 29, "club": "马德里竞技", "rating": 84},
+      {"id": "URU_3", "name": "科茨", "position": "DEF", "age": 32, "club": "葡萄牙体育", "rating": 82},
+      {"id": "URU_4", "name": "戈丁", "position": "DEF", "age": 38, "club": "自由", "rating": 78},
+      {"id": "URU_5", "name": "巴尔韦德", "position": "MID", "age": 26, "club": "皇家马德里", "rating": 87},
+      {"id": "URU_6", "name": "贝西诺", "position": "MID", "age": 32, "club": "拉齐奥", "rating": 80},
+      {"id": "URU_7", "name": "德阿拉斯凯塔", "position": "MID", "age": 25, "club": "弗拉门戈", "rating": 82},
+      {"id": "URU_8", "name": "努涅斯", "position": "FWD", "age": 25, "club": "利物浦", "rating": 84},
+      {"id": "URU_9", "name": "苏亚雷斯", "position": "FWD", "age": 37, "club": "迈阿密国际", "rating": 78},
+      {"id": "URU_10", "name": "卡诺比奥", "position": "FWD", "age": 26, "club": "弗拉门戈", "rating": 80}
+    ]
+  },
+  "CRO": {
+    "id": "CRO", "name": "克罗地亚", "code": "CRO", "fifa_rank": 10, "group": "F", "strengthScore": 82,
+    "historicRecord": {"appearances": 6, "titles": 0, "winRate": 48},
+    "currentSquad": [
+      {"id": "CRO_1", "name": "利瓦科维奇", "position": "GK", "age": 29, "club": "萨格勒布迪纳摩", "rating": 82},
+      {"id": "CRO_2", "name": "格瓦尔迪奥尔", "position": "DEF", "age": 22, "club": "曼城", "rating": 84},
+      {"id": "CRO_3", "name": "尤拉诺维奇", "position": "DEF", "age": 28, "club": "凯尔特人", "rating": 80},
+      {"id": "CRO_4", "name": "莫德里奇", "position": "MID", "age": 39, "club": "皇家马德里", "rating": 85},
+      {"id": "CRO_5", "name": "科瓦西奇", "position": "MID", "age": 30, "club": "曼城", "rating": 83},
+      {"id": "CRO_6", "name": "布罗佐维奇", "position": "MID", "age": 32, "club": "利雅得胜利", "rating": 82},
+      {"id": "CRO_7", "name": "帕萨利奇", "position": "MID", "age": 28, "club": "亚特兰大", "rating": 81},
+      {"id": "CRO_8", "name": "克拉马里奇", "position": "FWD", "age": 33, "club": "霍芬海姆", "rating": 82},
+      {"id": "CRO_9", "name": "佩特科维奇", "position": "FWD", "age": 26, "club": "莱比锡红牛", "rating": 80}
+    ]
+  },
+  "JPN": {
+    "id": "JPN", "name": "日本", "code": "JPN", "fifa_rank": 18, "group": "E", "strengthScore": 82,
+    "historicRecord": {"appearances": 7, "titles": 0, "winRate": 35},
+    "currentSquad": [
+      {"id": "JPN_1", "name": "铃木彩艳", "position": "GK", "age": 21, "club": "圣图尔登", "rating": 78},
+      {"id": "JPN_2", "name": "板仓滉", "position": "DEF", "age": 26, "club": "门兴", "rating": 79},
+      {"id": "JPN_3", "name": "富安健洋", "position": "DEF", "age": 25, "club": "阿森纳", "rating": 82},
+      {"id": "JPN_4", "name": "远藤航", "position": "MID", "age": 31, "club": "利物浦", "rating": 82},
+      {"id": "JPN_5", "name": "守田英正", "position": "MID", "age": 28, "club": "布拉加", "rating": 80},
+      {"id": "JPN_6", "name": "久保建英", "position": "MID", "age": 23, "club": "皇家社会", "rating": 84},
+      {"id": "JPN_7", "name": "三笘薰", "position": "FWD", "age": 27, "club": "布莱顿", "rating": 83},
+      {"id": "JPN_8", "name": "上田绮世", "position": "FWD", "age": 26, "club": "费耶诺德", "rating": 81},
+      {"id": "JPN_9", "name": "南野拓实", "position": "FWD", "age": 29, "club": "摩纳哥", "rating": 82}
+    ]
+  },
+  "CAN": {
+    "id": "CAN", "name": "加拿大", "code": "CAN", "fifa_rank": 46, "group": "A", "strengthScore": 68,
+    "historicRecord": {"appearances": 2, "titles": 0, "winRate": 20},
+    "currentSquad": [
+      {"id": "CAN_1", "name": "博里扬", "position": "GK", "age": 31, "club": "贝尔格莱德红星", "rating": 75},
+      {"id": "CAN_2", "name": "阿方索-戴维斯", "position": "DEF", "age": 23, "club": "拜仁慕尼黑", "rating": 85},
+      {"id": "CAN_3", "name": "维多利亚", "position": "DEF", "age": 24, "club": "、标准列日", "rating": 75},
+      {"id": "CAN_4", "name": "哈钦森", "position": "MID", "age": 41, "club": "贝西克塔斯", "rating": 74},
+      {"id": "CAN_5", "name": "戴维", "position": "FWD", "age": 24, "club": "里尔", "rating": 82},
+      {"id": "CAN_6", "name": "拉林", "position": "FWD", "age": 29, "club": "贝西克塔斯", "rating": 76}
+    ]
+  },
+  "USA": {
+    "id": "USA", "name": "美国", "code": "USA", "fifa_rank": 16, "group": "G", "strengthScore": 80,
+    "historicRecord": {"appearances": 11, "titles": 0, "winRate": 28},
+    "currentSquad": [
+      {"id": "USA_1", "name": "特纳", "position": "GK", "age": 29, "club": "诺丁汉森林", "rating": 78},
+      {"id": "USA_2", "name": "德斯特", "position": "DEF", "age": 23, "club": "AC米兰", "rating": 77},
+      {"id": "USA_3", "name": "里姆", "position": "DEF", "age": 31, "club": "富勒姆", "rating": 78},
+      {"id": "USA_4", "name": "麦肯尼", "position": "MID", "age": 25, "club": "尤文图斯", "rating": 79},
+      {"id": "USA_5", "name": "普利西奇", "position": "FWD", "age": 26, "club": "AC米兰", "rating": 83},
+      {"id": "USA_6", "name": "雷纳", "position": "FWD", "age": 21, "club": "多特蒙德", "rating": 78},
+      {"id": "USA_7", "name": "维阿", "position": "FWD", "age": 23, "club": "雷恩", "rating": 77}
+    ]
+  },
+  "SEN": {
+    "id": "SEN", "name": "塞内加尔", "code": "SEN", "fifa_rank": 20, "group": "I", "strengthScore": 78,
+    "historicRecord": {"appearances": 3, "titles": 0, "winRate": 42},
+    "currentSquad": [
+      {"id": "SEN_1", "name": "门迪", "position": "GK", "age": 31, "club": "皇家马德里", "rating": 84},
+      {"id": "SEN_2", "name": "库里巴利", "position": "DEF", "age": 32, "club": "利雅得胜利", "rating": 83},
+      {"id": "SEN_3", "name": "萨巴利", "position": "DEF", "age": 29, "club": "亚特兰大", "rating": 79},
+      {"id": "SEN_4", "name": "盖耶", "position": "MID", "age": 34, "club": "利雅得新月", "rating": 80},
+      {"id": "SEN_5", "name": "门迪", "position": "MID", "age": 28, "club": "水晶宫", "rating": 78},
+      {"id": "SEN_6", "name": "萨内", "position": "FWD", "age": 26, "club": "拜仁慕尼黑", "rating": 85},
+      {"id": "SEN_7", "name": "迪亚", "position": "FWD", "age": 26, "club": "利雅得新月", "rating": 82}
+    ]
+  },
+  "GUA": {
+    "id": "GUA", "name": "危地马拉", "code": "GUA", "fifa_rank": 89, "group": "A", "strengthScore": 55,
+    "historicRecord": {"appearances": 0, "titles": 0, "winRate": 0},
+    "currentSquad": [
+      {"id": "GUA_1", "name": "阿雷瓦洛", "position": "GK", "age": 30, "club": "科林蒂安", "rating": 70},
+      {"id": "GUA_2", "name": "平托", "position": "DEF", "age": 28, "club": "科林蒂安", "rating": 68},
+      {"id": "GUA_3", "name": "查伊", "position": "MID", "age": 26, "club": "危地马拉城", "rating": 65}
+    ]
+  },
+  "EGY": {
+    "id": "EGY", "name": "埃及", "code": "EGY", "fifa_rank": 18, "group": "C", "strengthScore": 74,
+    "historicRecord": {"appearances": 3, "titles": 0, "winRate": 38},
+    "currentSquad": [
+      {"id": "EGY_1", "name": "阿布阿里", "position": "GK", "age": 30, "club": "阿布扎比统一", "rating": 75},
+      {"id": "EGY_2", "name": "赫加齐", "position": "DEF", "age": 31, "club": "利雅得青年", "rating": 76},
+      {"id": "EGY_3", "name": "埃尔内尼", "position": "MID", "age": 32, "club": "贝蒂斯", "rating": 77},
+      {"id": "EGY_4", "name": "萨拉赫", "position": "FWD", "age": 32, "club": "利物浦", "rating": 89},
+      {"id": "EGY_5", "name": "马尔穆什", "position": "FWD", "age": 25, "club": "法兰克福", "rating": 80}
+    ]
+  },
+  "MAR": {
+    "id": "MAR", "name": "摩洛哥", "code": "MAR", "fifa_rank": 13, "group": "D", "strengthScore": 80,
+    "historicRecord": {"appearances": 6, "titles": 0, "winRate": 42},
+    "currentSquad": [
+      {"id": "MAR_1", "name": "布努", "position": "GK", "age": 33, "club": "利雅得新月", "rating": 83},
+      {"id": "MAR_2", "name": "阿什拉夫", "position": "DEF", "age": 26, "club": "巴黎圣日耳曼", "rating": 86},
+      {"id": "MAR_3", "name": "达里", "position": "DEF", "age": 28, "club": "布莱顿", "rating": 81},
+      {"id": "MAR_4", "name": "塞斯", "position": "DEF", "age": 33, "club": "狼队", "rating": 79},
+      {"id": "MAR_5", "name": "阿姆拉巴特", "position": "MID", "age": 27, "club": "佛罗伦萨", "rating": 80},
+      {"id": "MAR_6", "name": "齐耶赫", "position": "MID", "age": 31, "club": "利雅得新月", "rating": 82},
+      {"id": "MAR_7", "name": "恩内斯里", "position": "FWD", "age": 27, "club": "塞维利亚", "rating": 83}
+    ]
+  },
+  "AUS": {
+    "id": "AUS", "name": "澳大利亚", "code": "AUS", "fifa_rank": 23, "group": "E", "strengthScore": 78,
+    "historicRecord": {"appearances": 6, "titles": 0, "winRate": 33},
+    "currentSquad": [
+      {"id": "AUS_1", "name": "瑞安", "position": "GK", "age": 31, "club": "诺维奇", "rating": 77},
+      {"id": "AUS_2", "name": "苏塔", "position": "DEF", "age": 24, "club": "米德尔斯堡", "rating": 78},
+      {"id": "AUS_3", "name": "罗尔斯", "position": "DEF", "age": 30, "club": "马略卡", "rating": 77},
+      {"id": "AUS_4", "name": "赫鲁斯蒂奇", "position": "MID", "age": 27, "club": "法兰克福", "rating": 78},
+      {"id": "AUS_5", "name": "杜克", "position": "FWD", "age": 32, "club": "麦克阿瑟", "rating": 76}
+    ]
+  },
+  "KOR": {
+    "id": "KOR", "name": "韩国", "code": "KOR", "fifa_rank": 24, "group": "F", "strengthScore": 77,
+    "historicRecord": {"appearances": 11, "titles": 0, "winRate": 30},
+    "currentSquad": [
+      {"id": "KOR_1", "name": "金承奎", "position": "GK", "age": 33, "club": "利雅得青年", "rating": 78},
+      {"id": "KOR_2", "name": "金玟哉", "position": "DEF", "age": 27, "club": "拜仁慕尼黑", "rating": 83},
+      {"id": "KOR_3", "name": "李在成", "position": "DEF", "age": 31, "club": "美因茨", "rating": 77},
+      {"id": "KOR_4", "name": "孙兴慜", "position": "FWD", "age": 32, "club": "热刺", "rating": 88},
+      {"id": "KOR_5", "name": "黄喜灿", "position": "FWD", "age": 28, "club": "狼队", "rating": 79},
+      {"id": "KOR_6", "name": "李刚仁", "position": "MID", "age": 22, "club": "巴黎圣日耳曼", "rating": 81}
+    ]
+  }
 }
