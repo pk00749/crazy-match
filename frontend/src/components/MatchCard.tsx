@@ -37,23 +37,35 @@ interface LeaderboardEntry {
   current_streak: number
 }
 
-const flagBase = 'https://flagcdn.com/w160/'
+// 占位符代码（A1, C2, W49...）没有对应球队数据，不显示阵容入口
+const PLACEHOLDER_CODES = new Set([
+  'A1','C2','D3','E1','G2','H3','I1','K2','L1','J2','B1','F2','C2b',
+  'A2','E2','G1','H1','F2b','K1','I2','J1','L2','B2','D1','A3','C1',
+  'D2','E2b','F1','H2','G3','H2b',
+  'W49','W50','W51','W52','W53','W54','W55','W56','W57','W58','W59',
+  'W60','W61','W62','W63','W64','W65','W66','W67','W68','W69','W70',
+])
 
-// 3-letter team code -> 2-letter ISO flag code
+function isPlaceholder(code: string): boolean {
+  return PLACEHOLDER_CODES.has(code)
+}
+
+// 3-letter team code -> 2-letter ISO flag code (flagcdn.com)
 const flagCodeMap: Record<string, string> = {
   ALG:'dz', ARG:'ar', AUS:'au', AUT:'at', BEL:'be', BIH:'ba', BRA:'br', CAN:'ca',
-  CMR:'cm', COL:'co', CRO:'hr', ECU:'ec', EGY:'eg', ENG:'gb-eng', ESP:'es', FRA:'fr',
-  GER:'de', GHA:'gh', HUN:'hu', INA:'id', IRL:'ie', IRN:'ir', ITA:'it', JPN:'jp',
-  KOR:'kr', KSA:'sa', MAR:'ma', MEX:'mx', NED:'nl', NGA:'ng', NOR:'no', NZL:'nz',
-  PAR:'py', PER:'pe', POL:'pl', POR:'pt', QAT:'qa', ROU:'ro', RSA:'za', SEN:'sn',
-  SRB:'rs', SUI:'ch', UAE:'ae', URU:'uy', USA:'us', VEN:'ve', WAL:'gb-wls', CHI:'cl'
+  CHI:'cl', CMR:'cm', COL:'co', CRO:'hr', ECU:'ec', EGY:'eg', ENG:'gb-eng',
+  ESP:'es', FRA:'fr', GER:'de', GHA:'gh', HUN:'hu', INA:'id', IRL:'ie',
+  IRN:'ir', ITA:'it', JPN:'jp', KOR:'kr', KSA:'sa', MAR:'ma', MEX:'mx',
+  NED:'nl', NGA:'ng', NOR:'no', NZL:'nz', PAR:'py', PER:'pe', POL:'pl',
+  POR:'pt', QAT:'qa', ROU:'ro', RSA:'za', SEN:'sn', SRB:'rs', SUI:'ch',
+  UAE:'ae', URU:'uy', USA:'us', VEN:'ve', WAL:'gb-wls',
 }
 
 function getTeamFlagUrl(code: string): string {
   if (!code) return ''
   const mapped = flagCodeMap[code]
-  if (mapped) return `${flagBase}${mapped}.png`
-  return `${flagBase}${code.toLowerCase()}.png`
+  if (mapped) return `https://flagcdn.com/w160/${mapped}.png`
+  return `https://flagcdn.com/w160/${code.toLowerCase()}.png`
 }
 
 function getStageLabel(stage: string): string {
@@ -61,6 +73,19 @@ function getStageLabel(stage: string): string {
     group: '小组赛', round16: '1/8决赛', quarter: '1/4决赛', semi: '半决赛', final: '决赛'
   }
   return map[stage] || stage
+}
+
+function getBadge(w: string, teamA: string, teamB: string): string {
+  if (w === 'draw') return 'badge-draw'
+  if (w === teamA) return 'badge-teamA'
+  return 'badge-teamB'
+}
+
+function getLabel(w: string, teamA: string, teamB: string): string {
+  if (w === 'draw') return '平局'
+  if (w === teamA) return teamA
+  if (w === teamB) return teamB
+  return w
 }
 
 export default function MatchCard({ match, isSelected, prediction, onPredict, onShare, onSelect }: MatchCardProps) {
@@ -88,18 +113,8 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
     finally { setLoading(false) }
   }
 
-  const getBadge = (w: string) => {
-    if (w === 'draw') return 'badge-draw'
-    if (w === match.team_a) return 'badge-teamA'
-    return 'badge-teamB'
-  }
-
-  const getLabel = (w: string) => {
-    if (w === 'draw') return '平局'
-    if (w === match.team_a) return match.team_a
-    if (w === match.team_b) return match.team_b
-    return w
-  }
+  const canShowTeamA = !isPlaceholder(match.team_a)
+  const canShowTeamB = !isPlaceholder(match.team_b)
 
   return (
     <>
@@ -121,10 +136,14 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
               <img className="team-flag-img" src={getTeamFlagUrl(match.team_a)} alt={match.team_a} loading="lazy" />
             </div>
             <div className="team-name-wrap">
-              <div className="team-name-main" onClick={(e) => { e.stopPropagation(); setShowTeamA(true) }}>
-                {match.team_a}
-                <div className="team-name-hint">👤 点击查看阵容</div>
-              </div>
+              {canShowTeamA ? (
+                <div className="team-name-main" onClick={(e) => { e.stopPropagation(); setShowTeamA(true) }}>
+                  {match.team_a}
+                  <div className="team-name-hint">👤 点击查看阵容</div>
+                </div>
+              ) : (
+                <div className="team-name-main">{match.team_a}</div>
+              )}
             </div>
           </div>
 
@@ -135,10 +154,14 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
 
           <div className="team-block team-b">
             <div className="team-name-wrap" style={{ textAlign: 'right' }}>
-              <div className="team-name-main" onClick={(e) => { e.stopPropagation(); setShowTeamB(true) }}>
-                <div className="team-name-hint" style={{ textAlign: 'right' }}>点击查看阵容 👤</div>
-                {match.team_b}
-              </div>
+              {canShowTeamB ? (
+                <div className="team-name-main" onClick={(e) => { e.stopPropagation(); setShowTeamB(true) }}>
+                  <div className="team-name-hint" style={{ textAlign: 'right' }}>点击查看阵容 👤</div>
+                  {match.team_b}
+                </div>
+              ) : (
+                <div className="team-name-main" style={{ textAlign: 'right' }}>{match.team_b}</div>
+              )}
             </div>
             <div className="team-flag-wrap">
               <img className="team-flag-img" src={getTeamFlagUrl(match.team_b)} alt={match.team_b} loading="lazy" />
@@ -207,7 +230,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
                 predictions.map(p => (
                   <div key={p.id} className="pred-mini-item">
                     <span className="pred-mini-nick">{p.nickname}</span>
-                    <span className={`pred-mini-badge ${getBadge(p.predicted_winner)}`}>{getLabel(p.predicted_winner)}</span>
+                    <span className={`pred-mini-badge ${getBadge(p.predicted_winner, match.team_a, match.team_b)}`}>{getLabel(p.predicted_winner, match.team_a, match.team_b)}</span>
                   </div>
                 ))
               ) : (
@@ -233,11 +256,13 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
           </div>
         )}
 
-        {!isSelected && <div className="match-hint">⚽ 点击查看预测详情 &amp; 阵容</div>}
+        {!isSelected && (
+          <div className="match-hint">⚽ 点击查看预测详情{canShowTeamA || canShowTeamB ? ' & 阵容' : ''}</div>
+        )}
       </div>
 
-      {showTeamA && <TeamModal teamCode={match.team_a} teamName={match.team_a} onClose={() => setShowTeamA(false)} />}
-      {showTeamB && <TeamModal teamCode={match.team_b} teamName={match.team_b} onClose={() => setShowTeamB(false)} />}
+      {canShowTeamA && showTeamA && <TeamModal teamCode={match.team_a} teamName={match.team_a} onClose={() => setShowTeamA(false)} />}
+      {canShowTeamB && showTeamB && <TeamModal teamCode={match.team_b} teamName={match.team_b} onClose={() => setShowTeamB(false)} />}
     </>
   )
 }
