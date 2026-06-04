@@ -25,7 +25,6 @@ export default function PredictionForm({ matchId, teamAName, teamBName, onClose 
     try {
       predictApi.submit(matchId, nickname, prediction)
       
-      // Save to localStorage for persistence
       const predictions = JSON.parse(localStorage.getItem('crazy_match_predictions') || '{}')
       predictions[matchId] = { nickname, prediction, timestamp: Date.now() }
       localStorage.setItem('crazy_match_predictions', JSON.stringify(predictions))

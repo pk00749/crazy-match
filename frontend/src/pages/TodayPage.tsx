@@ -6,10 +6,10 @@ import PredictionForm from '../components/PredictionForm'
 import { matchesApi, teamsApi, predictApi } from '../api'
 
 export default function TodayPage() {
-  // Default to June 11, 2026 - first match day
   const [selectedDate, setSelectedDate] = useState(new Date('2026-06-11'))
   const [matches, setMatches] = useState<any[]>([])
   const [predictions, setPredictions] = useState<Record<string, any>>({})
+  const [selectedMatchId, setSelectedMatchId] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [showPredictionForm, setShowPredictionForm] = useState<string | null>(null)
 
@@ -19,21 +19,23 @@ export default function TodayPage() {
 
   const loadMatches = async () => {
     setLoading(true)
+    setSelectedMatchId(null)
     try {
       const dateStr = selectedDate.toISOString().split('T')[0]
       const data = matchesApi.getByDate(dateStr)
       setMatches(data || [])
 
-      // Load predictions for each match
       const preds: Record<string, any> = {}
       for (const match of data || []) {
         try {
           preds[match.id] = predictApi.getByMatch(match.id)
-        } catch (e) {
-          console.error('Failed to get prediction for match', match.id, e)
-        }
+        } catch (e) {}
       }
       setPredictions(preds)
+      
+      if (data && data.length > 0) {
+        setSelectedMatchId(data[0].id)
+      }
     } catch (err) {
       console.error('Failed to load matches:', err)
     } finally {
@@ -42,21 +44,13 @@ export default function TodayPage() {
   }
 
   const handleShare = (matchId: string) => {
-    const match = matches.find(m => m.id === matchId)
-    if (match) {
-      const link = `${window.location.origin}/share/${matchId}`
-      navigator.clipboard.writeText(link)
-      alert('分享链接已复制！')
-    }
+    const link = `${window.location.origin}/share/${matchId}`
+    navigator.clipboard.writeText(link)
+    alert('分享链接已复制！')
   }
 
   const formatDate = (date: Date) => {
     return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
-  }
-
-  const getMatchCount = () => {
-    const dateStr = selectedDate.toISOString().split('T')[0]
-    return matchesApi.getByDate(dateStr).length
   }
 
   return (
@@ -64,7 +58,7 @@ export default function TodayPage() {
       <div className="today-header">
         <div>
           <h2>{formatDate(selectedDate)}</h2>
-          <span className="today-date-badge">共 {getMatchCount()} 场比赛</span>
+          <span className="today-date-badge">共 {matches.length} 场比赛</span>
         </div>
         <DatePicker selectedDate={selectedDate} onDateChange={setSelectedDate} />
       </div>
@@ -87,11 +81,19 @@ export default function TodayPage() {
               <MatchCard
                 key={match.id}
                 match={{
-                  ...match,
+                  id: match.id,
+                  team_a_code: match.team_a,
                   team_a: teamA?.name || match.team_a,
-                  team_b: teamB?.name || match.team_b
+                  team_b_code: match.team_b,
+                  team_b: teamB?.name || match.team_b,
+                  time: match.time,
+                  venue: match.venue,
+                  stage: match.stage,
+                  group: match.group,
                 }}
+                isSelected={selectedMatchId === match.id}
                 prediction={predictions[match.id]}
+                onSelect={setSelectedMatchId}
                 onPredict={(id) => setShowPredictionForm(id)}
                 onShare={handleShare}
               />
@@ -104,14 +106,19 @@ export default function TodayPage() {
         <Leaderboard />
       </div>
 
-      {showPredictionForm && (
-        <PredictionForm
-          matchId={showPredictionForm}
-          teamAName={matches.find(m => m.id === showPredictionForm)?.team_a || ''}
-          teamBName={matches.find(m => m.id === showPredictionForm)?.team_b || ''}
-          onClose={() => setShowPredictionForm(null)}
-        />
-      )}
+      {showPredictionForm && (() => {
+        const match = matches.find(m => m.id === showPredictionForm)
+        const teamA = teamsApi.getById(match?.team_a)
+        const teamB = teamsApi.getById(match?.team_b)
+        return (
+          <PredictionForm
+            matchId={showPredictionForm}
+            teamAName={teamA?.name || match?.team_a || ''}
+            teamBName={teamB?.name || match?.team_b || ''}
+            onClose={() => setShowPredictionForm(null)}
+          />
+        )
+      })()}
     </div>
   )
 }

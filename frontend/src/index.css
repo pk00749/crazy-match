@@ -895,3 +895,186 @@ input {
 .date-picker-grid span.empty {
   background: transparent;
 }
+
+/* Match Group Tag */
+.match-group {
+  background: var(--gradient);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Score Details (expanded) */
+.score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.score-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.score-detail .detail-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.score-detail .detail-value {
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 30px;
+  text-align: center;
+}
+
+.score-detail .detail-sep {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Prob Values */
+.prob-values {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin-top: 8px;
+}
+
+/* Strength Item */
+.strength-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strength-label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.strength-sep {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Expanded card highlight */
+.match-card:has(.score-details) {
+  border-color: var(--accent-secondary);
+}
+
+/* Team Flag Image */
+.team-flag-img {
+  width: 36px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.team-a .team-flag-img {
+  margin-right: 10px;
+}
+
+.team-b .team-flag-img {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .team-flag-img {
+    width: 28px;
+    height: 18px;
+  }
+}
+
+/* Match Hint */
+.match-hint {
+  text-align: center;
+  padding: 12px 0 4px;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-top: 1px dashed var(--border);
+  margin-top: 12px;
+}
+
+/* Expanded state */
+.match-card.expanded {
+  border-color: var(--accent);
+}
+
+/* Card transition */
+.match-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.match-card:hover {
+  border-color: var(--border);
+}
+
+.match-card.expanded:hover {
+  border-color: var(--accent);
+}
+
+/* Probability Bar with Values */
+.prob-bar {
+  position: relative;
+  height: 28px;
+  background: var(--secondary);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+}
+
+.prob-fill {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  transition: width 0.5s ease;
+}
+
+.prob-fill.win {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.prob-fill.draw {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.prob-fill.lose {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* Hide values if bar too narrow */
+.prob-fill span {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Probability Labels */
+.prob-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.prob-label {
+  text-align: center;
+  flex: 1;
+}
+
+.prob-label.win { color: var(--success); }
+.prob-label.draw { color: var(--warning); }
+.prob-label.lose { color: var(--danger); }
