@@ -113,7 +113,9 @@ export default function TodayPage() {
         return (
           <PredictionForm
             matchId={showPredictionForm}
+            teamACode={match?.team_a || ''}
             teamAName={teamA?.name || match?.team_a || ''}
+            teamBCode={match?.team_b || ''}
             teamBName={teamB?.name || match?.team_b || ''}
             onClose={() => setShowPredictionForm(null)}
           />

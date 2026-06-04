@@ -39,7 +39,6 @@ export default function SchedulePage() {
       }
       setPredictions(preds)
       
-      // 默认选中第一场
       if (data && data.length > 0 && activeTab === 'group') {
         const groupMatches = data.filter(m => m.stage === 'group')
         if (groupMatches.length > 0) {
@@ -63,7 +62,6 @@ export default function SchedulePage() {
     setActiveTab(tab)
     setSelectedMatchId(null)
     
-    // 选中该阶段第一场比赛
     const tabMatches = matches.filter(m => m.stage === tab)
     if (tabMatches.length > 0) {
       setTimeout(() => setSelectedMatchId(tabMatches[0].id), 50)
@@ -168,7 +166,9 @@ export default function SchedulePage() {
         return (
           <PredictionForm
             matchId={showPredictionForm}
+            teamACode={match?.team_a || ''}
             teamAName={teamA?.name || match?.team_a || ''}
+            teamBCode={match?.team_b || ''}
             teamBName={teamB?.name || match?.team_b || ''}
             onClose={() => setShowPredictionForm(null)}
           />

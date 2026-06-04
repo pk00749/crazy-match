@@ -3,14 +3,16 @@ import { submitPrediction } from '../api/supabase'
 
 interface PredictionFormProps {
   matchId: string
+  teamACode: string  // 新增
   teamAName: string
+  teamBCode: string  // 新增
   teamBName: string
   onClose: () => void
 }
 
-export default function PredictionForm({ matchId, teamAName, teamBName, onClose }: PredictionFormProps) {
+export default function PredictionForm({ matchId, teamACode, teamAName, teamBCode, teamBName, onClose }: PredictionFormProps) {
   const [nickname, setNickname] = useState('')
-  const [prediction, setPrediction] = useState<'teamA' | 'teamB' | 'draw' | ''>('')
+  const [prediction, setPrediction] = useState<string>('')  // 改为 string 类型
   const [submitting, setSubmitting] = useState(false)
   const [message, setMessage] = useState('')
 
@@ -25,7 +27,7 @@ export default function PredictionForm({ matchId, teamAName, teamBName, onClose 
     setMessage('')
     
     try {
-      await submitPrediction(matchId, nickname, prediction)
+      await submitPrediction(matchId, nickname, teamACode, teamBCode, prediction)
       setMessage('预测提交成功！')
       setTimeout(onClose, 1500)
     } catch (err) {
@@ -59,8 +61,8 @@ export default function PredictionForm({ matchId, teamAName, teamBName, onClose 
             <div className="prediction-options">
               <button
                 type="button"
-                className={prediction === 'teamA' ? 'selected' : ''}
-                onClick={() => setPrediction('teamA')}
+                className={prediction === teamACode ? 'selected' : ''}
+                onClick={() => setPrediction(teamACode)}
               >
                 {teamAName} 胜
               </button>
@@ -73,8 +75,8 @@ export default function PredictionForm({ matchId, teamAName, teamBName, onClose 
               </button>
               <button
                 type="button"
-                className={prediction === 'teamB' ? 'selected' : ''}
-                onClick={() => setPrediction('teamB')}
+                className={prediction === teamBCode ? 'selected' : ''}
+                onClick={() => setPrediction(teamBCode)}
               >
                 {teamBName} 胜
               </button>

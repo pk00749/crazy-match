@@ -11,10 +11,13 @@ export function getDeviceId(): string {
 }
 
 // 提交预测到 Supabase
+// winner: 具体的国家队代码如 'ARG', 'BRA', 或 'draw'
 export async function submitPrediction(
   matchId: string,
   nickname: string,
-  predictedWinner: 'teamA' | 'teamB' | 'draw'
+  teamACode: string,
+  teamBCode: string,
+  winner: string  // 球队代码或 'draw'
 ) {
   const deviceId = getDeviceId()
   
@@ -24,7 +27,9 @@ export async function submitPrediction(
       match_id: matchId,
       device_id: deviceId,
       nickname: nickname,
-      predicted_winner: predictedWinner,
+      predicted_winner: winner,  // 存储具体球队代码或 'draw'
+      team_a_code: teamACode,
+      team_b_code: teamBCode,
     }, { onConflict: 'match_id,device_id' })
     .select()
   
@@ -46,6 +51,17 @@ export async function getUserPredictions() {
   return data || []
 }
 
+// 获取所有预测记录（用于排行榜统计）
+export async function getAllPredictions() {
+  const { data, error } = await supabase
+    .from('predictions')
+    .select('*')
+    .order('created_at', { ascending: false })
+  
+  if (error) throw error
+  return data || []
+}
+
 // 获取排行榜
 export async function getLeaderboard(limit = 20) {
   const { data, error } = await supabase
@@ -59,7 +75,7 @@ export async function getLeaderboard(limit = 20) {
   return data || []
 }
 
-// 更新排行榜（提交预测后调用）
+// 更新排行榜
 export async function updateLeaderboard(nickname: string, isCorrect: boolean) {
   const deviceId = getDeviceId()
   
@@ -73,7 +89,7 @@ export async function updateLeaderboard(nickname: string, isCorrect: boolean) {
   return data
 }
 
-// 获取比赛结果（用于开奖）
+// 获取比赛结果
 export async function getMatchResult(matchId: string) {
   const { data, error } = await supabase
     .from('match_results')
