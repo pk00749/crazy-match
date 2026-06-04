@@ -2,8 +2,6 @@ import teamsData from '../data/teams.json'
 import matchesData from '../data/matches.json'
 
 // 预测算法 v2.0
-const HISTORIC_WEIGHTS = { worldCupTitles: 15, appearances: 5, winRate: 10, recentPerformance: 10 }
-const SQUAD_WEIGHTS = { fifaRank: 15, bigLeaguePlayers: 15, marketValue: 15, coach: 5, squadDepth: 10 }
 
 function calculateHistoricScore(team: any): number {
   const baseScore = Math.max(20, 100 - (team.fifa_rank || 50))
@@ -58,10 +56,7 @@ function calculateWinProbability(teamA: any, teamB: any) {
   
   const drawChance = Math.max(5, Math.min(30, Math.round(20 - Math.abs(diff) / 10)))
   
-  // 直接计算整数百分比，确保总和为100
   const teamAWinFloat = adjustedWinRate * (100 - drawChance)
-  const teamBWinFloat = 100 - drawChance - teamAWinFloat
-  
   const teamAWin = Math.round(teamAWinFloat)
   const teamBWin = 100 - drawChance - teamAWin
   
@@ -88,7 +83,7 @@ function getHomeBonus(teamAId: string, teamBId: string): number {
   return 0
 }
 
-let predictions: Record<string, any> = {}
+const predictions: Record<string, any> = {}
 
 export const matchesApi = {
   getAll: () => matchesData.matches,
@@ -98,7 +93,7 @@ export const matchesApi = {
 
 export const teamsApi = {
   getAll: () => Object.values(teamsData),
-  getById: (id: string) => teamsData[id],
+  getById: (id: string) => (teamsData as any)[id],
 }
 
 export const predictApi = {
@@ -106,8 +101,8 @@ export const predictApi = {
     const match = matchesData.matches.find((m: any) => m.id === matchId)
     if (!match) throw new Error('Match not found')
     
-    const teamA = teamsData[match.team_a]
-    const teamB = teamsData[match.team_b]
+    const teamA = (teamsData as any)[match.team_a]
+    const teamB = (teamsData as any)[match.team_b]
     if (!teamA || !teamB) throw new Error('Team not found')
     
     predictions[matchId] = {
@@ -121,8 +116,8 @@ export const predictApi = {
     const match = matchesData.matches.find((m: any) => m.id === matchId)
     if (!match) return null
     
-    const teamA = teamsData[match.team_a]
-    const teamB = teamsData[match.team_b]
+    const teamA = (teamsData as any)[match.team_a]
+    const teamB = (teamsData as any)[match.team_b]
     if (!teamA || !teamB) return null
     
     return calculateWinProbability(teamA, teamB)

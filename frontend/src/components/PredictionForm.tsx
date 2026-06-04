@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { predictApi } from '../api'
+import { submitPrediction } from '../api/supabase'
 
 interface PredictionFormProps {
   matchId: string
@@ -22,16 +22,14 @@ export default function PredictionForm({ matchId, teamAName, teamBName, onClose 
     }
 
     setSubmitting(true)
+    setMessage('')
+    
     try {
-      predictApi.submit(matchId, nickname, prediction)
-      
-      const predictions = JSON.parse(localStorage.getItem('crazy_match_predictions') || '{}')
-      predictions[matchId] = { nickname, prediction, timestamp: Date.now() }
-      localStorage.setItem('crazy_match_predictions', JSON.stringify(predictions))
-      
+      await submitPrediction(matchId, nickname, prediction)
       setMessage('预测提交成功！')
       setTimeout(onClose, 1500)
     } catch (err) {
+      console.error('Failed to submit prediction:', err)
       setMessage('提交失败，请重试')
     } finally {
       setSubmitting(false)

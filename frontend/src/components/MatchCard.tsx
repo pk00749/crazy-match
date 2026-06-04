@@ -67,7 +67,6 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
       className={`match-card ${isSelected ? 'selected' : ''}`}
       onClick={handleClick}
     >
-      {/* 球队对阵区域 */}
       <div className="match-header">
         <div className="team team-a">
           {getTeamFlagUrl(match.team_a_code) && (
@@ -90,10 +89,8 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
         {match.stage === 'group' && <span className="match-group">🏆 {match.group}组</span>}
       </div>
 
-      {/* 预测数据 - 选中后显示 */}
       {isSelected && prediction && (
         <div className="prediction-summary" onClick={(e) => e.stopPropagation()}>
-          {/* 概率条 */}
           <div className="prob-bar">
             <div className="prob-fill win" style={{ width: `${prediction.win_probability.team_a}%` }}>
               {prediction.win_probability.team_a >= 8 && <span>{prediction.win_probability.team_a}%</span>}
@@ -141,7 +138,6 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
         </div>
       )}
 
-      {/* 未选中时显示提示 */}
       {!isSelected && <div className="match-hint">点击查看预测</div>}
     </div>
   )
