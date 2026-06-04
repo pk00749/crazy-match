@@ -1078,3 +1078,18 @@ input {
 .prob-label.win { color: var(--success); }
 .prob-label.draw { color: var(--warning); }
 .prob-label.lose { color: var(--danger); }
+
+/* Leaderboard empty state */
+.leaderboard-empty {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Leaderboard error */
+.leaderboard.error {
+  color: var(--danger);
+  text-align: center;
+  padding: 20px;
+}
