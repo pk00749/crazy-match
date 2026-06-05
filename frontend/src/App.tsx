@@ -16,26 +16,21 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <header className="header-hero">
-          <div className="header-hero-left">
-            <span className="trophy-icon">🏆</span>
+        <header className="header">
+          <div className="header-brand">
+            <span className="header-logo">🏆</span>
             <div>
-              <div className="header-hero-title">
-                <span>2026 世界杯预测</span>
-              </div>
-              <div className="header-hero-sub">美墨加三国联合举办 · 48支球队 · 87场比赛</div>
+              <div className="header-title">Crazy Match</div>
+              <div className="header-sub">2026 世界杯预测 · 美墨加</div>
             </div>
           </div>
-          <div className="wc-countdown">
-            <div>
-              <div className="wc-countdown-days">距离开幕</div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                <span className="wc-countdown-num">{daysLeft}</span>
-                <span className="wc-countdown-label">天</span>
-              </div>
-            </div>
+          
+          <div className="header-countdown">
+            <span className="countdown-num">{daysLeft}</span>
+            <span className="countdown-label">天后开幕</span>
           </div>
-          <nav>
+
+          <nav className="header-nav">
             <NavLink to="/today" className={({ isActive }) => isActive ? 'active' : ''}>
               今日预测
             </NavLink>
@@ -44,6 +39,7 @@ function App() {
             </NavLink>
           </nav>
         </header>
+
         <main>
           <Routes>
             <Route path="/today" element={<TodayPage />} />

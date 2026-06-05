@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
-import DatePicker from '../components/DatePicker'
 import MatchCard from '../components/MatchCard'
 import PredictionForm from '../components/PredictionForm'
-import ShareImageModal from '../components/ShareImageModal'
 import { matchesApi, teamsApi, predictApi } from '../api'
 
 export default function TodayPage() {
@@ -12,7 +10,6 @@ export default function TodayPage() {
   const [selectedMatchId, setSelectedMatchId] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [showPredictionForm, setShowPredictionForm] = useState<string | null>(null)
-  const [showShareModal, setShowShareModal] = useState<string | null>(null)
 
   const loadMatches = useCallback(async () => {
     setLoading(true)
@@ -26,7 +23,7 @@ export default function TodayPage() {
       for (const match of data || []) {
         try {
           preds[match.id] = predictApi.getByMatch(match.id)
-        } catch (e) {}
+        } catch (e) { /* silent */ }
       }
       setPredictions(preds)
       
@@ -40,35 +37,37 @@ export default function TodayPage() {
     }
   }, [selectedDate])
 
-  useEffect(() => {
-    loadMatches()
-  }, [loadMatches])
-
-  const handleShare = (matchId: string) => {
-    setShowShareModal(matchId)
-  }
+  useEffect(() => { loadMatches() }, [loadMatches])
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
+    return date.toLocaleDateString('zh-CN', { month: 'long', day: 'numeric', weekday: 'long' })
   }
 
-  const worldCupDate = new Date('2026-06-11')
-  const today = new Date()
-  const daysLeft = Math.ceil((worldCupDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
+  const prevDay = () => {
+    const d = new Date(selectedDate)
+    d.setDate(d.getDate() - 1)
+    setSelectedDate(d)
+  }
+
+  const nextDay = () => {
+    const d = new Date(selectedDate)
+    d.setDate(d.getDate() + 1)
+    setSelectedDate(d)
+  }
+
+  const match = selectedMatchId ? matches.find(m => m.id === selectedMatchId) : null
 
   return (
-    <div className="today-page">
-      <div className="countdown-bar">
-        <span className="countdown-title">🏆 2026 世界杯</span>
-        <span className="countdown-days">{daysLeft > 0 ? `倒计时 ${daysLeft} 天` : '进行中'}</span>
+    <div>
+      <div className="page-header">
+        <h2 className="page-title">📅 今日赛程</h2>
+        <span className="page-meta">{matches.length} 场比赛</span>
       </div>
 
-      <div className="today-header">
-        <div>
-          <h2>{formatDate(selectedDate)}</h2>
-          <span className="today-date-badge">📅 共 {matches.length} 场比赛</span>
-        </div>
-        <DatePicker selectedDate={selectedDate} onDateChange={setSelectedDate} />
+      <div className="date-nav">
+        <button className="date-nav-btn" onClick={prevDay}>←</button>
+        <span className="date-display">{formatDate(selectedDate)}</span>
+        <button className="date-nav-btn" onClick={nextDay}>→</button>
       </div>
 
       {loading ? (
@@ -77,12 +76,9 @@ export default function TodayPage() {
           加载中...
         </div>
       ) : matches.length === 0 ? (
-        <div className="no-matches">
-          <div className="no-matches-icon">🏆</div>
-          <p>当天没有比赛</p>
-          <p style={{ fontSize: '14px', marginTop: '8px', color: 'var(--text-muted)' }}>
-            2026世界杯小组赛：6月11日-6月27日
-          </p>
+        <div className="empty-state">
+          <div className="empty-icon">🏆</div>
+          <p className="empty-text">当天没有比赛安排</p>
         </div>
       ) : (
         <div className="matches-list">
@@ -98,6 +94,7 @@ export default function TodayPage() {
                   team_b: teamB?.name || match.team_b,
                   time: match.time,
                   venue: match.venue,
+                  city: match.city,
                   stage: match.stage,
                   group: match.group,
                 }}
@@ -105,7 +102,6 @@ export default function TodayPage() {
                 prediction={predictions[match.id]}
                 onSelect={setSelectedMatchId}
                 onPredict={(id) => setShowPredictionForm(id)}
-                onShare={handleShare}
               />
             )
           })}
@@ -113,25 +109,21 @@ export default function TodayPage() {
       )}
 
       {showPredictionForm && (() => {
-        const match = matches.find(m => m.id === showPredictionForm)
-        const teamA = teamsApi.getById(match?.team_a)
-        const teamB = teamsApi.getById(match?.team_b)
+        const m = matches.find(x => x.id === showPredictionForm)
+        const teamA = teamsApi.getById(m?.team_a)
+        const teamB = teamsApi.getById(m?.team_b)
         return (
           <PredictionForm
             matchId={showPredictionForm}
-            teamACode={match?.team_a || ''}
-            teamAName={teamA?.name || match?.team_a || ''}
-            teamBCode={match?.team_b || ''}
-            teamBName={teamB?.name || match?.team_b || ''}
+            teamACode={m?.team_a || ''}
+            teamAName={teamA?.name || m?.team_a || ''}
+            teamBCode={m?.team_b || ''}
+            teamBName={teamB?.name || m?.team_b || ''}
             onClose={() => setShowPredictionForm(null)}
             onSuccess={loadMatches}
           />
         )
       })()}
-
-      {showShareModal && (
-        <ShareImageModal matchId={showShareModal} onClose={() => setShowShareModal(null)} />
-      )}
     </div>
   )
 }

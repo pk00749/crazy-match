@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
-import TeamModal from './TeamModal'
 
 interface MatchCardProps {
   match: {
@@ -37,20 +36,20 @@ interface LeaderboardEntry {
   current_streak: number
 }
 
-// 占位符代码（A1, C2, W49...）没有对应球队数据，不显示阵容入口
+// Placeholder codes for knockout stage teams
 const PLACEHOLDER_CODES = new Set([
-  'A1','C2','D3','E1','G2','H3','I1','K2','L1','J2','B1','F2','C2b',
-  'A2','E2','G1','H1','F2b','K1','I2','J1','L2','B2','D1','A3','C1',
-  'D2','E2b','F1','H2','G3','H2b',
-  'W49','W50','W51','W52','W53','W54','W55','W56','W57','W58','W59',
-  'W60','W61','W62','W63','W64','W65','W66','W67','W68','W69','W70',
+  'A1','C2','D3','E1','G2','H3','I1','K2','L1','J2','B1','F2',
+  'A2','E2','G1','H1','K1','I2','J1','L2','B2','D1','A3','C1',
+  'D2','F1','H2','G3',
+  'W49','W50','W51','W52','W53','W54','W55','W56','W57','W58',
+  'W59','W60','W61','W62','W63','W64','W65','W66','W67','W68',
 ])
 
 function isPlaceholder(code: string): boolean {
   return PLACEHOLDER_CODES.has(code)
 }
 
-// 3-letter team code -> 2-letter ISO flag code (flagcdn.com)
+// Team code to 2-letter ISO flag code
 const flagCodeMap: Record<string, string> = {
   ALG:'dz', ARG:'ar', AUS:'au', AUT:'at', BEL:'be', BIH:'ba', BRA:'br', CAN:'ca',
   CHI:'cl', CMR:'cm', COL:'co', CRO:'hr', ECU:'ec', EGY:'eg', ENG:'gb-eng',
@@ -64,8 +63,8 @@ const flagCodeMap: Record<string, string> = {
 function getTeamFlagUrl(code: string): string {
   if (!code) return ''
   const mapped = flagCodeMap[code]
-  if (mapped) return `https://flagcdn.com/w160/${mapped}.png`
-  return `https://flagcdn.com/w160/${code.toLowerCase()}.png`
+  if (mapped) return `https://flagcdn.com/w80/${mapped}.png`
+  return `https://flagcdn.com/w80/${code.toLowerCase()}.png`
 }
 
 function getStageLabel(stage: string): string {
@@ -75,13 +74,13 @@ function getStageLabel(stage: string): string {
   return map[stage] || stage
 }
 
-function getBadge(w: string, teamA: string, teamB: string): string {
+function getBadgeClass(w: string, teamA: string, teamB: string): string {
   if (w === 'draw') return 'badge-draw'
   if (w === teamA) return 'badge-teamA'
   return 'badge-teamB'
 }
 
-function getLabel(w: string, teamA: string, teamB: string): string {
+function getBadgeLabel(w: string, teamA: string, teamB: string): string {
   if (w === 'draw') return '平局'
   if (w === teamA) return teamA
   if (w === teamB) return teamB
@@ -93,8 +92,6 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([])
   const [activeTab, setActiveTab] = useState<'pred' | 'rank'>('pred')
   const [loading, setLoading] = useState(false)
-  const [showTeamA, setShowTeamA] = useState(false)
-  const [showTeamB, setShowTeamB] = useState(false)
 
   useEffect(() => {
     if (isSelected) loadData()
@@ -104,7 +101,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
     setLoading(true)
     try {
       const [{ data: pd }, { data: lb }] = await Promise.all([
-        supabase.from('predictions').select('*').eq('match_id', match.id).order('created_at', { ascending: false }).limit(20),
+        supabase.from('predictions').select('*').eq('match_id', match.id).order('created_at', { ascending: false }).limit(15),
         supabase.from('leaderboard_stats').select('*').order('correct_count', { ascending: false }).limit(10),
       ])
       setPredictions(pd || [])
@@ -117,152 +114,119 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
   const canShowTeamB = !isPlaceholder(match.team_b)
 
   return (
-    <>
-      <div className={`match-card${isSelected ? ' selected' : ''}`} onClick={() => onSelect?.(match.id)}>
-        {/* Stage badge */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-          <span className={`stage-badge ${match.stage}`}>
-            {match.stage === 'final' ? '🏆' : match.stage === 'semi' ? '⭐' : match.stage === 'quarter' ? '💎' : match.stage === 'round16' ? '⚡' : '🔵'} {getStageLabel(match.stage)}
+    <div
+      className={`match-card${isSelected ? ' selected' : ''}`}
+      onClick={() => onSelect?.(match.id)}
+    >
+      {/* Top badges */}
+      <div className="match-card-top">
+        <div className="match-badges">
+          <span className={`badge ${match.stage === 'final' ? 'badge-final' : match.stage === 'group' ? 'badge-group' : 'badge-knockout'}`}>
+            {getStageLabel(match.stage)}
           </span>
           {match.stage === 'group' && match.group && (
-            <span className="stage-badge group">{match.group}组</span>
+            <span className="badge badge-group">{match.group}组</span>
           )}
         </div>
-
-        {/* Teams */}
-        <div className="match-teams">
-          <div className="team-block team-a">
-            <div className="team-flag-wrap">
-              <img className="team-flag-img" src={getTeamFlagUrl(match.team_a)} alt={match.team_a} loading="lazy" />
-            </div>
-            <div className="team-name-wrap">
-              {canShowTeamA ? (
-                <div className="team-name-main" onClick={(e) => { e.stopPropagation(); setShowTeamA(true) }}>
-                  {match.team_a}
-                  <div className="team-name-hint">👤 点击查看阵容</div>
-                </div>
-              ) : (
-                <div className="team-name-main">{match.team_a}</div>
-              )}
-            </div>
-          </div>
-
-          <div className="match-vs-center">
-            <div className="match-vs-ball">⚽</div>
-            <div className="match-vs-text">VS</div>
-          </div>
-
-          <div className="team-block team-b">
-            <div className="team-name-wrap" style={{ textAlign: 'right' }}>
-              {canShowTeamB ? (
-                <div className="team-name-main" onClick={(e) => { e.stopPropagation(); setShowTeamB(true) }}>
-                  <div className="team-name-hint" style={{ textAlign: 'right' }}>点击查看阵容 👤</div>
-                  {match.team_b}
-                </div>
-              ) : (
-                <div className="team-name-main" style={{ textAlign: 'right' }}>{match.team_b}</div>
-              )}
-            </div>
-            <div className="team-flag-wrap">
-              <img className="team-flag-img" src={getTeamFlagUrl(match.team_b)} alt={match.team_b} loading="lazy" />
-            </div>
-          </div>
-        </div>
-
-        {/* Meta */}
-        <div className="match-meta-row">
-          {match.time && <span className="match-meta-item"><span className="emoji">🕐</span>{match.time}</span>}
-          {match.venue && <span className="match-meta-item"><span className="emoji">📍</span>{match.venue}{match.city ? ` · ${match.city}` : ''}</span>}
-          {match.date && <span className="match-meta-item"><span className="emoji">📅</span>{match.date}</span>}
-        </div>
-
-        {/* Selected: prediction + tabs */}
-        {isSelected && (
-          <div onClick={e => e.stopPropagation()}>
-            {prediction && (
-              <div className="prob-section">
-                <div className="prob-bar-wrap">
-                  {[
-                    { pct: prediction.win_probability?.team_a || 0, cls: 'win', label: match.team_a },
-                    { pct: prediction.win_probability?.draw || 0, cls: 'draw', label: '平局' },
-                    { pct: prediction.win_probability?.team_b || 0, cls: 'lose', label: match.team_b },
-                  ].map(s => (
-                    <div key={s.cls} className={`prob-segment ${s.cls}`} style={{ flexBasis: `${s.pct}%` }}>
-                      {s.pct >= 15 && <span>{Math.round(s.pct)}%</span>}
-                    </div>
-                  ))}
-                </div>
-                <div className="prob-labels-row">
-                  {[match.team_a, '平局', match.team_b].map((name, i) => (
-                    <span key={name} className={`prob-label-name ${['win','draw','lose'][i]}`}>{name}</span>
-                  ))}
-                </div>
-
-                <div className="strength-row">
-                  <span className="strength-num">{prediction.strength_rating?.team_a || 0}</span>
-                  <div className="strength-bar-wrap">
-                    <div className="strength-bar-track">
-                      <div className="strength-bar-fill" style={{ width: `${prediction.strength_rating?.team_a || 0}%` }} />
-                    </div>
-                    <span className="strength-vs">⚽</span>
-                    <div className="strength-bar-track">
-                      <div className="strength-bar-fill" style={{ width: `${prediction.strength_rating?.team_b || 0}%` }} />
-                    </div>
-                  </div>
-                  <span className="strength-num">{prediction.strength_rating?.team_b || 0}</span>
-                </div>
-              </div>
-            )}
-
-            <div className="card-tabs">
-              <button className={`card-tab ${activeTab === 'pred' ? 'active' : ''}`} onClick={() => setActiveTab('pred')}>
-                本场预测 ({predictions.length})
-              </button>
-              <button className={`card-tab ${activeTab === 'rank' ? 'active' : ''}`} onClick={() => setActiveTab('rank')}>
-                🏅 排行榜
-              </button>
-            </div>
-
-            <div className="card-data">
-              {activeTab === 'pred' ? (
-                loading ? <div className="mini-loading">⚽ 加载中...</div> :
-                predictions.length === 0 ? <div className="mini-empty">暂无预测，成为第一个预言家！</div> :
-                predictions.map(p => (
-                  <div key={p.id} className="pred-mini-item">
-                    <span className="pred-mini-nick">{p.nickname}</span>
-                    <span className={`pred-mini-badge ${getBadge(p.predicted_winner, match.team_a, match.team_b)}`}>{getLabel(p.predicted_winner, match.team_a, match.team_b)}</span>
-                  </div>
-                ))
-              ) : (
-                loading ? <div className="mini-loading">⚽ 加载中...</div> :
-                leaderboard.length === 0 ? <div className="mini-empty">暂无排行</div> :
-                leaderboard.map((e, i) => (
-                  <div key={e.device_id} className={`rank-mini-item${i === 0 ? ' top1' : ''}`}>
-                    <span className="rank-mini-pos">{i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1}</span>
-                    <span className="rank-mini-nick">{e.nickname}</span>
-                    <span className="rank-mini-stats">
-                      {e.total_count > 0 ? `${Math.round(e.correct_count / e.total_count * 100)}%` : '0%'}
-                      {e.current_streak > 0 && ` 🔥${e.current_streak}`}
-                    </span>
-                  </div>
-                ))
-              )}
-            </div>
-
-            <div className="match-actions">
-              <button className="btn-predict" onClick={() => onPredict?.(match.id)}>📝 预测</button>
-              <button className="btn-share" onClick={() => onShare?.(match.id)}>🔗 分享</button>
-            </div>
-          </div>
-        )}
-
-        {!isSelected && (
-          <div className="match-hint">⚽ 点击查看预测详情{canShowTeamA || canShowTeamB ? ' & 阵容' : ''}</div>
-        )}
       </div>
 
-      {canShowTeamA && showTeamA && <TeamModal teamCode={match.team_a} teamName={match.team_a} onClose={() => setShowTeamA(false)} />}
-      {canShowTeamB && showTeamB && <TeamModal teamCode={match.team_b} teamName={match.team_b} onClose={() => setShowTeamB(false)} />}
-    </>
+      {/* Teams */}
+      <div className="match-teams">
+        <div className="team team-a">
+          <img className="team-flag" src={getTeamFlagUrl(match.team_a)} alt={match.team_a} loading="lazy" />
+          <span className="team-name">{match.team_a}</span>
+        </div>
+        <span className="match-vs">VS</span>
+        <div className="team team-b">
+          <span className="team-name">{match.team_b}</span>
+          <img className="team-flag" src={getTeamFlagUrl(match.team_b)} alt={match.team_b} loading="lazy" />
+        </div>
+      </div>
+
+      {/* Meta */}
+      <div className="match-meta">
+        {match.time && <span className="meta-item">🕐 {match.time}</span>}
+        {match.venue && <span className="meta-item">📍 {match.venue}{match.city ? ` · ${match.city}` : ''}</span>}
+      </div>
+
+      {/* Expanded content */}
+      {isSelected && (
+        <div onClick={e => e.stopPropagation()}>
+          {prediction && (
+            <div className="match-expanded">
+              <div className="prob-bar">
+                {[
+                  { pct: prediction.win_probability?.team_a || 0, cls: 'win' },
+                  { pct: prediction.win_probability?.draw || 0, cls: 'draw' },
+                  { pct: prediction.win_probability?.team_b || 0, cls: 'lose' },
+                ].map(s => (
+                  <div key={s.cls} className={`prob-segment ${s.cls}`} style={{ flexBasis: `${s.pct}%` }}>
+                    {s.pct >= 15 && <span>{Math.round(s.pct)}%</span>}
+                  </div>
+                ))}
+              </div>
+              <div className="prob-labels">
+                {[match.team_a, '平局', match.team_b].map((name, i) => (
+                  <span key={name} className={`prob-label ${['win','draw','lose'][i]}`}>{name}</span>
+                ))}
+              </div>
+              <div className="strength-row">
+                <span className="strength-num">{prediction.strength_rating?.team_a || 0}</span>
+                <div className="strength-bar-track">
+                  <div className="strength-bar-fill" style={{ width: `${prediction.strength_rating?.team_a || 0}%` }} />
+                </div>
+                <span className="strength-vs">⚽</span>
+                <div className="strength-bar-track">
+                  <div className="strength-bar-fill" style={{ width: `${prediction.strength_rating?.team_b || 0}%` }} />
+                </div>
+                <span className="strength-num">{prediction.strength_rating?.team_b || 0}</span>
+              </div>
+            </div>
+          )}
+
+          <div className="card-tabs">
+            <button className={`card-tab ${activeTab === 'pred' ? 'active' : ''}`} onClick={() => setActiveTab('pred')}>
+              本场预测 ({predictions.length})
+            </button>
+            <button className={`card-tab ${activeTab === 'rank' ? 'active' : ''}`} onClick={() => setActiveTab('rank')}>
+              排行榜
+            </button>
+          </div>
+
+          <div className="card-data">
+            {activeTab === 'pred' ? (
+              loading ? <div className="mini-loading">⚽ 加载中...</div> :
+              predictions.length === 0 ? <div className="mini-empty">暂无预测，快来成为第一个预言家！</div> :
+              predictions.map(p => (
+                <div key={p.id} className="pred-item">
+                  <span className="pred-nick">{p.nickname}</span>
+                  <span className={`pred-badge ${getBadgeClass(p.predicted_winner, match.team_a, match.team_b)}`}>
+                    {getBadgeLabel(p.predicted_winner, match.team_a, match.team_b)}
+                  </span>
+                </div>
+              ))
+            ) : (
+              loading ? <div className="mini-loading">⚽ 加载中...</div> :
+              leaderboard.length === 0 ? <div className="mini-empty">暂无排行</div> :
+              leaderboard.map((e, i) => (
+                <div key={e.device_id} className="rank-item">
+                  <span className="rank-pos">{i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1}</span>
+                  <span className="rank-nick">{e.nickname}</span>
+                  <span className="rank-stats">
+                    {e.total_count > 0 ? `${Math.round(e.correct_count / e.total_count * 100)}%` : '0%'}
+                    {e.current_streak > 0 && ` 🔥${e.current_streak}`}
+                  </span>
+                </div>
+              ))
+            )}
+          </div>
+
+          <div className="match-actions">
+            <button className="btn btn-predict" onClick={() => onPredict?.(match.id)}>📝 预测</button>
+            {onShare && <button className="btn btn-share" onClick={() => onShare?.(match.id)}>🔗 分享</button>}
+          </div>
+        </div>
+      )}
+    </div>
   )
 }

@@ -28,15 +28,13 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
     setMessage('')
     
     try {
-      // 获取设备ID
       let deviceId = localStorage.getItem('crazy_match_device_id')
       if (!deviceId) {
         deviceId = 'device_' + Math.random().toString(36).substring(2, 15)
         localStorage.setItem('crazy_match_device_id', deviceId)
       }
 
-      // 提交到 Supabase
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('predictions')
         .upsert({
           match_id: matchId,
@@ -46,31 +44,21 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
           team_a_code: teamACode,
           team_b_code: teamBCode,
         }, { onConflict: 'match_id,device_id' })
-        .select()
 
-      if (error) {
-        console.error('Supabase error:', error)
-        throw error
-      }
-
-      // 同时保存到 localStorage 作为备份
-      const localPredictions = JSON.parse(localStorage.getItem('crazy_match_predictions') || '{}')
-      localPredictions[matchId] = { nickname, prediction, timestamp: Date.now() }
-      localStorage.setItem('crazy_match_predictions', JSON.stringify(localPredictions))
+      if (error) throw error
 
       setMessage('✅ 预测提交成功！')
       setTimeout(() => {
         onSuccess?.()
         onClose()
       }, 1500)
-    } catch (err: any) {
-      console.error('Failed to submit:', err)
-      // 如果 Supabase 失败，保存到本地
+    } catch (err) {
+      // Fallback to localStorage
       const localPredictions = JSON.parse(localStorage.getItem('crazy_match_predictions') || '{}')
       localPredictions[matchId] = { nickname, prediction, timestamp: Date.now() }
       localStorage.setItem('crazy_match_predictions', JSON.stringify(localPredictions))
       
-      setMessage('✅ 已保存到本地（离线模式）')
+      setMessage('✅ 已保存到本地')
       setTimeout(() => {
         onSuccess?.()
         onClose()
@@ -81,10 +69,10 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
   }
 
   return (
-    <div className="prediction-form-overlay" onClick={onClose}>
-      <div className="prediction-form" onClick={e => e.stopPropagation()}>
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
         <h3>🏆 提交预测</h3>
-        <div className="match-info">{teamAName} vs {teamBName}</div>
+        <div className="modal-sub">{teamAName} vs {teamBName}</div>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -100,27 +88,15 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
 
           <div className="form-group">
             <label>预测结果</label>
-            <div className="prediction-options">
-              <button
-                type="button"
-                className={prediction === teamACode ? 'selected' : ''}
-                onClick={() => setPrediction(teamACode)}
-              >
-                {teamAName} 胜
+            <div className="pred-options">
+              <button type="button" className={prediction === teamACode ? 'selected' : ''} onClick={() => setPrediction(teamACode)}>
+                {teamAName}
               </button>
-              <button
-                type="button"
-                className={prediction === 'draw' ? 'selected' : ''}
-                onClick={() => setPrediction('draw')}
-              >
+              <button type="button" className={prediction === 'draw' ? 'selected' : ''} onClick={() => setPrediction('draw')}>
                 平局
               </button>
-              <button
-                type="button"
-                className={prediction === teamBCode ? 'selected' : ''}
-                onClick={() => setPrediction(teamBCode)}
-              >
-                {teamBName} 胜
+              <button type="button" className={prediction === teamBCode ? 'selected' : ''} onClick={() => setPrediction(teamBCode)}>
+                {teamBName}
               </button>
             </div>
           </div>
@@ -134,7 +110,7 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
         </form>
 
         {message && (
-          <div className={`message ${message.includes('成功') || message.includes('本地') ? 'success' : 'error'}`}>
+          <div className={`msg ${message.includes('成功') || message.includes('本地') ? 'success' : 'error'}`}>
             {message}
           </div>
         )}
