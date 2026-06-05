@@ -4,7 +4,7 @@
     "name": "美国",
     "code": "USA",
     "fifa_rank": 11,
-    "group": "A",
+    "group": "D",
     "strengthScore": 94,
     "historicRecord": {
       "appearances": 18,
@@ -203,7 +203,7 @@
     "name": "加拿大",
     "code": "CAN",
     "fifa_rank": 38,
-    "group": "A",
+    "group": "B",
     "strengthScore": 78,
     "historicRecord": {
       "appearances": 13,
@@ -601,7 +601,7 @@
     "name": "新西兰",
     "code": "NZL",
     "fifa_rank": 87,
-    "group": "A",
+    "group": "G",
     "strengthScore": 48,
     "historicRecord": {
       "appearances": 3,
@@ -800,7 +800,7 @@
     "name": "阿根廷",
     "code": "ARG",
     "fifa_rank": 1,
-    "group": "B",
+    "group": "J",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 20,
@@ -999,7 +999,7 @@
     "name": "巴西",
     "code": "BRA",
     "fifa_rank": 3,
-    "group": "B",
+    "group": "C",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 20,
@@ -1198,7 +1198,7 @@
     "name": "厄瓜多尔",
     "code": "ECU",
     "fifa_rank": 30,
-    "group": "B",
+    "group": "E",
     "strengthScore": 83,
     "historicRecord": {
       "appearances": 14,
@@ -1392,211 +1392,12 @@
       }
     ]
   },
-  "VEN": {
-    "id": "VEN",
-    "name": "委内瑞拉",
-    "code": "VEN",
-    "fifa_rank": 54,
-    "group": "B",
-    "strengthScore": 68,
-    "historicRecord": {
-      "appearances": 10,
-      "titles": 0,
-      "winRate": 47
-    },
-    "currentSquad": [
-      {
-        "id": "VEN_s1",
-        "name": "委内瑞拉球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "VEN_s2",
-        "name": "委内瑞拉球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "VEN_s3",
-        "name": "委内瑞拉球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "VEN_s4",
-        "name": "委内瑞拉球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "VEN_s5",
-        "name": "委内瑞拉球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "VEN_s6",
-        "name": "委内瑞拉球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "VEN_s7",
-        "name": "委内瑞拉球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "VEN_s8",
-        "name": "委内瑞拉球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "VEN_s9",
-        "name": "委内瑞拉球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "VEN_s10",
-        "name": "委内瑞拉球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "VEN_s11",
-        "name": "委内瑞拉球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "VEN_s12",
-        "name": "委内瑞拉球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "VEN_s13",
-        "name": "委内瑞拉球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "VEN_s14",
-        "name": "委内瑞拉球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "VEN_s15",
-        "name": "委内瑞拉球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "VEN_s16",
-        "name": "委内瑞拉球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "VEN_s17",
-        "name": "委内瑞拉球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "VEN_s18",
-        "name": "委内瑞拉球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "VEN_s19",
-        "name": "委内瑞拉球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "VEN_s20",
-        "name": "委内瑞拉球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "VEN_s21",
-        "name": "委内瑞拉球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "VEN_s22",
-        "name": "委内瑞拉球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "VEN_s23",
-        "name": "委内瑞拉球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "COL": {
     "id": "COL",
     "name": "哥伦比亚",
     "code": "COL",
     "fifa_rank": 9,
-    "group": "C",
+    "group": "K",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 19,
@@ -1795,7 +1596,7 @@
     "name": "乌拉圭",
     "code": "URU",
     "fifa_rank": 11,
-    "group": "C",
+    "group": "H",
     "strengthScore": 94,
     "historicRecord": {
       "appearances": 18,
@@ -1994,7 +1795,7 @@
     "name": "巴拉圭",
     "code": "PAR",
     "fifa_rank": 57,
-    "group": "C",
+    "group": "D",
     "strengthScore": 66,
     "historicRecord": {
       "appearances": 9,
@@ -2188,211 +1989,12 @@
       }
     ]
   },
-  "PER": {
-    "id": "PER",
-    "name": "秘鲁",
-    "code": "PER",
-    "fifa_rank": 42,
-    "group": "C",
-    "strengthScore": 75,
-    "historicRecord": {
-      "appearances": 12,
-      "titles": 0,
-      "winRate": 51
-    },
-    "currentSquad": [
-      {
-        "id": "PER_s1",
-        "name": "秘鲁球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "PER_s2",
-        "name": "秘鲁球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "PER_s3",
-        "name": "秘鲁球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "PER_s4",
-        "name": "秘鲁球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "PER_s5",
-        "name": "秘鲁球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "PER_s6",
-        "name": "秘鲁球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "PER_s7",
-        "name": "秘鲁球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "PER_s8",
-        "name": "秘鲁球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "PER_s9",
-        "name": "秘鲁球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "PER_s10",
-        "name": "秘鲁球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "PER_s11",
-        "name": "秘鲁球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "PER_s12",
-        "name": "秘鲁球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "PER_s13",
-        "name": "秘鲁球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "PER_s14",
-        "name": "秘鲁球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "PER_s15",
-        "name": "秘鲁球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "PER_s16",
-        "name": "秘鲁球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "PER_s17",
-        "name": "秘鲁球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "PER_s18",
-        "name": "秘鲁球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "PER_s19",
-        "name": "秘鲁球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "PER_s20",
-        "name": "秘鲁球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "PER_s21",
-        "name": "秘鲁球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "PER_s22",
-        "name": "秘鲁球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "PER_s23",
-        "name": "秘鲁球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "FRA": {
     "id": "FRA",
     "name": "法国",
     "code": "FRA",
     "fifa_rank": 2,
-    "group": "D",
+    "group": "I",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 20,
@@ -2591,7 +2193,7 @@
     "name": "英格兰",
     "code": "ENG",
     "fifa_rank": 4,
-    "group": "D",
+    "group": "L",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 20,
@@ -2790,7 +2392,7 @@
     "name": "葡萄牙",
     "code": "POR",
     "fifa_rank": 6,
-    "group": "D",
+    "group": "K",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 19,
@@ -2984,211 +2586,12 @@
       }
     ]
   },
-  "CHI": {
-    "id": "CHI",
-    "name": "智利",
-    "code": "CHI",
-    "fifa_rank": 40,
-    "group": "D",
-    "strengthScore": 77,
-    "historicRecord": {
-      "appearances": 12,
-      "titles": 0,
-      "winRate": 52
-    },
-    "currentSquad": [
-      {
-        "id": "CHI_s1",
-        "name": "智利球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "CHI_s2",
-        "name": "智利球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "CHI_s3",
-        "name": "智利球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "CHI_s4",
-        "name": "智利球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "CHI_s5",
-        "name": "智利球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "CHI_s6",
-        "name": "智利球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "CHI_s7",
-        "name": "智利球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "CHI_s8",
-        "name": "智利球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "CHI_s9",
-        "name": "智利球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "CHI_s10",
-        "name": "智利球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "CHI_s11",
-        "name": "智利球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "CHI_s12",
-        "name": "智利球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "CHI_s13",
-        "name": "智利球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "CHI_s14",
-        "name": "智利球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "CHI_s15",
-        "name": "智利球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "CHI_s16",
-        "name": "智利球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "CHI_s17",
-        "name": "智利球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "CHI_s18",
-        "name": "智利球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "CHI_s19",
-        "name": "智利球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "CHI_s20",
-        "name": "智利球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "CHI_s21",
-        "name": "智利球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "CHI_s22",
-        "name": "智利球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "CHI_s23",
-        "name": "智利球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "ESP": {
     "id": "ESP",
     "name": "西班牙",
     "code": "ESP",
     "fifa_rank": 8,
-    "group": "E",
+    "group": "H",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 19,
@@ -3382,211 +2785,12 @@
       }
     ]
   },
-  "ITA": {
-    "id": "ITA",
-    "name": "意大利",
-    "code": "ITA",
-    "fifa_rank": 10,
-    "group": "E",
-    "strengthScore": 95,
-    "historicRecord": {
-      "appearances": 18,
-      "titles": 2,
-      "winRate": 62
-    },
-    "currentSquad": [
-      {
-        "id": "ITA_s1",
-        "name": "意大利球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "ITA_s2",
-        "name": "意大利球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "ITA_s3",
-        "name": "意大利球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "ITA_s4",
-        "name": "意大利球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "ITA_s5",
-        "name": "意大利球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "ITA_s6",
-        "name": "意大利球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "ITA_s7",
-        "name": "意大利球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "ITA_s8",
-        "name": "意大利球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "ITA_s9",
-        "name": "意大利球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "ITA_s10",
-        "name": "意大利球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "ITA_s11",
-        "name": "意大利球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "ITA_s12",
-        "name": "意大利球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "ITA_s13",
-        "name": "意大利球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "ITA_s14",
-        "name": "意大利球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "ITA_s15",
-        "name": "意大利球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "ITA_s16",
-        "name": "意大利球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "ITA_s17",
-        "name": "意大利球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "ITA_s18",
-        "name": "意大利球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "ITA_s19",
-        "name": "意大利球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "ITA_s20",
-        "name": "意大利球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "ITA_s21",
-        "name": "意大利球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "ITA_s22",
-        "name": "意大利球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "ITA_s23",
-        "name": "意大利球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "NED": {
     "id": "NED",
     "name": "荷兰",
     "code": "NED",
     "fifa_rank": 7,
-    "group": "E",
+    "group": "F",
     "strengthScore": 95,
     "historicRecord": {
       "appearances": 19,
@@ -3780,211 +2984,12 @@
       }
     ]
   },
-  "IRL": {
-    "id": "IRL",
-    "name": "爱尔兰",
-    "code": "IRL",
-    "fifa_rank": 54,
-    "group": "E",
-    "strengthScore": 68,
-    "historicRecord": {
-      "appearances": 10,
-      "titles": 0,
-      "winRate": 47
-    },
-    "currentSquad": [
-      {
-        "id": "IRL_s1",
-        "name": "爱尔兰球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "IRL_s2",
-        "name": "爱尔兰球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "IRL_s3",
-        "name": "爱尔兰球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "IRL_s4",
-        "name": "爱尔兰球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "IRL_s5",
-        "name": "爱尔兰球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "IRL_s6",
-        "name": "爱尔兰球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "IRL_s7",
-        "name": "爱尔兰球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "IRL_s8",
-        "name": "爱尔兰球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "IRL_s9",
-        "name": "爱尔兰球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "IRL_s10",
-        "name": "爱尔兰球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "IRL_s11",
-        "name": "爱尔兰球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "IRL_s12",
-        "name": "爱尔兰球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "IRL_s13",
-        "name": "爱尔兰球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "IRL_s14",
-        "name": "爱尔兰球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "IRL_s15",
-        "name": "爱尔兰球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "IRL_s16",
-        "name": "爱尔兰球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "IRL_s17",
-        "name": "爱尔兰球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "IRL_s18",
-        "name": "爱尔兰球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "IRL_s19",
-        "name": "爱尔兰球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "IRL_s20",
-        "name": "爱尔兰球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "IRL_s21",
-        "name": "爱尔兰球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "IRL_s22",
-        "name": "爱尔兰球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "IRL_s23",
-        "name": "爱尔兰球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "GER": {
     "id": "GER",
     "name": "德国",
     "code": "GER",
     "fifa_rank": 13,
-    "group": "F",
+    "group": "E",
     "strengthScore": 93,
     "historicRecord": {
       "appearances": 18,
@@ -4183,7 +3188,7 @@
     "name": "比利时",
     "code": "BEL",
     "fifa_rank": 15,
-    "group": "F",
+    "group": "G",
     "strengthScore": 92,
     "historicRecord": {
       "appearances": 17,
@@ -4382,7 +3387,7 @@
     "name": "克罗地亚",
     "code": "CRO",
     "fifa_rank": 12,
-    "group": "F",
+    "group": "L",
     "strengthScore": 93,
     "historicRecord": {
       "appearances": 18,
@@ -4581,7 +3586,7 @@
     "name": "瑞士",
     "code": "SUI",
     "fifa_rank": 16,
-    "group": "F",
+    "group": "B",
     "strengthScore": 91,
     "historicRecord": {
       "appearances": 17,
@@ -4775,211 +3780,12 @@
       }
     ]
   },
-  "POL": {
-    "id": "POL",
-    "name": "波兰",
-    "code": "POL",
-    "fifa_rank": 28,
-    "group": "G",
-    "strengthScore": 84,
-    "historicRecord": {
-      "appearances": 15,
-      "titles": 0,
-      "winRate": 56
-    },
-    "currentSquad": [
-      {
-        "id": "POL_s1",
-        "name": "波兰球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "POL_s2",
-        "name": "波兰球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "POL_s3",
-        "name": "波兰球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "POL_s4",
-        "name": "波兰球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "POL_s5",
-        "name": "波兰球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "POL_s6",
-        "name": "波兰球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "POL_s7",
-        "name": "波兰球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "POL_s8",
-        "name": "波兰球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "POL_s9",
-        "name": "波兰球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "POL_s10",
-        "name": "波兰球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "POL_s11",
-        "name": "波兰球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "POL_s12",
-        "name": "波兰球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "POL_s13",
-        "name": "波兰球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "POL_s14",
-        "name": "波兰球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "POL_s15",
-        "name": "波兰球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "POL_s16",
-        "name": "波兰球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "POL_s17",
-        "name": "波兰球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "POL_s18",
-        "name": "波兰球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "POL_s19",
-        "name": "波兰球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "POL_s20",
-        "name": "波兰球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "POL_s21",
-        "name": "波兰球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "POL_s22",
-        "name": "波兰球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "POL_s23",
-        "name": "波兰球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "AUT": {
     "id": "AUT",
     "name": "奥地利",
     "code": "AUT",
     "fifa_rank": 22,
-    "group": "G",
+    "group": "J",
     "strengthScore": 87,
     "historicRecord": {
       "appearances": 16,
@@ -5173,609 +3979,12 @@
       }
     ]
   },
-  "WAL": {
-    "id": "WAL",
-    "name": "威尔士",
-    "code": "WAL",
-    "fifa_rank": 26,
-    "group": "G",
-    "strengthScore": 85,
-    "historicRecord": {
-      "appearances": 15,
-      "titles": 0,
-      "winRate": 57
-    },
-    "currentSquad": [
-      {
-        "id": "WAL_s1",
-        "name": "威尔士球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "WAL_s2",
-        "name": "威尔士球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "WAL_s3",
-        "name": "威尔士球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "WAL_s4",
-        "name": "威尔士球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "WAL_s5",
-        "name": "威尔士球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "WAL_s6",
-        "name": "威尔士球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "WAL_s7",
-        "name": "威尔士球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "WAL_s8",
-        "name": "威尔士球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "WAL_s9",
-        "name": "威尔士球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "WAL_s10",
-        "name": "威尔士球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "WAL_s11",
-        "name": "威尔士球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "WAL_s12",
-        "name": "威尔士球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "WAL_s13",
-        "name": "威尔士球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "WAL_s14",
-        "name": "威尔士球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "WAL_s15",
-        "name": "威尔士球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "WAL_s16",
-        "name": "威尔士球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "WAL_s17",
-        "name": "威尔士球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "WAL_s18",
-        "name": "威尔士球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "WAL_s19",
-        "name": "威尔士球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "WAL_s20",
-        "name": "威尔士球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "WAL_s21",
-        "name": "威尔士球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "WAL_s22",
-        "name": "威尔士球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "WAL_s23",
-        "name": "威尔士球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
-  "ROU": {
-    "id": "ROU",
-    "name": "罗马尼亚",
-    "code": "ROU",
-    "fifa_rank": 48,
-    "group": "G",
-    "strengthScore": 72,
-    "historicRecord": {
-      "appearances": 11,
-      "titles": 0,
-      "winRate": 49
-    },
-    "currentSquad": [
-      {
-        "id": "ROU_s1",
-        "name": "罗马尼亚球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "ROU_s2",
-        "name": "罗马尼亚球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "ROU_s3",
-        "name": "罗马尼亚球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "ROU_s4",
-        "name": "罗马尼亚球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "ROU_s5",
-        "name": "罗马尼亚球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "ROU_s6",
-        "name": "罗马尼亚球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "ROU_s7",
-        "name": "罗马尼亚球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "ROU_s8",
-        "name": "罗马尼亚球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "ROU_s9",
-        "name": "罗马尼亚球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "ROU_s10",
-        "name": "罗马尼亚球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "ROU_s11",
-        "name": "罗马尼亚球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "ROU_s12",
-        "name": "罗马尼亚球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "ROU_s13",
-        "name": "罗马尼亚球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "ROU_s14",
-        "name": "罗马尼亚球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "ROU_s15",
-        "name": "罗马尼亚球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "ROU_s16",
-        "name": "罗马尼亚球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "ROU_s17",
-        "name": "罗马尼亚球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "ROU_s18",
-        "name": "罗马尼亚球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "ROU_s19",
-        "name": "罗马尼亚球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "ROU_s20",
-        "name": "罗马尼亚球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "ROU_s21",
-        "name": "罗马尼亚球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "ROU_s22",
-        "name": "罗马尼亚球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "ROU_s23",
-        "name": "罗马尼亚球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
-  "HUN": {
-    "id": "HUN",
-    "name": "匈牙利",
-    "code": "HUN",
-    "fifa_rank": 26,
-    "group": "H",
-    "strengthScore": 85,
-    "historicRecord": {
-      "appearances": 15,
-      "titles": 0,
-      "winRate": 57
-    },
-    "currentSquad": [
-      {
-        "id": "HUN_s1",
-        "name": "匈牙利球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "HUN_s2",
-        "name": "匈牙利球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "HUN_s3",
-        "name": "匈牙利球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "HUN_s4",
-        "name": "匈牙利球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "HUN_s5",
-        "name": "匈牙利球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "HUN_s6",
-        "name": "匈牙利球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "HUN_s7",
-        "name": "匈牙利球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "HUN_s8",
-        "name": "匈牙利球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "HUN_s9",
-        "name": "匈牙利球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "HUN_s10",
-        "name": "匈牙利球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "HUN_s11",
-        "name": "匈牙利球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "HUN_s12",
-        "name": "匈牙利球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "HUN_s13",
-        "name": "匈牙利球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "HUN_s14",
-        "name": "匈牙利球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "HUN_s15",
-        "name": "匈牙利球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "HUN_s16",
-        "name": "匈牙利球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "HUN_s17",
-        "name": "匈牙利球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "HUN_s18",
-        "name": "匈牙利球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "HUN_s19",
-        "name": "匈牙利球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "HUN_s20",
-        "name": "匈牙利球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "HUN_s21",
-        "name": "匈牙利球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "HUN_s22",
-        "name": "匈牙利球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "HUN_s23",
-        "name": "匈牙利球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "NOR": {
     "id": "NOR",
     "name": "挪威",
     "code": "NOR",
     "fifa_rank": 47,
-    "group": "H",
+    "group": "I",
     "strengthScore": 72,
     "historicRecord": {
       "appearances": 11,
@@ -5974,7 +4183,7 @@
     "name": "波黑",
     "code": "BIH",
     "fifa_rank": 72,
-    "group": "H",
+    "group": "B",
     "strengthScore": 57,
     "historicRecord": {
       "appearances": 6,
@@ -6168,211 +4377,12 @@
       }
     ]
   },
-  "SRB": {
-    "id": "SRB",
-    "name": "塞尔维亚",
-    "code": "SRB",
-    "fifa_rank": 25,
-    "group": "H",
-    "strengthScore": 86,
-    "historicRecord": {
-      "appearances": 15,
-      "titles": 0,
-      "winRate": 57
-    },
-    "currentSquad": [
-      {
-        "id": "SRB_s1",
-        "name": "塞尔维亚球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "SRB_s2",
-        "name": "塞尔维亚球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "SRB_s3",
-        "name": "塞尔维亚球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "SRB_s4",
-        "name": "塞尔维亚球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "SRB_s5",
-        "name": "塞尔维亚球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "SRB_s6",
-        "name": "塞尔维亚球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "SRB_s7",
-        "name": "塞尔维亚球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "SRB_s8",
-        "name": "塞尔维亚球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "SRB_s9",
-        "name": "塞尔维亚球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "SRB_s10",
-        "name": "塞尔维亚球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "SRB_s11",
-        "name": "塞尔维亚球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "SRB_s12",
-        "name": "塞尔维亚球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "SRB_s13",
-        "name": "塞尔维亚球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "SRB_s14",
-        "name": "塞尔维亚球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "SRB_s15",
-        "name": "塞尔维亚球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "SRB_s16",
-        "name": "塞尔维亚球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "SRB_s17",
-        "name": "塞尔维亚球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "SRB_s18",
-        "name": "塞尔维亚球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "SRB_s19",
-        "name": "塞尔维亚球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "SRB_s20",
-        "name": "塞尔维亚球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "SRB_s21",
-        "name": "塞尔维亚球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "SRB_s22",
-        "name": "塞尔维亚球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "SRB_s23",
-        "name": "塞尔维亚球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "MAR": {
     "id": "MAR",
     "name": "摩洛哥",
     "code": "MAR",
     "fifa_rank": 30,
-    "group": "I",
+    "group": "C",
     "strengthScore": 83,
     "historicRecord": {
       "appearances": 14,
@@ -6571,7 +4581,7 @@
     "name": "埃及",
     "code": "EGY",
     "fifa_rank": 36,
-    "group": "I",
+    "group": "G",
     "strengthScore": 79,
     "historicRecord": {
       "appearances": 13,
@@ -6964,205 +4974,6 @@
       }
     ]
   },
-  "NGA": {
-    "id": "NGA",
-    "name": "尼日利亚",
-    "code": "NGA",
-    "fifa_rank": 31,
-    "group": "I",
-    "strengthScore": 82,
-    "historicRecord": {
-      "appearances": 14,
-      "titles": 0,
-      "winRate": 55
-    },
-    "currentSquad": [
-      {
-        "id": "NGA_s1",
-        "name": "尼日利亚球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "NGA_s2",
-        "name": "尼日利亚球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "NGA_s3",
-        "name": "尼日利亚球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "NGA_s4",
-        "name": "尼日利亚球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "NGA_s5",
-        "name": "尼日利亚球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "NGA_s6",
-        "name": "尼日利亚球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "NGA_s7",
-        "name": "尼日利亚球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "NGA_s8",
-        "name": "尼日利亚球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "NGA_s9",
-        "name": "尼日利亚球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "NGA_s10",
-        "name": "尼日利亚球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "NGA_s11",
-        "name": "尼日利亚球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "NGA_s12",
-        "name": "尼日利亚球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "NGA_s13",
-        "name": "尼日利亚球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "NGA_s14",
-        "name": "尼日利亚球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "NGA_s15",
-        "name": "尼日利亚球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "NGA_s16",
-        "name": "尼日利亚球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "NGA_s17",
-        "name": "尼日利亚球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "NGA_s18",
-        "name": "尼日利亚球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "NGA_s19",
-        "name": "尼日利亚球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "NGA_s20",
-        "name": "尼日利亚球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "NGA_s21",
-        "name": "尼日利亚球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "NGA_s22",
-        "name": "尼日利亚球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "NGA_s23",
-        "name": "尼日利亚球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "ALG": {
     "id": "ALG",
     "name": "阿尔及利亚",
@@ -7362,211 +5173,12 @@
       }
     ]
   },
-  "CMR": {
-    "id": "CMR",
-    "name": "喀麦隆",
-    "code": "CMR",
-    "fifa_rank": 142,
-    "group": "J",
-    "strengthScore": 15,
-    "historicRecord": {
-      "appearances": 1,
-      "titles": 0,
-      "winRate": 20
-    },
-    "currentSquad": [
-      {
-        "id": "CMR_s1",
-        "name": "喀麦隆球员1",
-        "position": "GK",
-        "age": 24,
-        "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "CMR_s2",
-        "name": "喀麦隆球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "CMR_s3",
-        "name": "喀麦隆球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "CMR_s4",
-        "name": "喀麦隆球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "CMR_s5",
-        "name": "喀麦隆球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "CMR_s6",
-        "name": "喀麦隆球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "CMR_s7",
-        "name": "喀麦隆球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
-        "rating": 71
-      },
-      {
-        "id": "CMR_s8",
-        "name": "喀麦隆球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
-        "rating": 72
-      },
-      {
-        "id": "CMR_s9",
-        "name": "喀麦隆球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
-        "rating": 73
-      },
-      {
-        "id": "CMR_s10",
-        "name": "喀麦隆球员10",
-        "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
-        "rating": 74
-      },
-      {
-        "id": "CMR_s11",
-        "name": "喀麦隆球员11",
-        "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
-        "rating": 75
-      },
-      {
-        "id": "CMR_s12",
-        "name": "喀麦隆球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
-        "rating": 76
-      },
-      {
-        "id": "CMR_s13",
-        "name": "喀麦隆球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
-        "rating": 77
-      },
-      {
-        "id": "CMR_s14",
-        "name": "喀麦隆球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
-        "rating": 78
-      },
-      {
-        "id": "CMR_s15",
-        "name": "喀麦隆球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
-        "rating": 79
-      },
-      {
-        "id": "CMR_s16",
-        "name": "喀麦隆球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
-        "rating": 80
-      },
-      {
-        "id": "CMR_s17",
-        "name": "喀麦隆球员17",
-        "position": "MID",
-        "age": 30,
-        "club": "俱乐部17",
-        "rating": 81
-      },
-      {
-        "id": "CMR_s18",
-        "name": "喀麦隆球员18",
-        "position": "MID",
-        "age": 31,
-        "club": "俱乐部18",
-        "rating": 82
-      },
-      {
-        "id": "CMR_s19",
-        "name": "喀麦隆球员19",
-        "position": "FWD",
-        "age": 32,
-        "club": "俱乐部19",
-        "rating": 83
-      },
-      {
-        "id": "CMR_s20",
-        "name": "喀麦隆球员20",
-        "position": "FWD",
-        "age": 33,
-        "club": "俱乐部20",
-        "rating": 84
-      },
-      {
-        "id": "CMR_s21",
-        "name": "喀麦隆球员21",
-        "position": "FWD",
-        "age": 24,
-        "club": "俱乐部21",
-        "rating": 85
-      },
-      {
-        "id": "CMR_s22",
-        "name": "喀麦隆球员22",
-        "position": "FWD",
-        "age": 25,
-        "club": "俱乐部22",
-        "rating": 86
-      },
-      {
-        "id": "CMR_s23",
-        "name": "喀麦隆球员23",
-        "position": "FWD",
-        "age": 26,
-        "club": "俱乐部23",
-        "rating": 87
-      }
-    ]
-  },
   "GHA": {
     "id": "GHA",
     "name": "加纳",
     "code": "GHA",
     "fifa_rank": 90,
-    "group": "J",
+    "group": "L",
     "strengthScore": 47,
     "historicRecord": {
       "appearances": 2,
@@ -7765,7 +5377,7 @@
     "name": "南非",
     "code": "RSA",
     "fifa_rank": 105,
-    "group": "J",
+    "group": "A",
     "strengthScore": 38,
     "historicRecord": {
       "appearances": 1,
@@ -7964,7 +5576,7 @@
     "name": "日本",
     "code": "JPN",
     "fifa_rank": 18,
-    "group": "K",
+    "group": "F",
     "strengthScore": 90,
     "historicRecord": {
       "appearances": 17,
@@ -8163,7 +5775,7 @@
     "name": "韩国",
     "code": "KOR",
     "fifa_rank": 24,
-    "group": "K",
+    "group": "A",
     "strengthScore": 86,
     "historicRecord": {
       "appearances": 16,
@@ -8362,7 +5974,7 @@
     "name": "伊朗",
     "code": "IRN",
     "fifa_rank": 21,
-    "group": "K",
+    "group": "G",
     "strengthScore": 88,
     "historicRecord": {
       "appearances": 16,
@@ -8561,7 +6173,7 @@
     "name": "沙特阿拉伯",
     "code": "KSA",
     "fifa_rank": 56,
-    "group": "K",
+    "group": "H",
     "strengthScore": 67,
     "historicRecord": {
       "appearances": 9,
@@ -8760,7 +6372,7 @@
     "name": "澳大利亚",
     "code": "AUS",
     "fifa_rank": 23,
-    "group": "L",
+    "group": "D",
     "strengthScore": 87,
     "historicRecord": {
       "appearances": 16,
@@ -8959,7 +6571,7 @@
     "name": "卡塔尔",
     "code": "QAT",
     "fifa_rank": 58,
-    "group": "L",
+    "group": "B",
     "strengthScore": 66,
     "historicRecord": {
       "appearances": 9,
@@ -9153,401 +6765,2789 @@
       }
     ]
   },
-  "UAE": {
-    "id": "UAE",
-    "name": "阿联酋",
-    "code": "UAE",
-    "fifa_rank": 69,
-    "group": "L",
-    "strengthScore": 59,
+  "CZE": {
+    "id": "CZE",
+    "name": "捷克",
+    "code": "CZE",
+    "fifa_rank": 31,
+    "group": "A",
+    "strengthScore": 76,
     "historicRecord": {
-      "appearances": 7,
+      "appearances": 13,
       "titles": 0,
-      "winRate": 42
+      "winRate": 57
     },
     "currentSquad": [
       {
-        "id": "UAE_s1",
-        "name": "阿联酋球员1",
+        "id": "CZE_s1",
+        "name": "CZE球员1",
         "position": "GK",
         "age": 24,
         "club": "俱乐部1",
-        "rating": 65
-      },
-      {
-        "id": "UAE_s2",
-        "name": "阿联酋球员2",
-        "position": "GK",
-        "age": 25,
-        "club": "俱乐部2",
-        "rating": 66
-      },
-      {
-        "id": "UAE_s3",
-        "name": "阿联酋球员3",
-        "position": "GK",
-        "age": 26,
-        "club": "俱乐部3",
-        "rating": 67
-      },
-      {
-        "id": "UAE_s4",
-        "name": "阿联酋球员4",
-        "position": "DEF",
-        "age": 27,
-        "club": "俱乐部4",
-        "rating": 68
-      },
-      {
-        "id": "UAE_s5",
-        "name": "阿联酋球员5",
-        "position": "DEF",
-        "age": 28,
-        "club": "俱乐部5",
-        "rating": 69
-      },
-      {
-        "id": "UAE_s6",
-        "name": "阿联酋球员6",
-        "position": "DEF",
-        "age": 29,
-        "club": "俱乐部6",
-        "rating": 70
-      },
-      {
-        "id": "UAE_s7",
-        "name": "阿联酋球员7",
-        "position": "DEF",
-        "age": 30,
-        "club": "俱乐部7",
         "rating": 71
       },
       {
-        "id": "UAE_s8",
-        "name": "阿联酋球员8",
-        "position": "DEF",
-        "age": 31,
-        "club": "俱乐部8",
+        "id": "CZE_s2",
+        "name": "CZE球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
         "rating": 72
       },
       {
-        "id": "UAE_s9",
-        "name": "阿联酋球员9",
-        "position": "DEF",
-        "age": 32,
-        "club": "俱乐部9",
+        "id": "CZE_s3",
+        "name": "CZE球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
         "rating": 73
       },
       {
-        "id": "UAE_s10",
-        "name": "阿联酋球员10",
+        "id": "CZE_s4",
+        "name": "CZE球员4",
         "position": "DEF",
-        "age": 33,
-        "club": "俱乐部10",
+        "age": 27,
+        "club": "俱乐部4",
         "rating": 74
       },
       {
-        "id": "UAE_s11",
-        "name": "阿联酋球员11",
+        "id": "CZE_s5",
+        "name": "CZE球员5",
         "position": "DEF",
-        "age": 24,
-        "club": "俱乐部11",
+        "age": 28,
+        "club": "俱乐部5",
         "rating": 75
       },
       {
-        "id": "UAE_s12",
-        "name": "阿联酋球员12",
-        "position": "MID",
-        "age": 25,
-        "club": "俱乐部12",
+        "id": "CZE_s6",
+        "name": "CZE球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
         "rating": 76
       },
       {
-        "id": "UAE_s13",
-        "name": "阿联酋球员13",
-        "position": "MID",
-        "age": 26,
-        "club": "俱乐部13",
+        "id": "CZE_s7",
+        "name": "CZE球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
         "rating": 77
       },
       {
-        "id": "UAE_s14",
-        "name": "阿联酋球员14",
-        "position": "MID",
-        "age": 27,
-        "club": "俱乐部14",
+        "id": "CZE_s8",
+        "name": "CZE球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
         "rating": 78
       },
       {
-        "id": "UAE_s15",
-        "name": "阿联酋球员15",
-        "position": "MID",
-        "age": 28,
-        "club": "俱乐部15",
+        "id": "CZE_s9",
+        "name": "CZE球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
         "rating": 79
       },
       {
-        "id": "UAE_s16",
-        "name": "阿联酋球员16",
-        "position": "MID",
-        "age": 29,
-        "club": "俱乐部16",
+        "id": "CZE_s10",
+        "name": "CZE球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
         "rating": 80
       },
       {
-        "id": "UAE_s17",
-        "name": "阿联酋球员17",
+        "id": "CZE_s11",
+        "name": "CZE球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 71
+      },
+      {
+        "id": "CZE_s12",
+        "name": "CZE球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 72
+      },
+      {
+        "id": "CZE_s13",
+        "name": "CZE球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 73
+      },
+      {
+        "id": "CZE_s14",
+        "name": "CZE球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 74
+      },
+      {
+        "id": "CZE_s15",
+        "name": "CZE球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 75
+      },
+      {
+        "id": "CZE_s16",
+        "name": "CZE球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 76
+      },
+      {
+        "id": "CZE_s17",
+        "name": "CZE球员17",
         "position": "MID",
         "age": 30,
         "club": "俱乐部17",
-        "rating": 81
+        "rating": 77
       },
       {
-        "id": "UAE_s18",
-        "name": "阿联酋球员18",
+        "id": "CZE_s18",
+        "name": "CZE球员18",
         "position": "MID",
         "age": 31,
         "club": "俱乐部18",
-        "rating": 82
+        "rating": 78
       },
       {
-        "id": "UAE_s19",
-        "name": "阿联酋球员19",
+        "id": "CZE_s19",
+        "name": "CZE球员19",
         "position": "FWD",
         "age": 32,
         "club": "俱乐部19",
-        "rating": 83
+        "rating": 79
       },
       {
-        "id": "UAE_s20",
-        "name": "阿联酋球员20",
+        "id": "CZE_s20",
+        "name": "CZE球员20",
         "position": "FWD",
         "age": 33,
         "club": "俱乐部20",
-        "rating": 84
+        "rating": 80
       },
       {
-        "id": "UAE_s21",
-        "name": "阿联酋球员21",
+        "id": "CZE_s21",
+        "name": "CZE球员21",
         "position": "FWD",
         "age": 24,
         "club": "俱乐部21",
-        "rating": 85
+        "rating": 71
       },
       {
-        "id": "UAE_s22",
-        "name": "阿联酋球员22",
+        "id": "CZE_s22",
+        "name": "CZE球员22",
         "position": "FWD",
         "age": 25,
         "club": "俱乐部22",
-        "rating": 86
+        "rating": 72
       },
       {
-        "id": "UAE_s23",
-        "name": "阿联酋球员23",
+        "id": "CZE_s23",
+        "name": "CZE球员23",
         "position": "FWD",
         "age": 26,
         "club": "俱乐部23",
-        "rating": 87
+        "rating": 73
       }
     ]
   },
-  "INA": {
-    "id": "INA",
-    "name": "印尼",
-    "code": "INA",
-    "fifa_rank": 127,
-    "group": "L",
-    "strengthScore": 24,
+  "HAI": {
+    "id": "HAI",
+    "name": "海地",
+    "code": "HAI",
+    "fifa_rank": 93,
+    "group": "C",
+    "strengthScore": 44,
     "historicRecord": {
-      "appearances": 1,
+      "appearances": 2,
       "titles": 0,
-      "winRate": 23
+      "winRate": 58
     },
     "currentSquad": [
       {
-        "id": "INA_s1",
-        "name": "印尼球员1",
+        "id": "HAI_s1",
+        "name": "HAI球员1",
         "position": "GK",
         "age": 24,
         "club": "俱乐部1",
-        "rating": 65
+        "rating": 39
       },
       {
-        "id": "INA_s2",
-        "name": "印尼球员2",
+        "id": "HAI_s2",
+        "name": "HAI球员2",
         "position": "GK",
         "age": 25,
         "club": "俱乐部2",
-        "rating": 66
+        "rating": 40
       },
       {
-        "id": "INA_s3",
-        "name": "印尼球员3",
+        "id": "HAI_s3",
+        "name": "HAI球员3",
         "position": "GK",
         "age": 26,
         "club": "俱乐部3",
-        "rating": 67
+        "rating": 41
       },
       {
-        "id": "INA_s4",
-        "name": "印尼球员4",
+        "id": "HAI_s4",
+        "name": "HAI球员4",
         "position": "DEF",
         "age": 27,
         "club": "俱乐部4",
-        "rating": 68
+        "rating": 42
       },
       {
-        "id": "INA_s5",
-        "name": "印尼球员5",
+        "id": "HAI_s5",
+        "name": "HAI球员5",
         "position": "DEF",
         "age": 28,
         "club": "俱乐部5",
-        "rating": 69
+        "rating": 43
       },
       {
-        "id": "INA_s6",
-        "name": "印尼球员6",
+        "id": "HAI_s6",
+        "name": "HAI球员6",
         "position": "DEF",
         "age": 29,
         "club": "俱乐部6",
-        "rating": 70
+        "rating": 44
       },
       {
-        "id": "INA_s7",
-        "name": "印尼球员7",
+        "id": "HAI_s7",
+        "name": "HAI球员7",
         "position": "DEF",
         "age": 30,
         "club": "俱乐部7",
-        "rating": 71
+        "rating": 45
       },
       {
-        "id": "INA_s8",
-        "name": "印尼球员8",
+        "id": "HAI_s8",
+        "name": "HAI球员8",
         "position": "DEF",
         "age": 31,
         "club": "俱乐部8",
-        "rating": 72
+        "rating": 46
       },
       {
-        "id": "INA_s9",
-        "name": "印尼球员9",
+        "id": "HAI_s9",
+        "name": "HAI球员9",
         "position": "DEF",
         "age": 32,
         "club": "俱乐部9",
-        "rating": 73
+        "rating": 47
       },
       {
-        "id": "INA_s10",
-        "name": "印尼球员10",
+        "id": "HAI_s10",
+        "name": "HAI球员10",
         "position": "DEF",
         "age": 33,
         "club": "俱乐部10",
-        "rating": 74
+        "rating": 48
       },
       {
-        "id": "INA_s11",
-        "name": "印尼球员11",
+        "id": "HAI_s11",
+        "name": "HAI球员11",
         "position": "DEF",
         "age": 24,
         "club": "俱乐部11",
-        "rating": 75
+        "rating": 39
       },
       {
-        "id": "INA_s12",
-        "name": "印尼球员12",
+        "id": "HAI_s12",
+        "name": "HAI球员12",
         "position": "MID",
         "age": 25,
         "club": "俱乐部12",
-        "rating": 76
+        "rating": 40
       },
       {
-        "id": "INA_s13",
-        "name": "印尼球员13",
+        "id": "HAI_s13",
+        "name": "HAI球员13",
         "position": "MID",
         "age": 26,
         "club": "俱乐部13",
-        "rating": 77
+        "rating": 41
       },
       {
-        "id": "INA_s14",
-        "name": "印尼球员14",
+        "id": "HAI_s14",
+        "name": "HAI球员14",
         "position": "MID",
         "age": 27,
         "club": "俱乐部14",
-        "rating": 78
+        "rating": 42
       },
       {
-        "id": "INA_s15",
-        "name": "印尼球员15",
+        "id": "HAI_s15",
+        "name": "HAI球员15",
         "position": "MID",
         "age": 28,
         "club": "俱乐部15",
-        "rating": 79
+        "rating": 43
       },
       {
-        "id": "INA_s16",
-        "name": "印尼球员16",
+        "id": "HAI_s16",
+        "name": "HAI球员16",
         "position": "MID",
         "age": 29,
         "club": "俱乐部16",
-        "rating": 80
+        "rating": 44
       },
       {
-        "id": "INA_s17",
-        "name": "印尼球员17",
+        "id": "HAI_s17",
+        "name": "HAI球员17",
         "position": "MID",
         "age": 30,
         "club": "俱乐部17",
-        "rating": 81
+        "rating": 45
       },
       {
-        "id": "INA_s18",
-        "name": "印尼球员18",
+        "id": "HAI_s18",
+        "name": "HAI球员18",
         "position": "MID",
         "age": 31,
         "club": "俱乐部18",
-        "rating": 82
+        "rating": 46
       },
       {
-        "id": "INA_s19",
-        "name": "印尼球员19",
+        "id": "HAI_s19",
+        "name": "HAI球员19",
         "position": "FWD",
         "age": 32,
         "club": "俱乐部19",
-        "rating": 83
+        "rating": 47
       },
       {
-        "id": "INA_s20",
-        "name": "印尼球员20",
+        "id": "HAI_s20",
+        "name": "HAI球员20",
         "position": "FWD",
         "age": 33,
         "club": "俱乐部20",
-        "rating": 84
+        "rating": 48
       },
       {
-        "id": "INA_s21",
-        "name": "印尼球员21",
+        "id": "HAI_s21",
+        "name": "HAI球员21",
         "position": "FWD",
         "age": 24,
         "club": "俱乐部21",
-        "rating": 85
+        "rating": 39
       },
       {
-        "id": "INA_s22",
-        "name": "印尼球员22",
+        "id": "HAI_s22",
+        "name": "HAI球员22",
         "position": "FWD",
         "age": 25,
         "club": "俱乐部22",
-        "rating": 86
+        "rating": 40
       },
       {
-        "id": "INA_s23",
-        "name": "印尼球员23",
+        "id": "HAI_s23",
+        "name": "HAI球员23",
         "position": "FWD",
         "age": 26,
         "club": "俱乐部23",
-        "rating": 87
+        "rating": 41
+      }
+    ]
+  },
+  "SCO": {
+    "id": "SCO",
+    "name": "苏格兰",
+    "code": "SCO",
+    "fifa_rank": 52,
+    "group": "C",
+    "strengthScore": 74,
+    "historicRecord": {
+      "appearances": 13,
+      "titles": 0,
+      "winRate": 38
+    },
+    "currentSquad": [
+      {
+        "id": "SCO_s1",
+        "name": "SCO球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 69
+      },
+      {
+        "id": "SCO_s2",
+        "name": "SCO球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 70
+      },
+      {
+        "id": "SCO_s3",
+        "name": "SCO球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 71
+      },
+      {
+        "id": "SCO_s4",
+        "name": "SCO球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 72
+      },
+      {
+        "id": "SCO_s5",
+        "name": "SCO球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 73
+      },
+      {
+        "id": "SCO_s6",
+        "name": "SCO球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 74
+      },
+      {
+        "id": "SCO_s7",
+        "name": "SCO球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 75
+      },
+      {
+        "id": "SCO_s8",
+        "name": "SCO球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 76
+      },
+      {
+        "id": "SCO_s9",
+        "name": "SCO球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 77
+      },
+      {
+        "id": "SCO_s10",
+        "name": "SCO球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 78
+      },
+      {
+        "id": "SCO_s11",
+        "name": "SCO球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 69
+      },
+      {
+        "id": "SCO_s12",
+        "name": "SCO球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 70
+      },
+      {
+        "id": "SCO_s13",
+        "name": "SCO球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 71
+      },
+      {
+        "id": "SCO_s14",
+        "name": "SCO球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 72
+      },
+      {
+        "id": "SCO_s15",
+        "name": "SCO球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 73
+      },
+      {
+        "id": "SCO_s16",
+        "name": "SCO球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 74
+      },
+      {
+        "id": "SCO_s17",
+        "name": "SCO球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 75
+      },
+      {
+        "id": "SCO_s18",
+        "name": "SCO球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 76
+      },
+      {
+        "id": "SCO_s19",
+        "name": "SCO球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 77
+      },
+      {
+        "id": "SCO_s20",
+        "name": "SCO球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 78
+      },
+      {
+        "id": "SCO_s21",
+        "name": "SCO球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 69
+      },
+      {
+        "id": "SCO_s22",
+        "name": "SCO球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 70
+      },
+      {
+        "id": "SCO_s23",
+        "name": "SCO球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 71
+      }
+    ]
+  },
+  "TUR": {
+    "id": "TUR",
+    "name": "土耳其",
+    "code": "TUR",
+    "fifa_rank": 28,
+    "group": "D",
+    "strengthScore": 79,
+    "historicRecord": {
+      "appearances": 13,
+      "titles": 0,
+      "winRate": 43
+    },
+    "currentSquad": [
+      {
+        "id": "TUR_s1",
+        "name": "TUR球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 74
+      },
+      {
+        "id": "TUR_s2",
+        "name": "TUR球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 75
+      },
+      {
+        "id": "TUR_s3",
+        "name": "TUR球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 76
+      },
+      {
+        "id": "TUR_s4",
+        "name": "TUR球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 77
+      },
+      {
+        "id": "TUR_s5",
+        "name": "TUR球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 78
+      },
+      {
+        "id": "TUR_s6",
+        "name": "TUR球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 79
+      },
+      {
+        "id": "TUR_s7",
+        "name": "TUR球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 80
+      },
+      {
+        "id": "TUR_s8",
+        "name": "TUR球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 81
+      },
+      {
+        "id": "TUR_s9",
+        "name": "TUR球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 82
+      },
+      {
+        "id": "TUR_s10",
+        "name": "TUR球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 83
+      },
+      {
+        "id": "TUR_s11",
+        "name": "TUR球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 74
+      },
+      {
+        "id": "TUR_s12",
+        "name": "TUR球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 75
+      },
+      {
+        "id": "TUR_s13",
+        "name": "TUR球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 76
+      },
+      {
+        "id": "TUR_s14",
+        "name": "TUR球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 77
+      },
+      {
+        "id": "TUR_s15",
+        "name": "TUR球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 78
+      },
+      {
+        "id": "TUR_s16",
+        "name": "TUR球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 79
+      },
+      {
+        "id": "TUR_s17",
+        "name": "TUR球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 80
+      },
+      {
+        "id": "TUR_s18",
+        "name": "TUR球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 81
+      },
+      {
+        "id": "TUR_s19",
+        "name": "TUR球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 82
+      },
+      {
+        "id": "TUR_s20",
+        "name": "TUR球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 83
+      },
+      {
+        "id": "TUR_s21",
+        "name": "TUR球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 74
+      },
+      {
+        "id": "TUR_s22",
+        "name": "TUR球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 75
+      },
+      {
+        "id": "TUR_s23",
+        "name": "TUR球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 76
+      }
+    ]
+  },
+  "CUR": {
+    "id": "CUR",
+    "name": "库拉索",
+    "code": "CUR",
+    "fifa_rank": 78,
+    "group": "E",
+    "strengthScore": 55,
+    "historicRecord": {
+      "appearances": 5,
+      "titles": 0,
+      "winRate": 49
+    },
+    "currentSquad": [
+      {
+        "id": "CUR_s1",
+        "name": "CUR球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 50
+      },
+      {
+        "id": "CUR_s2",
+        "name": "CUR球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 51
+      },
+      {
+        "id": "CUR_s3",
+        "name": "CUR球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 52
+      },
+      {
+        "id": "CUR_s4",
+        "name": "CUR球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 53
+      },
+      {
+        "id": "CUR_s5",
+        "name": "CUR球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 54
+      },
+      {
+        "id": "CUR_s6",
+        "name": "CUR球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 55
+      },
+      {
+        "id": "CUR_s7",
+        "name": "CUR球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 56
+      },
+      {
+        "id": "CUR_s8",
+        "name": "CUR球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 57
+      },
+      {
+        "id": "CUR_s9",
+        "name": "CUR球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 58
+      },
+      {
+        "id": "CUR_s10",
+        "name": "CUR球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 59
+      },
+      {
+        "id": "CUR_s11",
+        "name": "CUR球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 50
+      },
+      {
+        "id": "CUR_s12",
+        "name": "CUR球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 51
+      },
+      {
+        "id": "CUR_s13",
+        "name": "CUR球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 52
+      },
+      {
+        "id": "CUR_s14",
+        "name": "CUR球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 53
+      },
+      {
+        "id": "CUR_s15",
+        "name": "CUR球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 54
+      },
+      {
+        "id": "CUR_s16",
+        "name": "CUR球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 55
+      },
+      {
+        "id": "CUR_s17",
+        "name": "CUR球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 56
+      },
+      {
+        "id": "CUR_s18",
+        "name": "CUR球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 57
+      },
+      {
+        "id": "CUR_s19",
+        "name": "CUR球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 58
+      },
+      {
+        "id": "CUR_s20",
+        "name": "CUR球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 59
+      },
+      {
+        "id": "CUR_s21",
+        "name": "CUR球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 50
+      },
+      {
+        "id": "CUR_s22",
+        "name": "CUR球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 51
+      },
+      {
+        "id": "CUR_s23",
+        "name": "CUR球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 52
+      }
+    ]
+  },
+  "CIV": {
+    "id": "CIV",
+    "name": "科特迪瓦",
+    "code": "CIV",
+    "fifa_rank": 56,
+    "group": "E",
+    "strengthScore": 72,
+    "historicRecord": {
+      "appearances": 2,
+      "titles": 0,
+      "winRate": 54
+    },
+    "currentSquad": [
+      {
+        "id": "CIV_s1",
+        "name": "CIV球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 67
+      },
+      {
+        "id": "CIV_s2",
+        "name": "CIV球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 68
+      },
+      {
+        "id": "CIV_s3",
+        "name": "CIV球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 69
+      },
+      {
+        "id": "CIV_s4",
+        "name": "CIV球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 70
+      },
+      {
+        "id": "CIV_s5",
+        "name": "CIV球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 71
+      },
+      {
+        "id": "CIV_s6",
+        "name": "CIV球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 72
+      },
+      {
+        "id": "CIV_s7",
+        "name": "CIV球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 73
+      },
+      {
+        "id": "CIV_s8",
+        "name": "CIV球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 74
+      },
+      {
+        "id": "CIV_s9",
+        "name": "CIV球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 75
+      },
+      {
+        "id": "CIV_s10",
+        "name": "CIV球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 76
+      },
+      {
+        "id": "CIV_s11",
+        "name": "CIV球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 67
+      },
+      {
+        "id": "CIV_s12",
+        "name": "CIV球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 68
+      },
+      {
+        "id": "CIV_s13",
+        "name": "CIV球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 69
+      },
+      {
+        "id": "CIV_s14",
+        "name": "CIV球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 70
+      },
+      {
+        "id": "CIV_s15",
+        "name": "CIV球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 71
+      },
+      {
+        "id": "CIV_s16",
+        "name": "CIV球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 72
+      },
+      {
+        "id": "CIV_s17",
+        "name": "CIV球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 73
+      },
+      {
+        "id": "CIV_s18",
+        "name": "CIV球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 74
+      },
+      {
+        "id": "CIV_s19",
+        "name": "CIV球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 75
+      },
+      {
+        "id": "CIV_s20",
+        "name": "CIV球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 76
+      },
+      {
+        "id": "CIV_s21",
+        "name": "CIV球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 67
+      },
+      {
+        "id": "CIV_s22",
+        "name": "CIV球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 68
+      },
+      {
+        "id": "CIV_s23",
+        "name": "CIV球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 69
+      }
+    ]
+  },
+  "SWE": {
+    "id": "SWE",
+    "name": "瑞典",
+    "code": "SWE",
+    "fifa_rank": 21,
+    "group": "F",
+    "strengthScore": 82,
+    "historicRecord": {
+      "appearances": 9,
+      "titles": 0,
+      "winRate": 48
+    },
+    "currentSquad": [
+      {
+        "id": "SWE_s1",
+        "name": "SWE球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 77
+      },
+      {
+        "id": "SWE_s2",
+        "name": "SWE球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 78
+      },
+      {
+        "id": "SWE_s3",
+        "name": "SWE球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 79
+      },
+      {
+        "id": "SWE_s4",
+        "name": "SWE球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 80
+      },
+      {
+        "id": "SWE_s5",
+        "name": "SWE球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 81
+      },
+      {
+        "id": "SWE_s6",
+        "name": "SWE球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 82
+      },
+      {
+        "id": "SWE_s7",
+        "name": "SWE球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 83
+      },
+      {
+        "id": "SWE_s8",
+        "name": "SWE球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 84
+      },
+      {
+        "id": "SWE_s9",
+        "name": "SWE球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 85
+      },
+      {
+        "id": "SWE_s10",
+        "name": "SWE球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 86
+      },
+      {
+        "id": "SWE_s11",
+        "name": "SWE球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 77
+      },
+      {
+        "id": "SWE_s12",
+        "name": "SWE球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 78
+      },
+      {
+        "id": "SWE_s13",
+        "name": "SWE球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 79
+      },
+      {
+        "id": "SWE_s14",
+        "name": "SWE球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 80
+      },
+      {
+        "id": "SWE_s15",
+        "name": "SWE球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 81
+      },
+      {
+        "id": "SWE_s16",
+        "name": "SWE球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 82
+      },
+      {
+        "id": "SWE_s17",
+        "name": "SWE球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 83
+      },
+      {
+        "id": "SWE_s18",
+        "name": "SWE球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 84
+      },
+      {
+        "id": "SWE_s19",
+        "name": "SWE球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 85
+      },
+      {
+        "id": "SWE_s20",
+        "name": "SWE球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 86
+      },
+      {
+        "id": "SWE_s21",
+        "name": "SWE球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 77
+      },
+      {
+        "id": "SWE_s22",
+        "name": "SWE球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 78
+      },
+      {
+        "id": "SWE_s23",
+        "name": "SWE球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 79
+      }
+    ]
+  },
+  "TUN": {
+    "id": "TUN",
+    "name": "突尼斯",
+    "code": "TUN",
+    "fifa_rank": 41,
+    "group": "F",
+    "strengthScore": 68,
+    "historicRecord": {
+      "appearances": 5,
+      "titles": 0,
+      "winRate": 53
+    },
+    "currentSquad": [
+      {
+        "id": "TUN_s1",
+        "name": "TUN球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 63
+      },
+      {
+        "id": "TUN_s2",
+        "name": "TUN球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 64
+      },
+      {
+        "id": "TUN_s3",
+        "name": "TUN球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 65
+      },
+      {
+        "id": "TUN_s4",
+        "name": "TUN球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 66
+      },
+      {
+        "id": "TUN_s5",
+        "name": "TUN球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 67
+      },
+      {
+        "id": "TUN_s6",
+        "name": "TUN球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 68
+      },
+      {
+        "id": "TUN_s7",
+        "name": "TUN球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 69
+      },
+      {
+        "id": "TUN_s8",
+        "name": "TUN球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 70
+      },
+      {
+        "id": "TUN_s9",
+        "name": "TUN球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 71
+      },
+      {
+        "id": "TUN_s10",
+        "name": "TUN球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 72
+      },
+      {
+        "id": "TUN_s11",
+        "name": "TUN球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 63
+      },
+      {
+        "id": "TUN_s12",
+        "name": "TUN球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 64
+      },
+      {
+        "id": "TUN_s13",
+        "name": "TUN球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 65
+      },
+      {
+        "id": "TUN_s14",
+        "name": "TUN球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 66
+      },
+      {
+        "id": "TUN_s15",
+        "name": "TUN球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 67
+      },
+      {
+        "id": "TUN_s16",
+        "name": "TUN球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 68
+      },
+      {
+        "id": "TUN_s17",
+        "name": "TUN球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 69
+      },
+      {
+        "id": "TUN_s18",
+        "name": "TUN球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 70
+      },
+      {
+        "id": "TUN_s19",
+        "name": "TUN球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 71
+      },
+      {
+        "id": "TUN_s20",
+        "name": "TUN球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 72
+      },
+      {
+        "id": "TUN_s21",
+        "name": "TUN球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 63
+      },
+      {
+        "id": "TUN_s22",
+        "name": "TUN球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 64
+      },
+      {
+        "id": "TUN_s23",
+        "name": "TUN球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 65
+      }
+    ]
+  },
+  "CPV": {
+    "id": "CPV",
+    "name": "佛得角",
+    "code": "CPV",
+    "fifa_rank": 88,
+    "group": "H",
+    "strengthScore": 52,
+    "historicRecord": {
+      "appearances": 9,
+      "titles": 0,
+      "winRate": 48
+    },
+    "currentSquad": [
+      {
+        "id": "CPV_s1",
+        "name": "CPV球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 47
+      },
+      {
+        "id": "CPV_s2",
+        "name": "CPV球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 48
+      },
+      {
+        "id": "CPV_s3",
+        "name": "CPV球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 49
+      },
+      {
+        "id": "CPV_s4",
+        "name": "CPV球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 50
+      },
+      {
+        "id": "CPV_s5",
+        "name": "CPV球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 51
+      },
+      {
+        "id": "CPV_s6",
+        "name": "CPV球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 52
+      },
+      {
+        "id": "CPV_s7",
+        "name": "CPV球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 53
+      },
+      {
+        "id": "CPV_s8",
+        "name": "CPV球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 54
+      },
+      {
+        "id": "CPV_s9",
+        "name": "CPV球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 55
+      },
+      {
+        "id": "CPV_s10",
+        "name": "CPV球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 56
+      },
+      {
+        "id": "CPV_s11",
+        "name": "CPV球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 47
+      },
+      {
+        "id": "CPV_s12",
+        "name": "CPV球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 48
+      },
+      {
+        "id": "CPV_s13",
+        "name": "CPV球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 49
+      },
+      {
+        "id": "CPV_s14",
+        "name": "CPV球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 50
+      },
+      {
+        "id": "CPV_s15",
+        "name": "CPV球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 51
+      },
+      {
+        "id": "CPV_s16",
+        "name": "CPV球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 52
+      },
+      {
+        "id": "CPV_s17",
+        "name": "CPV球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 53
+      },
+      {
+        "id": "CPV_s18",
+        "name": "CPV球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 54
+      },
+      {
+        "id": "CPV_s19",
+        "name": "CPV球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 55
+      },
+      {
+        "id": "CPV_s20",
+        "name": "CPV球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 56
+      },
+      {
+        "id": "CPV_s21",
+        "name": "CPV球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 47
+      },
+      {
+        "id": "CPV_s22",
+        "name": "CPV球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 48
+      },
+      {
+        "id": "CPV_s23",
+        "name": "CPV球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 49
+      }
+    ]
+  },
+  "IRQ": {
+    "id": "IRQ",
+    "name": "伊拉克",
+    "code": "IRQ",
+    "fifa_rank": 68,
+    "group": "I",
+    "strengthScore": 58,
+    "historicRecord": {
+      "appearances": 9,
+      "titles": 0,
+      "winRate": 46
+    },
+    "currentSquad": [
+      {
+        "id": "IRQ_s1",
+        "name": "IRQ球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 53
+      },
+      {
+        "id": "IRQ_s2",
+        "name": "IRQ球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 54
+      },
+      {
+        "id": "IRQ_s3",
+        "name": "IRQ球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 55
+      },
+      {
+        "id": "IRQ_s4",
+        "name": "IRQ球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 56
+      },
+      {
+        "id": "IRQ_s5",
+        "name": "IRQ球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 57
+      },
+      {
+        "id": "IRQ_s6",
+        "name": "IRQ球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 58
+      },
+      {
+        "id": "IRQ_s7",
+        "name": "IRQ球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 59
+      },
+      {
+        "id": "IRQ_s8",
+        "name": "IRQ球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 60
+      },
+      {
+        "id": "IRQ_s9",
+        "name": "IRQ球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 61
+      },
+      {
+        "id": "IRQ_s10",
+        "name": "IRQ球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 62
+      },
+      {
+        "id": "IRQ_s11",
+        "name": "IRQ球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 53
+      },
+      {
+        "id": "IRQ_s12",
+        "name": "IRQ球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 54
+      },
+      {
+        "id": "IRQ_s13",
+        "name": "IRQ球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 55
+      },
+      {
+        "id": "IRQ_s14",
+        "name": "IRQ球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 56
+      },
+      {
+        "id": "IRQ_s15",
+        "name": "IRQ球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 57
+      },
+      {
+        "id": "IRQ_s16",
+        "name": "IRQ球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 58
+      },
+      {
+        "id": "IRQ_s17",
+        "name": "IRQ球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 59
+      },
+      {
+        "id": "IRQ_s18",
+        "name": "IRQ球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 60
+      },
+      {
+        "id": "IRQ_s19",
+        "name": "IRQ球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 61
+      },
+      {
+        "id": "IRQ_s20",
+        "name": "IRQ球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 62
+      },
+      {
+        "id": "IRQ_s21",
+        "name": "IRQ球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 53
+      },
+      {
+        "id": "IRQ_s22",
+        "name": "IRQ球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 54
+      },
+      {
+        "id": "IRQ_s23",
+        "name": "IRQ球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 55
+      }
+    ]
+  },
+  "JOR": {
+    "id": "JOR",
+    "name": "约旦",
+    "code": "JOR",
+    "fifa_rank": 68,
+    "group": "J",
+    "strengthScore": 55,
+    "historicRecord": {
+      "appearances": 11,
+      "titles": 0,
+      "winRate": 64
+    },
+    "currentSquad": [
+      {
+        "id": "JOR_s1",
+        "name": "JOR球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 50
+      },
+      {
+        "id": "JOR_s2",
+        "name": "JOR球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 51
+      },
+      {
+        "id": "JOR_s3",
+        "name": "JOR球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 52
+      },
+      {
+        "id": "JOR_s4",
+        "name": "JOR球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 53
+      },
+      {
+        "id": "JOR_s5",
+        "name": "JOR球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 54
+      },
+      {
+        "id": "JOR_s6",
+        "name": "JOR球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 55
+      },
+      {
+        "id": "JOR_s7",
+        "name": "JOR球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 56
+      },
+      {
+        "id": "JOR_s8",
+        "name": "JOR球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 57
+      },
+      {
+        "id": "JOR_s9",
+        "name": "JOR球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 58
+      },
+      {
+        "id": "JOR_s10",
+        "name": "JOR球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 59
+      },
+      {
+        "id": "JOR_s11",
+        "name": "JOR球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 50
+      },
+      {
+        "id": "JOR_s12",
+        "name": "JOR球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 51
+      },
+      {
+        "id": "JOR_s13",
+        "name": "JOR球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 52
+      },
+      {
+        "id": "JOR_s14",
+        "name": "JOR球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 53
+      },
+      {
+        "id": "JOR_s15",
+        "name": "JOR球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 54
+      },
+      {
+        "id": "JOR_s16",
+        "name": "JOR球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 55
+      },
+      {
+        "id": "JOR_s17",
+        "name": "JOR球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 56
+      },
+      {
+        "id": "JOR_s18",
+        "name": "JOR球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 57
+      },
+      {
+        "id": "JOR_s19",
+        "name": "JOR球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 58
+      },
+      {
+        "id": "JOR_s20",
+        "name": "JOR球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 59
+      },
+      {
+        "id": "JOR_s21",
+        "name": "JOR球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 50
+      },
+      {
+        "id": "JOR_s22",
+        "name": "JOR球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 51
+      },
+      {
+        "id": "JOR_s23",
+        "name": "JOR球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 52
+      }
+    ]
+  },
+  "COD": {
+    "id": "COD",
+    "name": "民主刚果",
+    "code": "COD",
+    "fifa_rank": 63,
+    "group": "K",
+    "strengthScore": 58,
+    "historicRecord": {
+      "appearances": 11,
+      "titles": 0,
+      "winRate": 40
+    },
+    "currentSquad": [
+      {
+        "id": "COD_s1",
+        "name": "COD球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 53
+      },
+      {
+        "id": "COD_s2",
+        "name": "COD球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 54
+      },
+      {
+        "id": "COD_s3",
+        "name": "COD球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 55
+      },
+      {
+        "id": "COD_s4",
+        "name": "COD球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 56
+      },
+      {
+        "id": "COD_s5",
+        "name": "COD球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 57
+      },
+      {
+        "id": "COD_s6",
+        "name": "COD球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 58
+      },
+      {
+        "id": "COD_s7",
+        "name": "COD球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 59
+      },
+      {
+        "id": "COD_s8",
+        "name": "COD球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 60
+      },
+      {
+        "id": "COD_s9",
+        "name": "COD球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 61
+      },
+      {
+        "id": "COD_s10",
+        "name": "COD球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 62
+      },
+      {
+        "id": "COD_s11",
+        "name": "COD球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 53
+      },
+      {
+        "id": "COD_s12",
+        "name": "COD球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 54
+      },
+      {
+        "id": "COD_s13",
+        "name": "COD球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 55
+      },
+      {
+        "id": "COD_s14",
+        "name": "COD球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 56
+      },
+      {
+        "id": "COD_s15",
+        "name": "COD球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 57
+      },
+      {
+        "id": "COD_s16",
+        "name": "COD球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 58
+      },
+      {
+        "id": "COD_s17",
+        "name": "COD球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 59
+      },
+      {
+        "id": "COD_s18",
+        "name": "COD球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 60
+      },
+      {
+        "id": "COD_s19",
+        "name": "COD球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 61
+      },
+      {
+        "id": "COD_s20",
+        "name": "COD球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 62
+      },
+      {
+        "id": "COD_s21",
+        "name": "COD球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 53
+      },
+      {
+        "id": "COD_s22",
+        "name": "COD球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 54
+      },
+      {
+        "id": "COD_s23",
+        "name": "COD球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 55
+      }
+    ]
+  },
+  "UZB": {
+    "id": "UZB",
+    "name": "乌兹别克斯坦",
+    "code": "UZB",
+    "fifa_rank": 61,
+    "group": "K",
+    "strengthScore": 58,
+    "historicRecord": {
+      "appearances": 5,
+      "titles": 0,
+      "winRate": 64
+    },
+    "currentSquad": [
+      {
+        "id": "UZB_s1",
+        "name": "UZB球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 53
+      },
+      {
+        "id": "UZB_s2",
+        "name": "UZB球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 54
+      },
+      {
+        "id": "UZB_s3",
+        "name": "UZB球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 55
+      },
+      {
+        "id": "UZB_s4",
+        "name": "UZB球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 56
+      },
+      {
+        "id": "UZB_s5",
+        "name": "UZB球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 57
+      },
+      {
+        "id": "UZB_s6",
+        "name": "UZB球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 58
+      },
+      {
+        "id": "UZB_s7",
+        "name": "UZB球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 59
+      },
+      {
+        "id": "UZB_s8",
+        "name": "UZB球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 60
+      },
+      {
+        "id": "UZB_s9",
+        "name": "UZB球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 61
+      },
+      {
+        "id": "UZB_s10",
+        "name": "UZB球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 62
+      },
+      {
+        "id": "UZB_s11",
+        "name": "UZB球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 53
+      },
+      {
+        "id": "UZB_s12",
+        "name": "UZB球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 54
+      },
+      {
+        "id": "UZB_s13",
+        "name": "UZB球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 55
+      },
+      {
+        "id": "UZB_s14",
+        "name": "UZB球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 56
+      },
+      {
+        "id": "UZB_s15",
+        "name": "UZB球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 57
+      },
+      {
+        "id": "UZB_s16",
+        "name": "UZB球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 58
+      },
+      {
+        "id": "UZB_s17",
+        "name": "UZB球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 59
+      },
+      {
+        "id": "UZB_s18",
+        "name": "UZB球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 60
+      },
+      {
+        "id": "UZB_s19",
+        "name": "UZB球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 61
+      },
+      {
+        "id": "UZB_s20",
+        "name": "UZB球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 62
+      },
+      {
+        "id": "UZB_s21",
+        "name": "UZB球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 53
+      },
+      {
+        "id": "UZB_s22",
+        "name": "UZB球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 54
+      },
+      {
+        "id": "UZB_s23",
+        "name": "UZB球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 55
+      }
+    ]
+  },
+  "PAN": {
+    "id": "PAN",
+    "name": "巴拿马",
+    "code": "PAN",
+    "fifa_rank": 95,
+    "group": "L",
+    "strengthScore": 48,
+    "historicRecord": {
+      "appearances": 11,
+      "titles": 0,
+      "winRate": 44
+    },
+    "currentSquad": [
+      {
+        "id": "PAN_s1",
+        "name": "PAN球员1",
+        "position": "GK",
+        "age": 24,
+        "club": "俱乐部1",
+        "rating": 43
+      },
+      {
+        "id": "PAN_s2",
+        "name": "PAN球员2",
+        "position": "GK",
+        "age": 25,
+        "club": "俱乐部2",
+        "rating": 44
+      },
+      {
+        "id": "PAN_s3",
+        "name": "PAN球员3",
+        "position": "GK",
+        "age": 26,
+        "club": "俱乐部3",
+        "rating": 45
+      },
+      {
+        "id": "PAN_s4",
+        "name": "PAN球员4",
+        "position": "DEF",
+        "age": 27,
+        "club": "俱乐部4",
+        "rating": 46
+      },
+      {
+        "id": "PAN_s5",
+        "name": "PAN球员5",
+        "position": "DEF",
+        "age": 28,
+        "club": "俱乐部5",
+        "rating": 47
+      },
+      {
+        "id": "PAN_s6",
+        "name": "PAN球员6",
+        "position": "DEF",
+        "age": 29,
+        "club": "俱乐部6",
+        "rating": 48
+      },
+      {
+        "id": "PAN_s7",
+        "name": "PAN球员7",
+        "position": "DEF",
+        "age": 30,
+        "club": "俱乐部7",
+        "rating": 49
+      },
+      {
+        "id": "PAN_s8",
+        "name": "PAN球员8",
+        "position": "DEF",
+        "age": 31,
+        "club": "俱乐部8",
+        "rating": 50
+      },
+      {
+        "id": "PAN_s9",
+        "name": "PAN球员9",
+        "position": "DEF",
+        "age": 32,
+        "club": "俱乐部9",
+        "rating": 51
+      },
+      {
+        "id": "PAN_s10",
+        "name": "PAN球员10",
+        "position": "DEF",
+        "age": 33,
+        "club": "俱乐部10",
+        "rating": 52
+      },
+      {
+        "id": "PAN_s11",
+        "name": "PAN球员11",
+        "position": "DEF",
+        "age": 24,
+        "club": "俱乐部11",
+        "rating": 43
+      },
+      {
+        "id": "PAN_s12",
+        "name": "PAN球员12",
+        "position": "MID",
+        "age": 25,
+        "club": "俱乐部12",
+        "rating": 44
+      },
+      {
+        "id": "PAN_s13",
+        "name": "PAN球员13",
+        "position": "MID",
+        "age": 26,
+        "club": "俱乐部13",
+        "rating": 45
+      },
+      {
+        "id": "PAN_s14",
+        "name": "PAN球员14",
+        "position": "MID",
+        "age": 27,
+        "club": "俱乐部14",
+        "rating": 46
+      },
+      {
+        "id": "PAN_s15",
+        "name": "PAN球员15",
+        "position": "MID",
+        "age": 28,
+        "club": "俱乐部15",
+        "rating": 47
+      },
+      {
+        "id": "PAN_s16",
+        "name": "PAN球员16",
+        "position": "MID",
+        "age": 29,
+        "club": "俱乐部16",
+        "rating": 48
+      },
+      {
+        "id": "PAN_s17",
+        "name": "PAN球员17",
+        "position": "MID",
+        "age": 30,
+        "club": "俱乐部17",
+        "rating": 49
+      },
+      {
+        "id": "PAN_s18",
+        "name": "PAN球员18",
+        "position": "MID",
+        "age": 31,
+        "club": "俱乐部18",
+        "rating": 50
+      },
+      {
+        "id": "PAN_s19",
+        "name": "PAN球员19",
+        "position": "FWD",
+        "age": 32,
+        "club": "俱乐部19",
+        "rating": 51
+      },
+      {
+        "id": "PAN_s20",
+        "name": "PAN球员20",
+        "position": "FWD",
+        "age": 33,
+        "club": "俱乐部20",
+        "rating": 52
+      },
+      {
+        "id": "PAN_s21",
+        "name": "PAN球员21",
+        "position": "FWD",
+        "age": 24,
+        "club": "俱乐部21",
+        "rating": 43
+      },
+      {
+        "id": "PAN_s22",
+        "name": "PAN球员22",
+        "position": "FWD",
+        "age": 25,
+        "club": "俱乐部22",
+        "rating": 44
+      },
+      {
+        "id": "PAN_s23",
+        "name": "PAN球员23",
+        "position": "FWD",
+        "age": 26,
+        "club": "俱乐部23",
+        "rating": 45
       }
     ]
   }
