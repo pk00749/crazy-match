@@ -79,16 +79,16 @@ function getStageLabel(stage: string): string {
   return map[stage] || stage
 }
 
-function getBadgeClass(w: string, teamAName: string, teamBName: string): string {
-  if (w === 'draw') return 'badge-draw'
-  if (w === teamAName) return 'badge-teamA'
-  return 'badge-teamB'
+function getBadgeClass(w: string, teamACode: string, teamBCode: string): string {
+  if (w === "draw") return "badge-draw"
+  if (w === teamACode) return "badge-teamA"
+  return "badge-teamB"
 }
 
-function getBadgeLabel(w: string, teamAName: string, teamBName: string): string {
-  if (w === 'draw') return '平局'
-  if (w === teamAName) return teamAName
-  if (w === teamBName) return teamBName
+function getBadgeLabel(w: string, teamAName: string, teamBName: string, teamACode: string, teamBCode: string): string {
+  if (w === "draw") return "平局"
+  if (w === teamACode) return teamAName
+  if (w === teamBCode) return teamBName
   return w
 }
 
@@ -223,8 +223,8 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
                 predictions.map(p => (
                   <div key={p.id} className="pred-item">
                     <span className="pred-nick">{p.nickname}</span>
-                    <span className={`pred-badge ${getBadgeClass(p.predicted_winner, match.team_a, match.team_b)}`}>
-                      {getBadgeLabel(p.predicted_winner, match.team_a, match.team_b)}
+                    <span className={`pred-badge ${getBadgeClass(p.predicted_winner, match.team_a_code, match.team_b_code)}`}>
+                      {getBadgeLabel(p.predicted_winner, match.team_a, match.team_b, match.team_a_code, match.team_b_code)}
                     </span>
                   </div>
                 ))
