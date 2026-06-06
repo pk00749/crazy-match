@@ -4,8 +4,10 @@ import { supabase } from '../lib/supabase'
 interface MatchCardProps {
   match: {
     id: string
-    team_a: string
-    team_b: string
+    team_a: string   // Chinese name
+    team_b: string   // Chinese name
+    team_a_code?: string  // English code for flag lookup
+    team_b_code?: string
     time: string
     venue: string
     city?: string
@@ -49,15 +51,17 @@ function isPlaceholder(code: string): boolean {
   return PLACEHOLDER_CODES.has(code)
 }
 
-// Team code to 2-letter ISO flag code
+// Team 3-letter code -> 2-letter ISO flag code
 const flagCodeMap: Record<string, string> = {
   ALG:'dz', ARG:'ar', AUS:'au', AUT:'at', BEL:'be', BIH:'ba', BRA:'br', CAN:'ca',
-  CHI:'cl', CMR:'cm', COL:'co', CRO:'hr', ECU:'ec', EGY:'eg', ENG:'gb-eng',
-  ESP:'es', FRA:'fr', GER:'de', GHA:'gh', HUN:'hu', INA:'id', IRL:'ie',
-  IRN:'ir', ITA:'it', JPN:'jp', KOR:'kr', KSA:'sa', MAR:'ma', MEX:'mx',
-  NED:'nl', NGA:'ng', NOR:'no', NZL:'nz', PAR:'py', PER:'pe', POL:'pl',
-  POR:'pt', QAT:'qa', ROU:'ro', RSA:'za', SEN:'sn', SRB:'rs', SUI:'ch',
-  UAE:'ae', URU:'uy', USA:'us', VEN:'ve', WAL:'gb-wls',
+  CHI:'cl', CMR:'cm', COD:'cd', COL:'co', CPV:'cv', CRO:'hr', CUR:'cw', CZE:'cz',
+  ECU:'ec', EGY:'eg', ENG:'gb-eng', ESP:'es', FRA:'fr', GER:'de', GHA:'gh',
+  HAI:'ht', HUN:'hu', INA:'id', IRL:'ie', IRN:'ir', IRQ:'iq', ITA:'it',
+  JOR:'jo', JPN:'jp', KOR:'kr', KSA:'sa', MAR:'ma', MEX:'mx', NED:'nl',
+  NGA:'ng', NOR:'no', NZL:'nz', PAN:'pa', PAR:'py', PER:'pe', POL:'pl',
+  POR:'pt', QAT:'qa', ROU:'ro', RSA:'za', SCO:'gb-sct', SEN:'sn', SRB:'rs',
+  SUI:'ch', SWE:'se', TUN:'tn', TUR:'tr', UAE:'ae', URU:'uy', USA:'us',
+  UZB:'uz', VEN:'ve', WAL:'gb-wls', CIV:'ci',
 }
 
 function getTeamFlagUrl(code: string): string {
@@ -74,16 +78,16 @@ function getStageLabel(stage: string): string {
   return map[stage] || stage
 }
 
-function getBadgeClass(w: string, teamA: string, teamB: string): string {
+function getBadgeClass(w: string, teamAName: string, teamBName: string): string {
   if (w === 'draw') return 'badge-draw'
-  if (w === teamA) return 'badge-teamA'
+  if (w === teamAName) return 'badge-teamA'
   return 'badge-teamB'
 }
 
-function getBadgeLabel(w: string, teamA: string, teamB: string): string {
+function getBadgeLabel(w: string, teamAName: string, teamBName: string): string {
   if (w === 'draw') return '平局'
-  if (w === teamA) return teamA
-  if (w === teamB) return teamB
+  if (w === teamAName) return teamAName
+  if (w === teamBName) return teamBName
   return w
 }
 
@@ -92,6 +96,10 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([])
   const [activeTab, setActiveTab] = useState<'pred' | 'rank'>('pred')
   const [loading, setLoading] = useState(false)
+
+  // Code for flag lookup - use passed code or derive from name
+  const codeA = match.team_a_code || (match.team_a.length <= 4 ? match.team_a : match.team_a.slice(0, 3))
+  const codeB = match.team_b_code || (match.team_b.length <= 4 ? match.team_b : match.team_b.slice(0, 3))
 
   useEffect(() => {
     if (isSelected) loadData()
@@ -110,8 +118,8 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
     finally { setLoading(false) }
   }
 
-  const canShowTeamA = !isPlaceholder(match.team_a)
-  const canShowTeamB = !isPlaceholder(match.team_b)
+  const canShowTeamA = !isPlaceholder(codeA)
+  const canShowTeamB = !isPlaceholder(codeB)
 
   return (
     <div
@@ -133,13 +141,13 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
       {/* Teams */}
       <div className="match-teams">
         <div className="team team-a">
-          <img className="team-flag" src={getTeamFlagUrl(match.team_a)} alt={match.team_a} loading="lazy" />
+          <img className="team-flag" src={getTeamFlagUrl(codeA)} alt={match.team_a} loading="lazy" />
           <span className="team-name">{match.team_a}</span>
         </div>
         <span className="match-vs">VS</span>
         <div className="team team-b">
           <span className="team-name">{match.team_b}</span>
-          <img className="team-flag" src={getTeamFlagUrl(match.team_b)} alt={match.team_b} loading="lazy" />
+          <img className="team-flag" src={getTeamFlagUrl(codeB)} alt={match.team_b} loading="lazy" />
         </div>
       </div>
 

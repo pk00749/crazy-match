@@ -55,8 +55,6 @@ export default function TodayPage() {
     setSelectedDate(d)
   }
 
-  const match = selectedMatchId ? matches.find(m => m.id === selectedMatchId) : null
-
   return (
     <div>
       <div className="page-header">
@@ -85,13 +83,17 @@ export default function TodayPage() {
           {matches.map(match => {
             const teamA = teamsApi.getById(match.team_a)
             const teamB = teamsApi.getById(match.team_b)
+            const nameA = teamA?.name || match.team_a
+            const nameB = teamB?.name || match.team_b
             return (
               <MatchCard
                 key={match.id}
                 match={{
                   id: match.id,
-                  team_a: teamA?.name || match.team_a,
-                  team_b: teamB?.name || match.team_b,
+                  team_a: nameA,
+                  team_b: nameB,
+                  team_a_code: match.team_a,
+                  team_b_code: match.team_b,
                   time: match.time,
                   venue: match.venue,
                   city: match.city,
