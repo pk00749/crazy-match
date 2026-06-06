@@ -99,6 +99,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
   const [loading, setLoading] = useState(false)
   const [showTeamA, setShowTeamA] = useState(false)
   const [showTeamB, setShowTeamB] = useState(false)
+  const [showCount, setShowCount] = useState(5)
 
   const { team_a_code, team_b_code } = match
   const canShowTeamA = !isPlaceholder(team_a_code)
@@ -208,7 +209,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
             )}
 
             <div className="card-tabs">
-              <button className={`card-tab ${activeTab === 'pred' ? 'active' : ''}`} onClick={() => setActiveTab('pred')}>
+              <button className={`card-tab ${activeTab === 'pred' ? 'active' : ''}`} onClick={() => { setActiveTab('pred'); setShowCount(5); }}>
                 本场预测 ({predictions.length})
               </button>
               <button className={`card-tab ${activeTab === 'rank' ? 'active' : ''}`} onClick={() => setActiveTab('rank')}>
@@ -220,14 +221,21 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
               {activeTab === 'pred' ? (
                 loading ? <div className="mini-loading">⚽ 加载中...</div> :
                 predictions.length === 0 ? <div className="mini-empty">暂无预测，快来成为第一个预言家！</div> :
-                predictions.map(p => (
-                  <div key={p.id} className="pred-item">
-                    <span className="pred-nick">{p.nickname}</span>
-                    <span className={`pred-badge ${getBadgeClass(p.predicted_winner, match.team_a_code, match.team_b_code)}`}>
-                      {getBadgeLabel(p.predicted_winner, match.team_a, match.team_b, match.team_a_code, match.team_b_code)}
-                    </span>
-                  </div>
-                ))
+                <>
+                  {predictions.slice(0, showCount).map(p => (
+                    <div key={p.id} className="pred-item">
+                      <span className="pred-nick">{p.nickname}</span>
+                      <span className={`pred-badge ${getBadgeClass(p.predicted_winner, match.team_a_code, match.team_b_code)}`}>
+                        {getBadgeLabel(p.predicted_winner, match.team_a, match.team_b, match.team_a_code, match.team_b_code)}
+                      </span>
+                    </div>
+                  ))}
+                  {predictions.length > showCount && (
+                    <button className="btn-more" onClick={() => setShowCount(c => c + 5)}>
+                      查看更多 ({predictions.length - showCount} 条) ↓
+                    </button>
+                  )}
+                </>
               ) : (
                 loading ? <div className="mini-loading">⚽ 加载中...</div> :
                 leaderboard.length === 0 ? <div className="mini-empty">暂无排行</div> :
