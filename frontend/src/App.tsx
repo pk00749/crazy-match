@@ -18,7 +18,7 @@ function App() {
       <div className="app">
         <header className="header">
           <div className="header-brand">
-            <span className="header-logo">🏆</span>
+            <img src="/logo.png" alt="Crazy Match" className="header-logo" />
             <div>
               <div className="header-title">Crazy Match</div>
               <div className="header-sub">2026 世界杯预测 · 美墨加</div>

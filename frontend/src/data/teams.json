@@ -641,6 +641,30 @@
         "age": 27,
         "club": "AC Milan",
         "rating": 83
+      },
+      {
+        "id": "MEX_s24",
+        "name": "Jorge Sanchez",
+        "position": "DEF",
+        "age": 27,
+        "club": "PSV",
+        "rating": 80
+      },
+      {
+        "id": "MEX_s25",
+        "name": "Chaco Sanchez",
+        "position": "MID",
+        "age": 26,
+        "club": "Chivas",
+        "rating": 79
+      },
+      {
+        "id": "MEX_s26",
+        "name": "Roberto Alvarado",
+        "position": "FWD",
+        "age": 26,
+        "club": "Chivas",
+        "rating": 79
       }
     ]
   },
@@ -800,6 +824,70 @@
         "age": 32,
         "club": "Wellington Phoenix",
         "rating": 78
+      },
+      {
+        "id": "NZL_s19",
+        "name": "Michael Woud",
+        "position": "GK",
+        "age": 28,
+        "club": "Derby County",
+        "rating": 74
+      },
+      {
+        "id": "NZL_s20",
+        "name": "Winston Freeman",
+        "position": "DEF",
+        "age": 27,
+        "club": "Hajduk",
+        "rating": 74
+      },
+      {
+        "id": "NZL_s21",
+        "name": "Nando Pijnaker",
+        "position": "DEF",
+        "age": 26,
+        "club": "Sparta",
+        "rating": 75
+      },
+      {
+        "id": "NZL_s22",
+        "name": "Chris Wood",
+        "position": "FWD",
+        "age": 32,
+        "club": "Nottingham",
+        "rating": 76
+      },
+      {
+        "id": "NZL_s23",
+        "name": "Matthew Garbett",
+        "position": "MID",
+        "age": 26,
+        "club": "Falkenbergs",
+        "rating": 74
+      },
+      {
+        "id": "NZL_s24",
+        "name": "Joe Bell",
+        "position": "MID",
+        "age": 30,
+        "club": "Bournemouth",
+        "rating": 75
+      },
+      {
+        "id": "NZL_s25",
+        "name": "Logan Wisnat",
+        "position": "MID",
+        "age": 25,
+        "club": "Western Utd",
+        "rating": 73
+      },
+      {
+        "id": "NZL_s26",
+        "name": "Ben Old",
+        "position": "MID",
+        "age": 23,
+        "club": "Wellington",
+        "rating": 73
       }
     ]
   },
@@ -1445,6 +1533,30 @@
         "age": 27,
         "club": "Stuttgart",
         "rating": 83
+      },
+      {
+        "id": "ECU_s24",
+        "name": "Galindez",
+        "position": "GK",
+        "age": 31,
+        "club": "Independiente",
+        "rating": 78
+      },
+      {
+        "id": "ECU_s25",
+        "name": "Pachuca",
+        "position": "GK",
+        "age": 27,
+        "club": "Pachuca",
+        "rating": 77
+      },
+      {
+        "id": "ECU_s26",
+        "name": "Ashley",
+        "position": "DEF",
+        "age": 25,
+        "club": "Pumas",
+        "rating": 76
       }
     ]
   },
@@ -1644,6 +1756,30 @@
         "age": 27,
         "club": "Wolverhampton Wanderers",
         "rating": 83
+      },
+      {
+        "id": "COL_s24",
+        "name": "David Ospina",
+        "position": "GK",
+        "age": 35,
+        "club": "Al Nasr",
+        "rating": 82
+      },
+      {
+        "id": "COL_s25",
+        "name": "Alvaro Montero",
+        "position": "GK",
+        "age": 28,
+        "club": "Nacional",
+        "rating": 78
+      },
+      {
+        "id": "COL_s26",
+        "name": "William Tesillo",
+        "position": "DEF",
+        "age": 33,
+        "club": "America",
+        "rating": 79
       }
     ]
   },
@@ -1819,6 +1955,54 @@
         "age": 24,
         "club": "Club Tijuana",
         "rating": 80
+      },
+      {
+        "id": "URU_s21",
+        "name": "Sergio Rochet",
+        "position": "GK",
+        "age": 31,
+        "club": "Pumas",
+        "rating": 81
+      },
+      {
+        "id": "URU_s22",
+        "name": "Diego Alonso",
+        "position": "GK",
+        "age": 28,
+        "club": "Sevilla",
+        "rating": 79
+      },
+      {
+        "id": "URU_s23",
+        "name": "Jose Gimenez",
+        "position": "DEF",
+        "age": 29,
+        "club": "Atletico",
+        "rating": 84
+      },
+      {
+        "id": "URU_s24",
+        "name": "Sebastian Coates",
+        "position": "DEF",
+        "age": 34,
+        "club": "Sporting",
+        "rating": 81
+      },
+      {
+        "id": "URU_s25",
+        "name": "Nicolas Otamendi",
+        "position": "DEF",
+        "age": 36,
+        "club": "Benfica",
+        "rating": 83
+      },
+      {
+        "id": "URU_s26",
+        "name": "Matias Vina",
+        "position": "DEF",
+        "age": 27,
+        "club": "Flamengo",
+        "rating": 81
       }
     ]
   },
@@ -2663,6 +2847,54 @@
         "age": 24,
         "club": "Atletico Madrid",
         "rating": 80
+      },
+      {
+        "id": "POR_s21",
+        "name": "Diogo Costa",
+        "position": "GK",
+        "age": 25,
+        "club": "Porto",
+        "rating": 86
+      },
+      {
+        "id": "POR_s22",
+        "name": "Jose Sa",
+        "position": "GK",
+        "age": 31,
+        "club": "Wolves",
+        "rating": 82
+      },
+      {
+        "id": "POR_s23",
+        "name": "Joao Cancelo",
+        "position": "DEF",
+        "age": 30,
+        "club": "Barcelona",
+        "rating": 84
+      },
+      {
+        "id": "POR_s24",
+        "name": "Ruben Neves",
+        "position": "MID",
+        "age": 27,
+        "club": "Al Hilal",
+        "rating": 83
+      },
+      {
+        "id": "POR_s25",
+        "name": "Bruno Fernandes",
+        "position": "MID",
+        "age": 29,
+        "club": "Man Utd",
+        "rating": 88
+      },
+      {
+        "id": "POR_s26",
+        "name": "Joao Felix",
+        "position": "FWD",
+        "age": 25,
+        "club": "Barcelona",
+        "rating": 83
       }
     ]
   },
@@ -2870,6 +3102,22 @@
         "age": 28,
         "club": "Tottenham",
         "rating": 84
+      },
+      {
+        "id": "ESP_s25",
+        "name": "Alex Merino",
+        "position": "DEF",
+        "age": 28,
+        "club": "Real Betis",
+        "rating": 79
+      },
+      {
+        "id": "ESP_s26",
+        "name": "Bryan Gil",
+        "position": "FWD",
+        "age": 23,
+        "club": "Tottenham",
+        "rating": 78
       }
     ]
   },
@@ -3069,6 +3317,30 @@
         "age": 27,
         "club": "Manchester United",
         "rating": 83
+      },
+      {
+        "id": "NED_s24",
+        "name": "Justin Bijlow",
+        "position": "GK",
+        "age": 26,
+        "club": "Feyenoord",
+        "rating": 81
+      },
+      {
+        "id": "NED_s25",
+        "name": "Nick Olise",
+        "position": "DEF",
+        "age": 22,
+        "club": "Crystal Palace",
+        "rating": 82
+      },
+      {
+        "id": "NED_s26",
+        "name": "Xavi Simons",
+        "position": "MID",
+        "age": 21,
+        "club": "RB Leipzig",
+        "rating": 82
       }
     ]
   },
@@ -4351,6 +4623,62 @@
         "age": 33,
         "club": "Crystal Palace",
         "rating": 79
+      },
+      {
+        "id": "NOR_s20",
+        "name": "Berg",
+        "position": "GK",
+        "age": 26,
+        "club": "Bournemouth",
+        "rating": 80
+      },
+      {
+        "id": "NOR_s21",
+        "name": "Hansen",
+        "position": "DEF",
+        "age": 25,
+        "club": "Leicester",
+        "rating": 79
+      },
+      {
+        "id": "NOR_s22",
+        "name": "Oyjord",
+        "position": "DEF",
+        "age": 24,
+        "club": "Brighton",
+        "rating": 80
+      },
+      {
+        "id": "NOR_s23",
+        "name": "Sorloth",
+        "position": "FWD",
+        "age": 28,
+        "club": "Atletico",
+        "rating": 83
+      },
+      {
+        "id": "NOR_s24",
+        "name": "King",
+        "position": "FWD",
+        "age": 30,
+        "club": "Fulham",
+        "rating": 81
+      },
+      {
+        "id": "NOR_s25",
+        "name": "Hauge",
+        "position": "MID",
+        "age": 24,
+        "club": "Eintracht",
+        "rating": 79
+      },
+      {
+        "id": "NOR_s26",
+        "name": "Ostigard",
+        "position": "DEF",
+        "age": 25,
+        "club": "Napoli",
+        "rating": 80
       }
     ]
   },
@@ -5195,6 +5523,54 @@
         "age": 24,
         "club": "Cremonese",
         "rating": 80
+      },
+      {
+        "id": "SEN_s21",
+        "name": "Rui Patricio",
+        "position": "GK",
+        "age": 36,
+        "club": "AS Roma",
+        "rating": 80
+      },
+      {
+        "id": "SEN_s22",
+        "name": "Seydou Keita",
+        "position": "MID",
+        "age": 32,
+        "club": "Al Wahda",
+        "rating": 78
+      },
+      {
+        "id": "SEN_s23",
+        "name": "Ismaila Sarr",
+        "position": "FWD",
+        "age": 26,
+        "club": "Crystal Palace",
+        "rating": 81
+      },
+      {
+        "id": "SEN_s24",
+        "name": "Bamba Dieng",
+        "position": "FWD",
+        "age": 23,
+        "club": "Lorient",
+        "rating": 79
+      },
+      {
+        "id": "SEN_s25",
+        "name": "Pape Gueye",
+        "position": "MID",
+        "age": 25,
+        "club": "Marseille",
+        "rating": 80
+      },
+      {
+        "id": "SEN_s26",
+        "name": "Moussa Ndiaye",
+        "position": "DEF",
+        "age": 22,
+        "club": "Lens",
+        "rating": 79
       }
     ]
   },
@@ -6055,6 +6431,38 @@
         "age": 26,
         "club": "SC Freiburg",
         "rating": 82
+      },
+      {
+        "id": "JPN_s23",
+        "name": "Kaoru Mitoma",
+        "position": "FWD",
+        "age": 27,
+        "club": "Brighton",
+        "rating": 83
+      },
+      {
+        "id": "JPN_s24",
+        "name": "Takefusa Kubo",
+        "position": "MID",
+        "age": 23,
+        "club": "Real Sociedad",
+        "rating": 82
+      },
+      {
+        "id": "JPN_s25",
+        "name": "Ritsu Doan",
+        "position": "FWD",
+        "age": 26,
+        "club": "Freiburg",
+        "rating": 81
+      },
+      {
+        "id": "JPN_s26",
+        "name": "Daizen Maeda",
+        "position": "FWD",
+        "age": 27,
+        "club": "Celtic",
+        "rating": 80
       }
     ]
   },
@@ -6668,6 +7076,62 @@
         "age": 33,
         "club": "Al Hilal",
         "rating": 79
+      },
+      {
+        "id": "KSA_s20",
+        "name": "Sami Al-Najei",
+        "position": "MID",
+        "age": 27,
+        "club": "Al-Nassr",
+        "rating": 78
+      },
+      {
+        "id": "KSA_s21",
+        "name": "Abdullah Al-Khaibari",
+        "position": "MID",
+        "age": 28,
+        "club": "Al-Faisaly",
+        "rating": 76
+      },
+      {
+        "id": "KSA_s22",
+        "name": "Ayman Al-Khulaif",
+        "position": "DEF",
+        "age": 25,
+        "club": "Al-Ittihad",
+        "rating": 77
+      },
+      {
+        "id": "KSA_s23",
+        "name": "Haroune Madani",
+        "position": "MID",
+        "age": 26,
+        "club": "Al-Faisaly",
+        "rating": 76
+      },
+      {
+        "id": "KSA_s24",
+        "name": "Abdulrahman Al-Riyati",
+        "position": "FWD",
+        "age": 24,
+        "club": "Al-Taawun",
+        "rating": 77
+      },
+      {
+        "id": "KSA_s25",
+        "name": "Ali Al-Habsi",
+        "position": "GK",
+        "age": 42,
+        "club": "Al-Shabab",
+        "rating": 75
+      },
+      {
+        "id": "KSA_s26",
+        "name": "Feras Al-Birka",
+        "position": "DEF",
+        "age": 23,
+        "club": "Al-Hilal",
+        "rating": 76
       }
     ]
   },
@@ -8627,6 +9091,54 @@
         "age": 24,
         "club": "Sporting",
         "rating": 80
+      },
+      {
+        "id": "SWE_s21",
+        "name": "Lucas Bergvall",
+        "position": "MID",
+        "age": 18,
+        "club": "Tottenham",
+        "rating": 80
+      },
+      {
+        "id": "SWE_s22",
+        "name": "Johan Veenstra",
+        "position": "MID",
+        "age": 22,
+        "club": "Feyenoord",
+        "rating": 78
+      },
+      {
+        "id": "SWE_s23",
+        "name": "Samuel Dahl",
+        "position": "DEF",
+        "age": 21,
+        "club": "Djurgarden",
+        "rating": 77
+      },
+      {
+        "id": "SWE_s24",
+        "name": "Oscar Stark",
+        "position": "DEF",
+        "age": 23,
+        "club": "Hacken",
+        "rating": 77
+      },
+      {
+        "id": "SWE_s25",
+        "name": "Alexandru Balan",
+        "position": "MID",
+        "age": 25,
+        "club": "AIK",
+        "rating": 76
+      },
+      {
+        "id": "SWE_s26",
+        "name": "Jacob Rinne",
+        "position": "GK",
+        "age": 31,
+        "club": "Wolfsberger",
+        "rating": 78
       }
     ]
   },
@@ -8802,6 +9314,54 @@
         "age": 24,
         "club": "Vancouver Whitecaps",
         "rating": 80
+      },
+      {
+        "id": "TUN_s21",
+        "name": "Aymen Mathlouthi",
+        "position": "GK",
+        "age": 40,
+        "club": "Al Ahly",
+        "rating": 78
+      },
+      {
+        "id": "TUN_s22",
+        "name": "Bilel Ifa",
+        "position": "DEF",
+        "age": 34,
+        "club": "Al Ahly",
+        "rating": 78
+      },
+      {
+        "id": "TUN_s23",
+        "name": "Youssef Msakni",
+        "position": "FWD",
+        "age": 35,
+        "club": "Al Ahly",
+        "rating": 80
+      },
+      {
+        "id": "TUN_s24",
+        "name": "Hannan Ajabi",
+        "position": "MID",
+        "age": 24,
+        "club": "Al Ahly",
+        "rating": 79
+      },
+      {
+        "id": "TUN_s25",
+        "name": "Elly Skira",
+        "position": "MID",
+        "age": 25,
+        "club": "Lorient",
+        "rating": 78
+      },
+      {
+        "id": "TUN_s26",
+        "name": "Taha Yessine",
+        "position": "DEF",
+        "age": 23,
+        "club": "Club Africain",
+        "rating": 76
       }
     ]
   },
@@ -9415,6 +9975,62 @@
         "age": 33,
         "club": "Al-Ramtha",
         "rating": 79
+      },
+      {
+        "id": "JOR_s20",
+        "name": "Yazan Al-Naimat",
+        "position": "FWD",
+        "age": 24,
+        "club": "Al-Faisaly",
+        "rating": 75
+      },
+      {
+        "id": "JOR_s21",
+        "name": "Ali Al-Rawashdeh",
+        "position": "GK",
+        "age": 29,
+        "club": "Al-Faisaly",
+        "rating": 74
+      },
+      {
+        "id": "JOR_s22",
+        "name": "Mohannad Ali",
+        "position": "DEF",
+        "age": 26,
+        "club": "Al-Wehdat",
+        "rating": 73
+      },
+      {
+        "id": "JOR_s23",
+        "name": "Saeed Al-Murman",
+        "position": "MID",
+        "age": 25,
+        "club": "Al-Faisaly",
+        "rating": 74
+      },
+      {
+        "id": "JOR_s24",
+        "name": "Amer Jaber",
+        "position": "MID",
+        "age": 27,
+        "club": "Al-Wehdat",
+        "rating": 74
+      },
+      {
+        "id": "JOR_s25",
+        "name": "Yazan Ibrahim",
+        "position": "FWD",
+        "age": 23,
+        "club": "Shabab Al-Aqaba",
+        "rating": 73
+      },
+      {
+        "id": "JOR_s26",
+        "name": "Ethan Mboma",
+        "position": "FWD",
+        "age": 22,
+        "club": "Al-Ramtha",
+        "rating": 72
       }
     ]
   },
@@ -9813,6 +10429,54 @@
         "age": 24,
         "club": "Nasaf Qarshi",
         "rating": 80
+      },
+      {
+        "id": "UZB_s21",
+        "name": "Eldor Shomurodov",
+        "position": "FWD",
+        "age": 29,
+        "club": "AS Roma",
+        "rating": 80
+      },
+      {
+        "id": "UZB_s22",
+        "name": "Odil Hamidullaev",
+        "position": "MID",
+        "age": 21,
+        "club": "CSKA Moscow",
+        "rating": 78
+      },
+      {
+        "id": "UZB_s23",
+        "name": "Abbosbek Fayzullaev",
+        "position": "MID",
+        "age": 22,
+        "club": "Maccabi Haifa",
+        "rating": 79
+      },
+      {
+        "id": "UZB_s24",
+        "name": "Oston Pardaev",
+        "position": "DEF",
+        "age": 28,
+        "club": "Fenerbahce",
+        "rating": 79
+      },
+      {
+        "id": "UZB_s25",
+        "name": "Rustam Rakhimov",
+        "position": "GK",
+        "age": 28,
+        "club": "PAOK",
+        "rating": 80
+      },
+      {
+        "id": "UZB_s26",
+        "name": "Sherdor, Joker",
+        "position": "DEF",
+        "age": 24,
+        "club": " Rubin Kazan",
+        "rating": 77
       }
     ]
   },
@@ -9948,6 +10612,94 @@
         "age": 29,
         "club": "Sporting",
         "rating": 75
+      },
+      {
+        "id": "PAN_s16",
+        "name": "Jose Luis Rodriguez",
+        "position": "DEF",
+        "age": 25,
+        "club": "Genk",
+        "rating": 75
+      },
+      {
+        "id": "PAN_s17",
+        "name": "Alberto Quinz",
+        "position": "MID",
+        "age": 24,
+        "club": "LAFC",
+        "rating": 74
+      },
+      {
+        "id": "PAN_s18",
+        "name": "Cesar Yanis",
+        "position": "DEF",
+        "age": 23,
+        "club": "Colorado",
+        "rating": 73
+      },
+      {
+        "id": "PAN_s19",
+        "name": "Freddy Gonzalez",
+        "position": "GK",
+        "age": 27,
+        "club": "Tauro",
+        "rating": 72
+      },
+      {
+        "id": "PAN_s20",
+        "name": "Ismael Diaz",
+        "position": "FWD",
+        "age": 27,
+        "club": "Platense",
+        "rating": 75
+      },
+      {
+        "id": "PAN_s21",
+        "name": "Jorginho",
+        "position": "MID",
+        "age": 26,
+        "club": "Inter Miami",
+        "rating": 74
+      },
+      {
+        "id": "PAN_s22",
+        "name": "Eddie Segura",
+        "position": "DEF",
+        "age": 27,
+        "club": "LAFC",
+        "rating": 75
+      },
+      {
+        "id": "PAN_s23",
+        "name": "Adalberto",
+        "position": "DEF",
+        "age": 28,
+        "club": "Changchun",
+        "rating": 74
+      },
+      {
+        "id": "PAN_s24",
+        "name": "Gabriel Gomez",
+        "position": "MID",
+        "age": 39,
+        "club": "Independiente",
+        "rating": 73
+      },
+      {
+        "id": "PAN_s25",
+        "name": "Roberto Chen",
+        "position": "DEF",
+        "age": 30,
+        "club": "Alajuelense",
+        "rating": 73
+      },
+      {
+        "id": "PAN_s26",
+        "name": "Luis Pereira",
+        "position": "MID",
+        "age": 24,
+        "club": "Antwerp",
+        "rating": 74
       }
     ]
   }
