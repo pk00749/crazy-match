@@ -184,7 +184,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
                     { pct: prediction.win_probability?.team_b || 0, cls: 'lose' },
                   ].map(s => (
                     <div key={s.cls} className={`prob-segment ${s.cls}`} style={{ flexBasis: `${s.pct}%` }}>
-                      {s.pct >= 15 && <span>{Math.round(s.pct)}%</span>}
+                      {s.pct >= 10 && <span>{Math.round(s.pct)}%</span>}
                     </div>
                   ))}
                 </div>
