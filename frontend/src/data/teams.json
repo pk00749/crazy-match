@@ -3,13 +3,13 @@
     "id": "USA",
     "name": "美国",
     "code": "USA",
-    "fifa_rank": 11,
+    "fifa_rank": 12,
     "group": "D",
     "strengthScore": 94,
     "historicRecord": {
-      "appearances": 18,
+      "appearances": 11,
       "titles": 0,
-      "winRate": 62
+      "winRate": 42
     },
     "currentSquad": [
       {
@@ -226,13 +226,13 @@
     "id": "CAN",
     "name": "加拿大",
     "code": "CAN",
-    "fifa_rank": 38,
+    "fifa_rank": 39,
     "group": "B",
     "strengthScore": 78,
     "historicRecord": {
-      "appearances": 13,
+      "appearances": 2,
       "titles": 0,
-      "winRate": 53
+      "winRate": 38
     },
     "currentSquad": [
       {
@@ -453,9 +453,9 @@
     "group": "A",
     "strengthScore": 92,
     "historicRecord": {
-      "appearances": 18,
+      "appearances": 17,
       "titles": 0,
-      "winRate": 61
+      "winRate": 48
     },
     "currentSquad": [
       {
@@ -648,13 +648,13 @@
     "id": "NZL",
     "name": "新西兰",
     "code": "NZL",
-    "fifa_rank": 87,
+    "fifa_rank": 49,
     "group": "G",
     "strengthScore": 48,
     "historicRecord": {
-      "appearances": 3,
+      "appearances": 2,
       "titles": 0,
-      "winRate": 36
+      "winRate": 30
     },
     "currentSquad": [
       {
@@ -811,9 +811,9 @@
     "group": "J",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 20,
+      "appearances": 18,
       "titles": 3,
-      "winRate": 65
+      "winRate": 56
     },
     "currentSquad": [
       {
@@ -1034,9 +1034,9 @@
     "group": "C",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 20,
-      "titles": 3,
-      "winRate": 64
+      "appearances": 22,
+      "titles": 5,
+      "winRate": 70
     },
     "currentSquad": [
       {
@@ -1253,13 +1253,13 @@
     "id": "ECU",
     "name": "厄瓜多尔",
     "code": "ECU",
-    "fifa_rank": 30,
+    "fifa_rank": 21,
     "group": "E",
     "strengthScore": 83,
     "historicRecord": {
-      "appearances": 14,
+      "appearances": 4,
       "titles": 0,
-      "winRate": 55
+      "winRate": 42
     },
     "currentSquad": [
       {
@@ -1452,13 +1452,13 @@
     "id": "COL",
     "name": "哥伦比亚",
     "code": "COL",
-    "fifa_rank": 9,
+    "fifa_rank": 10,
     "group": "K",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 19,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 62
+      "winRate": 48
     },
     "currentSquad": [
       {
@@ -1655,9 +1655,9 @@
     "group": "H",
     "strengthScore": 94,
     "historicRecord": {
-      "appearances": 18,
-      "titles": 0,
-      "winRate": 62
+      "appearances": 14,
+      "titles": 2,
+      "winRate": 52
     },
     "currentSquad": [
       {
@@ -1826,7 +1826,7 @@
     "id": "PAR",
     "name": "巴拉圭",
     "code": "PAR",
-    "fifa_rank": 57,
+    "fifa_rank": 34,
     "group": "D",
     "strengthScore": 66,
     "historicRecord": {
@@ -2053,9 +2053,9 @@
     "group": "I",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 20,
+      "appearances": 16,
       "titles": 2,
-      "winRate": 65
+      "winRate": 58
     },
     "currentSquad": [
       {
@@ -2276,9 +2276,9 @@
     "group": "L",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 20,
-      "titles": 0,
-      "winRate": 64
+      "appearances": 16,
+      "titles": 1,
+      "winRate": 52
     },
     "currentSquad": [
       {
@@ -2499,9 +2499,9 @@
     "group": "K",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 19,
+      "appearances": 8,
       "titles": 0,
-      "winRate": 63
+      "winRate": 52
     },
     "currentSquad": [
       {
@@ -2670,13 +2670,13 @@
     "id": "ESP",
     "name": "西班牙",
     "code": "ESP",
-    "fifa_rank": 8,
+    "fifa_rank": 5,
     "group": "H",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 19,
-      "titles": 0,
-      "winRate": 63
+      "appearances": 16,
+      "titles": 1,
+      "winRate": 55
     },
     "currentSquad": [
       {
@@ -2881,9 +2881,9 @@
     "group": "F",
     "strengthScore": 95,
     "historicRecord": {
-      "appearances": 19,
+      "appearances": 11,
       "titles": 0,
-      "winRate": 63
+      "winRate": 56
     },
     "currentSquad": [
       {
@@ -3076,13 +3076,13 @@
     "id": "GER",
     "name": "德国",
     "code": "GER",
-    "fifa_rank": 13,
+    "fifa_rank": 16,
     "group": "E",
     "strengthScore": 93,
     "historicRecord": {
-      "appearances": 18,
-      "titles": 2,
-      "winRate": 61
+      "appearances": 20,
+      "titles": 4,
+      "winRate": 62
     },
     "currentSquad": [
       {
@@ -3299,13 +3299,13 @@
     "id": "BEL",
     "name": "比利时",
     "code": "BEL",
-    "fifa_rank": 15,
+    "fifa_rank": 8,
     "group": "G",
     "strengthScore": 92,
     "historicRecord": {
-      "appearances": 17,
+      "appearances": 14,
       "titles": 0,
-      "winRate": 60
+      "winRate": 52
     },
     "currentSquad": [
       {
@@ -3522,13 +3522,13 @@
     "id": "CRO",
     "name": "克罗地亚",
     "code": "CRO",
-    "fifa_rank": 12,
+    "fifa_rank": 13,
     "group": "L",
     "strengthScore": 93,
     "historicRecord": {
-      "appearances": 18,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 61
+      "winRate": 48
     },
     "currentSquad": [
       {
@@ -3745,13 +3745,13 @@
     "id": "SUI",
     "name": "瑞士",
     "code": "SUI",
-    "fifa_rank": 16,
+    "fifa_rank": 15,
     "group": "B",
     "strengthScore": 91,
     "historicRecord": {
-      "appearances": 17,
+      "appearances": 12,
       "titles": 0,
-      "winRate": 60
+      "winRate": 48
     },
     "currentSquad": [
       {
@@ -3968,13 +3968,13 @@
     "id": "AUT",
     "name": "奥地利",
     "code": "AUT",
-    "fifa_rank": 22,
+    "fifa_rank": 29,
     "group": "J",
     "strengthScore": 87,
     "historicRecord": {
-      "appearances": 16,
+      "appearances": 7,
       "titles": 0,
-      "winRate": 58
+      "winRate": 45
     },
     "currentSquad": [
       {
@@ -4191,13 +4191,13 @@
     "id": "NOR",
     "name": "挪威",
     "code": "NOR",
-    "fifa_rank": 47,
+    "fifa_rank": 38,
     "group": "I",
     "strengthScore": 72,
     "historicRecord": {
-      "appearances": 11,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 50
+      "winRate": 42
     },
     "currentSquad": [
       {
@@ -4358,11 +4358,11 @@
     "id": "BIH",
     "name": "波黑",
     "code": "BIH",
-    "fifa_rank": 72,
+    "fifa_rank": 58,
     "group": "B",
     "strengthScore": 57,
     "historicRecord": {
-      "appearances": 6,
+      "appearances": 0,
       "titles": 0,
       "winRate": 41
     },
@@ -4581,13 +4581,13 @@
     "id": "MAR",
     "name": "摩洛哥",
     "code": "MAR",
-    "fifa_rank": 30,
+    "fifa_rank": 20,
     "group": "C",
     "strengthScore": 83,
     "historicRecord": {
-      "appearances": 14,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 55
+      "winRate": 42
     },
     "currentSquad": [
       {
@@ -4804,13 +4804,13 @@
     "id": "EGY",
     "name": "埃及",
     "code": "EGY",
-    "fifa_rank": 36,
+    "fifa_rank": 24,
     "group": "G",
     "strengthScore": 79,
     "historicRecord": {
-      "appearances": 13,
+      "appearances": 3,
       "titles": 0,
-      "winRate": 53
+      "winRate": 38
     },
     "currentSquad": [
       {
@@ -5027,13 +5027,13 @@
     "id": "SEN",
     "name": "塞内加尔",
     "code": "SEN",
-    "fifa_rank": 20,
+    "fifa_rank": 18,
     "group": "I",
     "strengthScore": 89,
     "historicRecord": {
-      "appearances": 16,
+      "appearances": 3,
       "titles": 0,
-      "winRate": 59
+      "winRate": 42
     },
     "currentSquad": [
       {
@@ -5202,13 +5202,13 @@
     "id": "ALG",
     "name": "阿尔及利亚",
     "code": "ALG",
-    "fifa_rank": 32,
+    "fifa_rank": 27,
     "group": "J",
     "strengthScore": 81,
     "historicRecord": {
-      "appearances": 14,
+      "appearances": 4,
       "titles": 0,
-      "winRate": 55
+      "winRate": 38
     },
     "currentSquad": [
       {
@@ -5425,13 +5425,13 @@
     "id": "GHA",
     "name": "加纳",
     "code": "GHA",
-    "fifa_rank": 90,
+    "fifa_rank": 30,
     "group": "L",
     "strengthScore": 47,
     "historicRecord": {
-      "appearances": 2,
+      "appearances": 3,
       "titles": 0,
-      "winRate": 35
+      "winRate": 42
     },
     "currentSquad": [
       {
@@ -5648,11 +5648,11 @@
     "id": "RSA",
     "name": "南非",
     "code": "RSA",
-    "fifa_rank": 105,
+    "fifa_rank": 53,
     "group": "A",
     "strengthScore": 38,
     "historicRecord": {
-      "appearances": 1,
+      "appearances": 3,
       "titles": 0,
       "winRate": 30
     },
@@ -5871,13 +5871,13 @@
     "id": "JPN",
     "name": "日本",
     "code": "JPN",
-    "fifa_rank": 18,
+    "fifa_rank": 17,
     "group": "F",
     "strengthScore": 90,
     "historicRecord": {
-      "appearances": 17,
+      "appearances": 7,
       "titles": 0,
-      "winRate": 59
+      "winRate": 35
     },
     "currentSquad": [
       {
@@ -6062,13 +6062,13 @@
     "id": "KOR",
     "name": "韩国",
     "code": "KOR",
-    "fifa_rank": 24,
+    "fifa_rank": 22,
     "group": "A",
     "strengthScore": 86,
     "historicRecord": {
-      "appearances": 16,
+      "appearances": 11,
       "titles": 0,
-      "winRate": 57
+      "winRate": 38
     },
     "currentSquad": [
       {
@@ -6285,13 +6285,13 @@
     "id": "IRN",
     "name": "伊朗",
     "code": "IRN",
-    "fifa_rank": 21,
+    "fifa_rank": 19,
     "group": "G",
     "strengthScore": 88,
     "historicRecord": {
-      "appearances": 16,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 58
+      "winRate": 35
     },
     "currentSquad": [
       {
@@ -6508,13 +6508,13 @@
     "id": "KSA",
     "name": "沙特阿拉伯",
     "code": "KSA",
-    "fifa_rank": 56,
+    "fifa_rank": 44,
     "group": "H",
     "strengthScore": 67,
     "historicRecord": {
-      "appearances": 9,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 47
+      "winRate": 40
     },
     "currentSquad": [
       {
@@ -6679,9 +6679,9 @@
     "group": "D",
     "strengthScore": 87,
     "historicRecord": {
-      "appearances": 16,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 58
+      "winRate": 35
     },
     "currentSquad": [
       {
@@ -6898,13 +6898,13 @@
     "id": "QAT",
     "name": "卡塔尔",
     "code": "QAT",
-    "fifa_rank": 58,
+    "fifa_rank": 40,
     "group": "B",
     "strengthScore": 66,
     "historicRecord": {
-      "appearances": 9,
+      "appearances": 1,
       "titles": 0,
-      "winRate": 46
+      "winRate": 30
     },
     "currentSquad": [
       {
@@ -7121,13 +7121,13 @@
     "id": "CZE",
     "name": "捷克",
     "code": "CZE",
-    "fifa_rank": 31,
+    "fifa_rank": 32,
     "group": "A",
     "strengthScore": 76,
     "historicRecord": {
-      "appearances": 13,
+      "appearances": 0,
       "titles": 0,
-      "winRate": 57
+      "winRate": 45
     },
     "currentSquad": [
       {
@@ -7344,13 +7344,13 @@
     "id": "HAI",
     "name": "海地",
     "code": "HAI",
-    "fifa_rank": 93,
+    "fifa_rank": 54,
     "group": "C",
     "strengthScore": 44,
     "historicRecord": {
-      "appearances": 2,
+      "appearances": 0,
       "titles": 0,
-      "winRate": 58
+      "winRate": 28
     },
     "currentSquad": [
       {
@@ -7567,11 +7567,11 @@
     "id": "SCO",
     "name": "苏格兰",
     "code": "SCO",
-    "fifa_rank": 52,
+    "fifa_rank": 43,
     "group": "C",
     "strengthScore": 74,
     "historicRecord": {
-      "appearances": 13,
+      "appearances": 9,
       "titles": 0,
       "winRate": 38
     },
@@ -8013,11 +8013,11 @@
     "id": "CUR",
     "name": "库拉索",
     "code": "CUR",
-    "fifa_rank": 78,
+    "fifa_rank": 62,
     "group": "E",
     "strengthScore": 55,
     "historicRecord": {
-      "appearances": 5,
+      "appearances": 0,
       "titles": 0,
       "winRate": 49
     },
@@ -8236,13 +8236,13 @@
     "id": "CIV",
     "name": "科特迪瓦",
     "code": "CIV",
-    "fifa_rank": 56,
+    "fifa_rank": 41,
     "group": "E",
     "strengthScore": 72,
     "historicRecord": {
-      "appearances": 2,
+      "appearances": 3,
       "titles": 0,
-      "winRate": 54
+      "winRate": 38
     },
     "currentSquad": [
       {
@@ -8459,11 +8459,11 @@
     "id": "SWE",
     "name": "瑞典",
     "code": "SWE",
-    "fifa_rank": 21,
+    "fifa_rank": 45,
     "group": "F",
     "strengthScore": 82,
     "historicRecord": {
-      "appearances": 9,
+      "appearances": 12,
       "titles": 0,
       "winRate": 48
     },
@@ -8634,13 +8634,13 @@
     "id": "TUN",
     "name": "突尼斯",
     "code": "TUN",
-    "fifa_rank": 41,
+    "fifa_rank": 42,
     "group": "F",
     "strengthScore": 68,
     "historicRecord": {
-      "appearances": 5,
+      "appearances": 6,
       "titles": 0,
-      "winRate": 53
+      "winRate": 40
     },
     "currentSquad": [
       {
@@ -8809,11 +8809,11 @@
     "id": "CPV",
     "name": "佛得角",
     "code": "CPV",
-    "fifa_rank": 88,
+    "fifa_rank": 56,
     "group": "H",
     "strengthScore": 52,
     "historicRecord": {
-      "appearances": 9,
+      "appearances": 0,
       "titles": 0,
       "winRate": 48
     },
@@ -9032,13 +9032,13 @@
     "id": "IRQ",
     "name": "伊拉克",
     "code": "IRQ",
-    "fifa_rank": 68,
+    "fifa_rank": 48,
     "group": "I",
     "strengthScore": 58,
     "historicRecord": {
-      "appearances": 9,
+      "appearances": 1,
       "titles": 0,
-      "winRate": 46
+      "winRate": 35
     },
     "currentSquad": [
       {
@@ -9255,13 +9255,13 @@
     "id": "JOR",
     "name": "约旦",
     "code": "JOR",
-    "fifa_rank": 68,
+    "fifa_rank": 55,
     "group": "J",
     "strengthScore": 55,
     "historicRecord": {
-      "appearances": 11,
+      "appearances": 0,
       "titles": 0,
-      "winRate": 64
+      "winRate": 35
     },
     "currentSquad": [
       {
@@ -9422,11 +9422,11 @@
     "id": "COD",
     "name": "民主刚果",
     "code": "COD",
-    "fifa_rank": 63,
+    "fifa_rank": 57,
     "group": "K",
     "strengthScore": 58,
     "historicRecord": {
-      "appearances": 11,
+      "appearances": 0,
       "titles": 0,
       "winRate": 40
     },
@@ -9645,13 +9645,13 @@
     "id": "UZB",
     "name": "乌兹别克斯坦",
     "code": "UZB",
-    "fifa_rank": 61,
+    "fifa_rank": 52,
     "group": "K",
     "strengthScore": 58,
     "historicRecord": {
-      "appearances": 5,
+      "appearances": 0,
       "titles": 0,
-      "winRate": 64
+      "winRate": 35
     },
     "currentSquad": [
       {
@@ -9820,13 +9820,13 @@
     "id": "PAN",
     "name": "巴拿马",
     "code": "PAN",
-    "fifa_rank": 95,
+    "fifa_rank": 51,
     "group": "L",
     "strengthScore": 48,
     "historicRecord": {
-      "appearances": 11,
+      "appearances": 1,
       "titles": 0,
-      "winRate": 44
+      "winRate": 32
     },
     "currentSquad": [
       {
