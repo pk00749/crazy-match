@@ -4,7 +4,7 @@ import PredictionForm from '../components/PredictionForm'
 import { matchesApi, teamsApi, predictApi } from '../api'
 
 export default function TodayPage() {
-  const [selectedDate, setSelectedDate] = useState(new Date('2026-06-11'))
+  const [selectedDate, setSelectedDate] = useState(new Date())
   const [matches, setMatches] = useState<any[]>([])
   const [predictions, setPredictions] = useState<Record<string, any>>({})
   const [selectedMatchId, setSelectedMatchId] = useState<string | null>(null)
