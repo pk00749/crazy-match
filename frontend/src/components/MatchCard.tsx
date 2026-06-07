@@ -169,7 +169,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
 
         {/* Meta */}
         <div className="match-meta">
-          {match.time && <span className="meta-item">🕐 {match.time}</span>}
+          {match.time && <span className="meta-item">🕐 北京时间 {match.time}</span>}
           {match.venue && <span className="meta-item">📍 {match.venue}{match.city ? ` · ${match.city}` : ''}</span>}
         </div>
 
