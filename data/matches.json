@@ -1,7 +1,7 @@
 {
   "matches": [
-    {"id": "g001","date": "2026-06-12","time": "03:00","stage": "group","group": "A","team_a": "MEX","team_b": "RSA","venue": "Estadio Azteca","city": "墨西哥城","score_a":null,"score_b":null},
-    {"id": "g002","date": "2026-06-12","time": "10:00","stage": "group","group": "A","team_a": "KOR","team_b": "CZE","venue": "Estadio Akron","city": "瓜达拉哈拉","score_a":null,"score_b":null},
+    {"id": "g001","date": "2026-06-12","time": "03:00","stage": "group","group": "A","team_a": "MEX","team_b": "RSA","venue": "Estadio Azteca","city": "墨西哥城","score_a":2,"score_b":0},
+    {"id": "g002","date": "2026-06-12","time": "10:00","stage": "group","group": "A","team_a": "KOR","team_b": "CZE","venue": "Estadio Akron","city": "瓜达拉哈拉","score_a":2,"score_b":1},
     {"id": "g003","date": "2026-06-19","time": "00:00","stage": "group","group": "A","team_a": "CZE","team_b": "RSA","venue": "Mercedes-Benz Stadium","city": "亚特兰大","score_a":null,"score_b":null},
     {"id": "g004","date": "2026-06-19","time": "09:00","stage": "group","group": "A","team_a": "MEX","team_b": "KOR","venue": "NRG Stadium","city": "休斯顿","score_a":null,"score_b":null},
     {"id": "g005","date": "2026-06-25","time": "09:00","stage": "group","group": "A","team_a": "CZE","team_b": "MEX","venue": "MetLife Stadium","city": "纽约/新泽西","score_a":null,"score_b":null},
