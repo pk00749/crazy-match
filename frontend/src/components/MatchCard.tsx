@@ -15,6 +15,8 @@ interface MatchCardProps {
     date?: string
     stage: string
     group?: string
+    score_a?: number | null
+    score_b?: number | null
   }
   isSelected?: boolean
   prediction?: any
@@ -50,6 +52,24 @@ const PLACEHOLDER_CODES = new Set([
 
 function isPlaceholder(code: string): boolean {
   return PLACEHOLDER_CODES.has(code)
+}
+
+// A match is considered "已结束" once kickoff + 2h has passed in local time.
+// Times in matches.json are stored as CST strings; parsing as local time keeps
+// this correct on any device timezone.
+const MATCH_DURATION_MS = 2 * 60 * 60 * 1000
+
+function isMatchEnded(dateStr?: string, timeStr?: string): boolean {
+  if (!dateStr || !timeStr) return false
+  const [y, mo, d] = dateStr.split('-').map(Number)
+  const [h, mi] = timeStr.split(':').map(Number)
+  if (!y || !mo || !d || isNaN(h) || isNaN(mi)) return false
+  const kickoff = new Date(y, mo - 1, d, h, mi).getTime()
+  return Date.now() > kickoff + MATCH_DURATION_MS
+}
+
+function hasScore(match: MatchCardProps['match']): boolean {
+  return typeof match.score_a === 'number' && typeof match.score_b === 'number'
 }
 
 // Team 3-letter code -> 2-letter ISO flag code
@@ -138,6 +158,9 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
             {match.stage === 'group' && match.group && (
               <span className="badge badge-group">{match.group}组</span>
             )}
+            {isMatchEnded(match.date, match.time) && (
+              <span className="badge badge-ended">已结束</span>
+            )}
           </div>
         </div>
 
@@ -154,7 +177,19 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
               )}
             </div>
           </div>
-          <span className="match-vs">VS</span>
+          {hasScore(match) ? (
+            <span className="match-score">
+              <span className={`match-score-num ${(match.score_a ?? 0) > (match.score_b ?? 0) ? 'score-winner' : (match.score_a ?? 0) < (match.score_b ?? 0) ? 'score-loser' : 'score-draw'}`}>
+                {match.score_a}
+              </span>
+              <span className="match-score-sep">-</span>
+              <span className={`match-score-num ${(match.score_b ?? 0) > (match.score_a ?? 0) ? 'score-winner' : (match.score_b ?? 0) < (match.score_a ?? 0) ? 'score-loser' : 'score-draw'}`}>
+                {match.score_b}
+              </span>
+            </span>
+          ) : (
+            <span className="match-vs">VS</span>
+          )}
           <div className="team team-b">
             <div style={{ textAlign: 'right' }}>
               <span className="team-name">{match.team_b}</span>

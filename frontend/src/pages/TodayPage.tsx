@@ -97,8 +97,11 @@ export default function TodayPage() {
                   time: match.time,
                   venue: match.venue,
                   city: match.city,
+                  date: match.date,
                   stage: match.stage,
                   group: match.group,
+                  score_a: match.score_a,
+                  score_b: match.score_b,
                 }}
                 isSelected={selectedMatchId === match.id}
                 prediction={predictions[match.id]}

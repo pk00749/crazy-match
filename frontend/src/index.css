@@ -226,6 +226,11 @@ a { color: inherit; text-decoration: none; }
 .badge-group { background: rgba(0,212,170,0.15); color: var(--teal); }
 .badge-knockout { background: rgba(163,113,247,0.15); color: var(--purple); }
 .badge-final { background: var(--gold-dim); color: var(--gold); }
+.badge-ended {
+  background: rgba(120,120,128,0.18);
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
 
 .match-teams {
   display: flex;
@@ -255,6 +260,36 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 2px;
 }
 
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0;
+  padding: 4px 8px;
+  background: rgba(255,215,0,0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(255,215,0,0.2);
+}
+
+.match-score-num {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  min-width: 22px;
+  text-align: center;
+  line-height: 1;
+}
+
+.match-score-num.score-winner { color: var(--green); }
+.match-score-num.score-loser { color: var(--red); }
+.match-score-num.score-draw { color: var(--gold); }
+
+.match-score-sep {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
 .match-meta {
   display: flex;
   align-items: center;

@@ -118,8 +118,11 @@ export default function SchedulePage() {
                       time: match.time,
                       venue: match.venue,
                       city: match.city,
+                      date: match.date,
                       stage: match.stage,
                       group: match.group,
+                      score_a: match.score_a,
+                      score_b: match.score_b,
                     }}
                     isSelected={selectedMatchId === match.id}
                     prediction={predictions[match.id]}
@@ -139,19 +142,22 @@ export default function SchedulePage() {
             const nameA = teamA?.name || match.team_a
             const nameB = teamB?.name || match.team_b
             return (
-              <MatchCard
-                key={match.id}
-                match={{
-                  id: match.id,
-                  team_a: nameA,
-                  team_b: nameB,
-                  team_a_code: match.team_a,
-                  team_b_code: match.team_b,
-                  time: match.time,
-                  venue: match.venue,
-                  city: match.city,
-                  stage: match.stage,
-                }}
+                <MatchCard
+                  key={match.id}
+                  match={{
+                    id: match.id,
+                    team_a: nameA,
+                    team_b: nameB,
+                    team_a_code: match.team_a,
+                    team_b_code: match.team_b,
+                    time: match.time,
+                    venue: match.venue,
+                    city: match.city,
+                    date: match.date,
+                    stage: match.stage,
+                    score_a: match.score_a,
+                    score_b: match.score_b,
+                  }}
                 isSelected={selectedMatchId === match.id}
                 prediction={predictions[match.id]}
                 onSelect={setSelectedMatchId}
