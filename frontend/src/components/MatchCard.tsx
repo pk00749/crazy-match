@@ -74,7 +74,8 @@ function getTeamFlagUrl(code: string): string {
 
 function getStageLabel(stage: string): string {
   const map: Record<string, string> = {
-    group: '小组赛', round16: '1/8决赛', quarter: '1/4决赛', semi: '半决赛', final: '决赛'
+    group: '小组赛', round32: '1/16决赛', round16: '1/8决赛',
+    quarter: '1/4决赛', semi: '半决赛', third: '季军赛', final: '决赛'
   }
   return map[stage] || stage
 }

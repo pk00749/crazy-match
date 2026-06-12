@@ -3,13 +3,15 @@ import MatchCard from '../components/MatchCard'
 import PredictionForm from '../components/PredictionForm'
 import { matchesApi, teamsApi, predictApi } from '../api'
 
-type Stage = 'group' | 'round16' | 'quarter' | 'semi' | 'final'
+type Stage = 'group' | 'round32' | 'round16' | 'quarter' | 'semi' | 'third' | 'final'
 
 const stageTabs: { key: Stage; label: string }[] = [
   { key: 'group', label: '小组赛' },
+  { key: 'round32', label: '32强' },
   { key: 'round16', label: '16强' },
   { key: 'quarter', label: '8强' },
   { key: 'semi', label: '4强' },
+  { key: 'third', label: '季军赛' },
   { key: 'final', label: '决赛' },
 ]
 

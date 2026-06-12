@@ -18,7 +18,7 @@
 |------|------|------|------|
 | 6月12日 | 03:00 | 🇲🇽 墨西哥 vs 南非 🇿🇦 | Estadio Azteca, 墨西哥城 |
 | 6月12日 | 10:00 | 🇰🇷 韩国 vs 捷克 | Estadio Akron, 瓜达拉哈拉 |
-| 6月19日 | 03:00 | 捷克 vs 南非 | Mercedes-Benz Stadium, 亚特兰大 |
+| 6月19日 | 00:00 | 捷克 vs 南非 | Mercedes-Benz Stadium, 亚特兰大 |
 | 6月19日 | 09:00 | 墨西哥 vs 韩国 | NRG Stadium, 休斯顿 |
 | 6月25日 | 09:00 | 捷克 vs 墨西哥 | MetLife Stadium, 纽约/新泽西 |
 | 6月25日 | 09:00 | 南非 vs 韩国 | BC Place, 温哥华 |
@@ -44,8 +44,8 @@
 |------|------|------|------|
 | 6月14日 | 06:00 | 🇧🇷 巴西 vs 摩洛哥 🇲🇦 | MetLife Stadium, 纽约/新泽西 |
 | 6月14日 | 09:00 | 🇭🇹 海地 vs 苏格兰 🏴󠁧󠁢󠁳󠁣󠁴󠁿 | Gillette Stadium, 波士顿 |
-| 6月20日 | 03:00 | 苏格兰 vs 摩洛哥 | Gillette Stadium, 波士顿 |
-| 6月20日 | 06:00 | 巴西 vs 海地 | Lincoln Financial Field, 费城 |
+| 6月20日 | 06:00 | 苏格兰 vs 摩洛哥 | Gillette Stadium, 波士顿 |
+| 6月20日 | 09:00 | 巴西 vs 海地 | Lincoln Financial Field, 费城 |
 | 6月25日 | 06:00 | 苏格兰 vs 巴西 | Hard Rock Stadium, 迈阿密 |
 | 6月25日 | 06:00 | 摩洛哥 vs 海地 | Mercedes-Benz Stadium, 亚特兰大 |
 
@@ -57,10 +57,10 @@
 |------|------|------|------|
 | 6月13日 | 09:00 | 🇺🇸 美国 vs 巴拉圭 🇵🇾 | SoFi Stadium, 洛杉矶 |
 | 6月14日 | 12:00 | 🇦🇺 澳大利亚 vs 土耳其 🇹🇷 | BC Place, 温哥华 |
-| 6月20日 | 06:00 | 美国 vs 澳大利亚 | Lumen Field, 西雅图 |
-| 6月20日 | 11:00 | 土耳其 vs 巴拉圭 | Levi's Stadium, 旧金山湾区 |
-| 6月26日 | 04:00 | 土耳其 vs 美国 | SoFi Stadium, 洛杉矶 |
-| 6月26日 | 04:00 | 巴拉圭 vs 澳大利亚 | Levi's Stadium, 旧金山湾区 |
+| 6月20日 | 03:00 | 美国 vs 澳大利亚 | Lumen Field, 西雅图 |
+| 6月20日 | 12:00 | 土耳其 vs 巴拉圭 | Levi's Stadium, 旧金山湾区 |
+| 6月26日 | 10:00 | 土耳其 vs 美国 | SoFi Stadium, 洛杉矶 |
+| 6月26日 | 10:00 | 巴拉圭 vs 澳大利亚 | Levi's Stadium, 旧金山湾区 |
 
 ---
 
@@ -69,9 +69,9 @@
 | 日期 | 时间 | 对阵 | 场地 |
 |------|------|------|------|
 | 6月15日 | 01:00 | 🇩🇪 德国 vs 库拉索 🇨🇼 | NRG Stadium, 休斯顿 |
-| 6月15日 | 04:00 | 🇨🇮 科特迪瓦 vs 厄瓜多尔 🇪🇨 | Lincoln Financial Field, 费城 |
-| 6月21日 | 01:00 | 德国 vs 科特迪瓦 | BMO Field, 多伦多 |
-| 6月21日 | 04:00 | 厄瓜多尔 vs 库拉索 | Arrowhead Stadium, 堪萨斯城 |
+| 6月15日 | 07:00 | 🇨🇮 科特迪瓦 vs 厄瓜多尔 🇪🇨 | Lincoln Financial Field, 费城 |
+| 6月21日 | 04:00 | 德国 vs 科特迪瓦 | BMO Field, 多伦多 |
+| 6月21日 | 08:00 | 厄瓜多尔 vs 库拉索 | Arrowhead Stadium, 堪萨斯城 |
 | 6月26日 | 04:00 | 厄瓜多尔 vs 德国 | MetLife Stadium, 纽约/新泽西 |
 | 6月26日 | 04:00 | 库拉索 vs 科特迪瓦 | Lincoln Financial Field, 费城 |
 
@@ -81,12 +81,12 @@
 
 | 日期 | 时间 | 对阵 | 场地 |
 |------|------|------|------|
-| 6月15日 | 07:00 | 🇳🇱 荷兰 vs 日本 🇯🇵 | AT&T Stadium, 达拉斯 |
+| 6月15日 | 04:00 | 🇳🇱 荷兰 vs 日本 🇯🇵 | AT&T Stadium, 达拉斯 |
 | 6月15日 | 10:00 | 🇸🇪 瑞典 vs 突尼斯 🇹🇳 | Estadio BBVA, 蒙特雷 |
-| 6月21日 | 00:00 | 荷兰 vs 瑞典 | NRG Stadium, 休斯顿 |
-| 6月21日 | 08:00 | 突尼斯 vs 日本 | Estadio BBVA, 蒙特雷 |
-| 6月26日 | 00:00 | 日本 vs 瑞典 | AT&T Stadium, 达拉斯 |
-| 6月26日 | 00:00 | 突尼斯 vs 荷兰 | Arrowhead Stadium, 堪萨斯城 |
+| 6月21日 | 01:00 | 荷兰 vs 瑞典 | NRG Stadium, 休斯顿 |
+| 6月21日 | 12:00 | 突尼斯 vs 日本 | Estadio BBVA, 蒙特雷 |
+| 6月26日 | 07:00 | 日本 vs 瑞典 | AT&T Stadium, 达拉斯 |
+| 6月26日 | 07:00 | 突尼斯 vs 荷兰 | Arrowhead Stadium, 堪萨斯城 |
 
 ---
 
@@ -94,12 +94,12 @@
 
 | 日期 | 时间 | 对阵 | 场地 |
 |------|------|------|------|
-| 6月16日 | 00:00 | 🇮🇷 伊朗 vs 新西兰 🇳🇿 | SoFi Stadium, 洛杉矶 |
+| 6月16日 | 09:00 | 🇮🇷 伊朗 vs 新西兰 🇳🇿 | SoFi Stadium, 洛杉矶 |
 | 6月16日 | 03:00 | 🇧🇪 比利时 vs 埃及 🇪🇬 | Lumen Field, 西雅图 |
-| 6月22日 | 00:00 | 比利时 vs 伊朗 | SoFi Stadium, 洛杉矶 |
-| 6月22日 | 03:00 | 新西兰 vs 埃及 | BC Place, 温哥华 |
-| 6月27日 | 03:00 | 埃及 vs 伊朗 | Lumen Field, 西雅图 |
-| 6月27日 | 03:00 | 新西兰 vs 比利时 | BC Place, 温哥华 |
+| 6月22日 | 03:00 | 比利时 vs 伊朗 | SoFi Stadium, 洛杉矶 |
+| 6月22日 | 09:00 | 新西兰 vs 埃及 | BC Place, 温哥华 |
+| 6月27日 | 11:00 | 埃及 vs 伊朗 | Lumen Field, 西雅图 |
+| 6月27日 | 11:00 | 新西兰 vs 比利时 | BC Place, 温哥华 |
 
 ---
 
@@ -107,12 +107,12 @@
 
 | 日期 | 时间 | 对阵 | 场地 |
 |------|------|------|------|
-| 6月16日 | 06:00 | 🇪🇸 西班牙 vs 佛得角 🇨🇻 | Mercedes-Benz Stadium, 亚特兰大 |
-| 6月16日 | 09:00 | 🇸🇦 沙特阿拉伯 vs 乌拉圭 🇺🇾 | Hard Rock Stadium, 迈阿密 |
+| 6月16日 | 00:00 | 🇪🇸 西班牙 vs 佛得角 🇨🇻 | Mercedes-Benz Stadium, 亚特兰大 |
+| 6月16日 | 06:00 | 🇸🇦 沙特阿拉伯 vs 乌拉圭 🇺🇾 | Hard Rock Stadium, 迈阿密 |
 | 6月22日 | 00:00 | 西班牙 vs 沙特阿拉伯 | Mercedes-Benz Stadium, 亚特兰大 |
-| 6月22日 | 03:00 | 乌拉圭 vs 佛得角 | Hard Rock Stadium, 迈阿密 |
-| 6月27日 | 06:00 | 佛得角 vs 沙特阿拉伯 | NRG Stadium, 休斯顿 |
-| 6月27日 | 06:00 | 乌拉圭 vs 西班牙 | Estadio Akron, 瓜达拉哈拉 |
+| 6月22日 | 06:00 | 乌拉圭 vs 佛得角 | Hard Rock Stadium, 迈阿密 |
+| 6月27日 | 08:00 | 佛得角 vs 沙特阿拉伯 | NRG Stadium, 休斯顿 |
+| 6月27日 | 08:00 | 乌拉圭 vs 西班牙 | Estadio Akron, 瓜达拉哈拉 |
 
 ---
 
@@ -137,7 +137,7 @@
 | 6月17日 | 12:00 | 🇦🇹 奥地利 vs 约旦 🇯🇴 | Levi's Stadium, 旧金山湾区 |
 | 6月23日 | 01:00 | 阿根廷 vs 奥地利 | AT&T Stadium, 达拉斯 |
 | 6月23日 | 11:00 | 约旦 vs 阿尔及利亚 | Levi's Stadium, 旧金山湾区 |
-| 6月28日 | 03:00 | 阿尔及利亚 vs 奥地利 | Arrowhead Stadium, 堪萨斯城 |
+| 6月28日 | 10:00 | 阿尔及利亚 vs 奥地利 | Arrowhead Stadium, 堪萨斯城 |
 | 6月28日 | 10:00 | 约旦 vs 阿根廷 | AT&T Stadium, 达拉斯 |
 
 ---
@@ -147,9 +147,9 @@
 | 日期 | 时间 | 对阵 | 场地 |
 |------|------|------|------|
 | 6月18日 | 01:00 | 🇵🇹 葡萄牙 vs 民主刚果 🇩🇬 | NRG Stadium, 休斯顿 |
-| 6月18日 | 04:00 | 🇺🇿 乌兹别克斯坦 vs 哥伦比亚 🇨🇴 | Estadio Azteca, 墨西哥城 |
+| 6月18日 | 10:00 | 🇺🇿 乌兹别克斯坦 vs 哥伦比亚 🇨🇴 | Estadio Azteca, 墨西哥城 |
 | 6月24日 | 01:00 | 葡萄牙 vs 乌兹别克斯坦 | NRG Stadium, 休斯顿 |
-| 6月24日 | 03:00 | 哥伦比亚 vs 民主刚果 | Estadio Akron, 瓜达拉哈拉 |
+| 6月24日 | 10:00 | 哥伦比亚 vs 民主刚果 | Estadio Akron, 瓜达拉哈拉 |
 | 6月28日 | 07:30 | 哥伦比亚 vs 葡萄牙 | Hard Rock Stadium, 迈阿密 |
 | 6月28日 | 07:30 | 民主刚果 vs 乌兹别克斯坦 | Mercedes-Benz Stadium, 亚特兰大 |
 
