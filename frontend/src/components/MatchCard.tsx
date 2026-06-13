@@ -72,6 +72,41 @@ function hasScore(match: MatchCardProps['match']): boolean {
   return typeof match.score_a === 'number' && typeof match.score_b === 'number'
 }
 
+// Compare the user's `predicted_winner` against the actual result derived from
+// the recorded scores. Returns 'correct' / 'wrong' only when the match is
+// finished, has a score, and a user prediction exists.
+//
+// `predicted_winner` may be either 'teamA'/'teamB'/'draw' (the canonical
+// values Supabase stores) or an ISO team code like 'MEX' (the value the form
+// currently sends to predictApi). We normalize codes to teamA/teamB here.
+function getActualWinner(match: MatchCardProps['match']): 'teamA' | 'teamB' | 'draw' | null {
+  if (!hasScore(match)) return null
+  const { score_a, score_b } = match as { score_a: number; score_b: number }
+  if (score_a === score_b) return 'draw'
+  return score_a > score_b ? 'teamA' : 'teamB'
+}
+
+function getPredictionResult(
+  prediction: any,
+  match: MatchCardProps['match']
+): 'correct' | 'wrong' | null {
+  let predicted = prediction?.predicted_winner
+  if (!predicted) return null
+  if (predicted === 'teamA' || predicted === 'teamB' || predicted === 'draw') {
+    // already canonical
+  } else if (predicted === match.team_a_code) {
+    predicted = 'teamA'
+  } else if (predicted === match.team_b_code) {
+    predicted = 'teamB'
+  } else {
+    return null
+  }
+  if (!isMatchEnded(match.date, match.time)) return null
+  const actual = getActualWinner(match)
+  if (!actual) return null
+  return predicted === actual ? 'correct' : 'wrong'
+}
+
 // Team 3-letter code -> 2-letter ISO flag code
 const flagCodeMap: Record<string, string> = {
   ALG:'dz', ARG:'ar', AUS:'au', AUT:'at', BEL:'be', BIH:'ba', BRA:'br', CAN:'ca',
@@ -125,6 +160,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
   const { team_a_code, team_b_code } = match
   const canShowTeamA = !isPlaceholder(team_a_code)
   const canShowTeamB = !isPlaceholder(team_b_code)
+  const predictionResult = getPredictionResult(prediction, match)
 
   useEffect(() => {
     if (isSelected) loadData()
@@ -146,7 +182,7 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
   return (
     <>
       <div
-        className={`match-card${isSelected ? ' selected' : ''}`}
+        className={`match-card${isSelected ? ' selected' : ''}${predictionResult ? ` ${predictionResult}` : ''}`}
         onClick={() => onSelect?.(match.id)}
       >
         {/* Top badges */}
@@ -160,6 +196,12 @@ export default function MatchCard({ match, isSelected, prediction, onPredict, on
             )}
             {isMatchEnded(match.date, match.time) && (
               <span className="badge badge-ended">已结束</span>
+            )}
+            {predictionResult === 'correct' && (
+              <span className="badge badge-correct">预测准确</span>
+            )}
+            {predictionResult === 'wrong' && (
+              <span className="badge badge-wrong">预测错误</span>
             )}
           </div>
         </div>

@@ -205,6 +205,10 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
+/* Prediction result outline — placed after :hover so it wins on same specificity */
+.match-card.correct { border-color: var(--green); }
+.match-card.wrong   { border-color: var(--red); }
+
 .match-card-top {
   display: flex;
   align-items: center;
@@ -230,6 +234,16 @@ a { color: inherit; text-decoration: none; }
   background: rgba(120,120,128,0.18);
   color: var(--text-secondary);
   letter-spacing: 1px;
+}
+
+.badge-correct {
+  background: rgba(63,185,80,0.18);
+  color: var(--green);
+}
+
+.badge-wrong {
+  background: rgba(248,81,73,0.18);
+  color: var(--red);
 }
 
 .match-teams {

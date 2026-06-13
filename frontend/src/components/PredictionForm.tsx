@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
+import { predictApi } from '../api'
 
 interface PredictionFormProps {
   matchId: string
@@ -46,6 +47,16 @@ export default function PredictionForm({ matchId, teamACode, teamAName, teamBCod
         }, { onConflict: 'match_id,device_id' })
 
       if (error) throw error
+
+      // Keep the in-memory + localStorage mirror in sync so the verification
+      // badge survives a page reload. predictApi.submit stores the prediction
+      // in module state and persists it to localStorage.
+      try {
+        predictApi.submit(matchId, nickname, prediction)
+        ;(window as any).__lastPredictSubmit = { matchId, nickname, prediction, ok: true }
+      } catch (e) {
+        ;(window as any).__lastPredictSubmit = { matchId, nickname, prediction, ok: false, error: String(e) }
+      }
 
       setMessage('✅ 预测提交成功！')
       setTimeout(() => {

@@ -126,7 +126,24 @@ function getHomeBonus(teamAId: string, teamBId: string): number {
   return 0
 }
 
-const predictions: Record<string, any> = {}
+// Persist user predictions to localStorage so the verification badge survives
+// a page reload. Without this, the in-memory map is reset on every refresh
+// and the green/red "预测准确 / 预测错误" border never renders.
+const PREDICTIONS_STORAGE_KEY = 'crazy_match_predictions_v1'
+const predictions: Record<string, any> = (() => {
+  try {
+    return JSON.parse(localStorage.getItem(PREDICTIONS_STORAGE_KEY) || '{}')
+  } catch {
+    return {}
+  }
+})()
+const persistPredictions = () => {
+  try {
+    localStorage.setItem(PREDICTIONS_STORAGE_KEY, JSON.stringify(predictions))
+  } catch {
+    /* localStorage may be unavailable (e.g. private mode); fall back to in-memory */
+  }
+}
 
 export const matchesApi = {
   getAll: () => matchesData.matches,
@@ -150,20 +167,30 @@ export const predictApi = {
     
     predictions[matchId] = {
       ...calculateWinProbability(teamA, teamB),
+      predicted_winner: prediction,
       user_prediction: prediction,
       nickname
     }
+    persistPredictions()
     return predictions[matchId]
   },
   getByMatch: (matchId: string) => {
     const match = matchesData.matches.find((m: any) => m.id === matchId)
     if (!match) return null
-    
+
     const teamA = (teamsData as any)[match.team_a]
     const teamB = (teamsData as any)[match.team_b]
     if (!teamA || !teamB) return null
-    
-    return calculateWinProbability(teamA, teamB)
+
+    const base = calculateWinProbability(teamA, teamB)
+    // Surface the user's stored predicted_winner so the UI can verify it
+    // against the actual result. The in-memory map covers direct calls;
+    // a future Supabase fallback can hydrate this same key.
+    const stored = predictions[matchId]
+    if (stored?.predicted_winner) {
+      return { ...base, predicted_winner: stored.predicted_winner }
+    }
+    return base
   },
 }
 
