@@ -72,13 +72,6 @@ function hasScore(match: MatchCardProps['match']): boolean {
   return typeof match.score_a === 'number' && typeof match.score_b === 'number'
 }
 
-// Compare the user's `predicted_winner` against the actual result derived from
-// the recorded scores. Returns 'correct' / 'wrong' only when the match is
-// finished, has a score, and a user prediction exists.
-//
-// `predicted_winner` may be either 'teamA'/'teamB'/'draw' (the canonical
-// values Supabase stores) or an ISO team code like 'MEX' (the value the form
-// currently sends to predictApi). We normalize codes to teamA/teamB here.
 function getActualWinner(match: MatchCardProps['match']): 'teamA' | 'teamB' | 'draw' | null {
   if (!hasScore(match)) return null
   const { score_a, score_b } = match as { score_a: number; score_b: number }
@@ -86,25 +79,33 @@ function getActualWinner(match: MatchCardProps['match']): 'teamA' | 'teamB' | 'd
   return score_a > score_b ? 'teamA' : 'teamB'
 }
 
+// Determine the algorithm's pre-match pick: the side with the highest
+// win_probability. Independent of any user submission; used to verify the
+// algorithm's accuracy once the real result lands.
+function getAlgorithmPick(prediction: any): 'teamA' | 'teamB' | 'draw' | null {
+  if (!prediction?.win_probability) return null
+  const a = prediction.win_probability.team_a ?? 0
+  const b = prediction.win_probability.team_b ?? 0
+  const d = prediction.win_probability.draw ?? 0
+  if (a === 0 && b === 0 && d === 0) return null
+  if (a >= b && a >= d) return 'teamA'
+  if (b >= d) return 'teamB'
+  return 'draw'
+}
+
+// Compare the algorithm's pick against the actual result derived from the
+// recorded scores. Returns 'correct' / 'wrong' only when the match is
+// finished, has a score, and the algorithm produced a probability split.
 function getPredictionResult(
   prediction: any,
   match: MatchCardProps['match']
 ): 'correct' | 'wrong' | null {
-  let predicted = prediction?.predicted_winner
-  if (!predicted) return null
-  if (predicted === 'teamA' || predicted === 'teamB' || predicted === 'draw') {
-    // already canonical
-  } else if (predicted === match.team_a_code) {
-    predicted = 'teamA'
-  } else if (predicted === match.team_b_code) {
-    predicted = 'teamB'
-  } else {
-    return null
-  }
   if (!isMatchEnded(match.date, match.time)) return null
   const actual = getActualWinner(match)
   if (!actual) return null
-  return predicted === actual ? 'correct' : 'wrong'
+  const pick = getAlgorithmPick(prediction)
+  if (!pick) return null
+  return pick === actual ? 'correct' : 'wrong'
 }
 
 // Team 3-letter code -> 2-letter ISO flag code
