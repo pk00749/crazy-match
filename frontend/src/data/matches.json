@@ -257,8 +257,8 @@
       "team_b": "TUR",
       "venue": "BC Place",
       "city": "温哥华",
-      "score_a": null,
-      "score_b": null
+      "score_a": 2,
+      "score_b": 0
     },
     {
       "id": "g021",
@@ -400,8 +400,8 @@
       "team_b": "JPN",
       "venue": "AT&T Stadium",
       "city": "达拉斯",
-      "score_a": null,
-      "score_b": null
+      "score_a": 2,
+      "score_b": 2
     },
     {
       "id": "g032",
@@ -413,8 +413,8 @@
       "team_b": "TUN",
       "venue": "Estadio BBVA",
       "city": "蒙特雷",
-      "score_a": null,
-      "score_b": null
+      "score_a": 5,
+      "score_b": 1
     },
     {
       "id": "g033",
